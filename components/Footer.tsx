@@ -85,9 +85,7 @@ export default function Footer() {
           <p>© 2026 Alpha Aircraft Systems. All rights reserved.</p>
 
           <div className="footer-meta-links">
-            <Link href="/privacy-policy">Privacy Policy</Link>
-            <Link href="/terms-of-service">Terms of Service</Link>
-            <Link href="/cookies">Cookies Settings</Link>
+            
           </div>
         </div>
       </div>
