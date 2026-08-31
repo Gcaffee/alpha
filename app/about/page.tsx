@@ -5,10 +5,12 @@ import Lenis from "lenis";
 
 import Header from "@/components/Header";
 // import Hero from "@/components/Preloader";
-
+import What from "@/components/What";
 import Footer from "@/components/Footer";
 import About from "@/components/About";
-
+import Ourstroy from "@/components/Ourstroy";
+import Aboutt from "@/components/Aboutt";
+import Team from "@/components/Team";
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis({
@@ -39,7 +41,11 @@ export default function Home() {
 
       <main>
         <About />
-    
+        
+    <Ourstroy />
+    <What />
+    <Aboutt />
+    <Team />
         </main>
 
       <Footer />
