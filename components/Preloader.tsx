@@ -809,202 +809,7 @@ export default function APUOverhaulPage() {
       {/* =====================================================
           EXPERTISE
       ===================================================== */}
-
-      <section
-        className="alpha-apu-expertise"
-        id="expertise"
-      >
-        <div className="alpha-apu-grid-bg" />
-
-        <span className="alpha-apu-section-number">
-          01 / 04
-        </span>
-
-        <div className="alpha-apu-container">
-          <div className="alpha-apu-expertise-grid">
-            <div className="alpha-apu-expertise-copy">
-              
-
-              <h2>
-                KEEPING THE
-                <br />
-                C-130 FLEET
-                <br />
-                MISSION-READY.
-                
-              </h2>
-
-              <p>
-                From component repair and overhaul to testing and support, Alpha Aircraft Systems delivers dependable MRO capabilities for the C-130 Hercules. Browse our detailed C-130 parts and capability database.
-              </p>
-              <a
-  href="/documents/component-mro.pdf"
-  download
-  className="alpha-apu-module-download"
->
-  <span>EXPLORE C-130 MRO CAPABILITIES</span>
-  <span className="alpha-apu-download-arrow">↗</span>
-</a>
-            </div>
-
-            <div className="alpha-apu-expertise-visual">
-              <div className="alpha-apu-image-ring" />
-
-              <div className="alpha-apu-expertise-image-wrap">
-                <Image
-                  src="/c130.jpg"
-                  alt="APU Overhaul and Repair"
-                  className="alpha-apu-expertise-image"
-                  width={1000}
-                  height={1000}
-                />
-
-                <div className="alpha-apu-image-overlay" />
-              </div>
-
-              
-
-              
-
-              
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================
-          PROCESS
-      ===================================================== */}
-
-      <section
-        className="alpha-apu-process"
-        id="process"
-      >
-        
-
-        <div className="alpha-apu-container">
-          <div className="alpha-apu-process-header">
-            <div>
-              
-
-              <h2 className="alpha-apu-process-title">
-                FROM TEST
-                <br />
-                TO FLIGHT.
-              </h2>
-            </div>
-
-            
-          </div>
-
-          <div className="alpha-apu-process-grid">
-            {processItems.map((item) => (
-              <article
-                className="alpha-apu-process-card"
-                key={item.number}
-              >
-                <span>{item.number}</span>
-
-                <h3>{item.title}</h3>
-
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================
-          CAPABILITIES
-      ===================================================== */}
-
-      
-      {/* <section
-        className="alpha-apu-capabilities"
-        id="capabilities"
-      >
-        <div className="alpha-apu-grid-bg" />
-
-        <span className="alpha-apu-section-number">
-          03 / 04
-        </span>
-
-        <div className="alpha-apu-container">
-          <div className="alpha-apu-cap-header">
-            <div>
-              <div className="alpha-apu-eyebrow">
-                CAPABILITIES
-              </div>
-
-              <h2>
-                WHAT
-                <br />
-                WE DO.
-              </h2>
-            </div>
-
-            <div className="alpha-apu-cap-meta">
-              TECHNICAL CAPABILITY DOCUMENTS
-            </div>
-          </div>
-
-          <div className="alpha-apu-cap-grid">
-            <article className="alpha-apu-cap-card">
-              <div className="alpha-apu-cap-number">
-                01
-              </div>
-
-              <div className="alpha-apu-cap-content">
-                <h3>APU</h3>
-
-                <p>
-                  APU overhaul, repair, testing
-                  and maintenance capabilities
-                  designed to keep your aircraft
-                  operating reliably.
-                </p>
-
-                <a
-                  href="https://alphaaircraftsystems.com/wp-content/uploads/AAS-APU-CAPABILITIES-8-8-2023.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="alpha-apu-pdf-link"
-                >
-                  VIEW APU CAPABILITIES PDF →
-                </a>
-              </div>
-            </article>
-
-            <article className="alpha-apu-cap-card">
-              <div className="alpha-apu-cap-number">
-                02
-              </div>
-
-              <div className="alpha-apu-cap-content">
-                <h3>C-130</h3>
-
-                <p>
-                  Specialized capabilities
-                  supporting C-130 aircraft
-                  maintenance, repair and
-                  overhaul requirements.
-                </p>
-
-                <a
-                  href="https://alphaaircraftsystems.com/wp-content/uploads/AAS-CAPABILITIES-C-130.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="alpha-apu-pdf-link"
-                >
-                  VIEW C-130 CAPABILITIES PDF →
-                </a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section> */}
-      
-   <section
+<section
       className="alpha-apu-modules-section"
       id="capabilities"
     >
@@ -1026,12 +831,12 @@ export default function APUOverhaulPage() {
             HEADER
         ================================================= */}
 
-        <div className="alpha-apu-modules-header">
+        <div  style={{ color: "#082b4c;" }} className="alpha-apu-modules-header">
 
           <span>CAPABILITIES</span>
 
           <h2>
-            APU <strong>MODULES</strong>
+             APU MODULES
           </h2>
 
           <p>
@@ -1253,6 +1058,201 @@ export default function APUOverhaulPage() {
       </div>
 
     </section>
+      
+
+      {/* =====================================================
+          PROCESS
+      ===================================================== */}
+
+      <section
+        className="alpha-apu-process"
+        id="process"
+      >
+        
+
+        <div className="alpha-apu-container">
+          <div className="alpha-apu-process-header">
+            <div>
+              
+
+              <h2 className="alpha-apu-process-title">
+                FROM TEST
+                <br />
+                TO FLIGHT.
+              </h2>
+            </div>
+
+            
+          </div>
+
+          <div className="alpha-apu-process-grid">
+            {processItems.map((item) => (
+              <article
+                className="alpha-apu-process-card"
+                key={item.number}
+              >
+                <span>{item.number}</span>
+
+                <h3>{item.title}</h3>
+
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          CAPABILITIES
+      ===================================================== */}
+<section
+        className="alpha-apu-expertise"
+        id="expertise"
+      >
+        <div className="alpha-apu-grid-bg" />
+
+        <span className="alpha-apu-section-number">
+          01 / 04
+        </span>
+
+        <div className="alpha-apu-container">
+          <div className="alpha-apu-expertise-grid">
+            <div className="alpha-apu-expertise-copy">
+              
+
+              <h2>
+                KEEPING THE
+                <br />
+                C-130 FLEET
+                <br />
+                MISSION-READY.
+                
+              </h2>
+
+              <p>
+                From component repair and overhaul to testing and support, Alpha Aircraft Systems delivers dependable MRO capabilities for the C-130 Hercules. Browse our detailed C-130 parts and capability database.
+              </p>
+              <a
+  href="/documents/component-mro.pdf"
+  download
+  className="alpha-apu-module-download"
+>
+  <span>EXPLORE C-130 MRO CAPABILITIES</span>
+  <span className="alpha-apu-download-arrow">↗</span>
+</a>
+            </div>
+
+            <div className="alpha-apu-expertise-visual">
+              <div className="alpha-apu-image-ring" />
+
+              <div className="alpha-apu-expertise-image-wrap">
+                <Image
+                  src="/c130.jpg"
+                  alt="APU Overhaul and Repair"
+                  className="alpha-apu-expertise-image"
+                  width={1000}
+                  height={1000}
+                />
+
+                <div className="alpha-apu-image-overlay" />
+              </div>
+
+              
+
+              
+
+              
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* <section
+        className="alpha-apu-capabilities"
+        id="capabilities"
+      >
+        <div className="alpha-apu-grid-bg" />
+
+        <span className="alpha-apu-section-number">
+          03 / 04
+        </span>
+
+        <div className="alpha-apu-container">
+          <div className="alpha-apu-cap-header">
+            <div>
+              <div className="alpha-apu-eyebrow">
+                CAPABILITIES
+              </div>
+
+              <h2>
+                WHAT
+                <br />
+                WE DO.
+              </h2>
+            </div>
+
+            <div className="alpha-apu-cap-meta">
+              TECHNICAL CAPABILITY DOCUMENTS
+            </div>
+          </div>
+
+          <div className="alpha-apu-cap-grid">
+            <article className="alpha-apu-cap-card">
+              <div className="alpha-apu-cap-number">
+                01
+              </div>
+
+              <div className="alpha-apu-cap-content">
+                <h3>APU</h3>
+
+                <p>
+                  APU overhaul, repair, testing
+                  and maintenance capabilities
+                  designed to keep your aircraft
+                  operating reliably.
+                </p>
+
+                <a
+                  href="https://alphaaircraftsystems.com/wp-content/uploads/AAS-APU-CAPABILITIES-8-8-2023.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="alpha-apu-pdf-link"
+                >
+                  VIEW APU CAPABILITIES PDF →
+                </a>
+              </div>
+            </article>
+
+            <article className="alpha-apu-cap-card">
+              <div className="alpha-apu-cap-number">
+                02
+              </div>
+
+              <div className="alpha-apu-cap-content">
+                <h3>C-130</h3>
+
+                <p>
+                  Specialized capabilities
+                  supporting C-130 aircraft
+                  maintenance, repair and
+                  overhaul requirements.
+                </p>
+
+                <a
+                  href="https://alphaaircraftsystems.com/wp-content/uploads/AAS-CAPABILITIES-C-130.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="alpha-apu-pdf-link"
+                >
+                  VIEW C-130 CAPABILITIES PDF →
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section> */}
+      
+   
       {/* =====================================================
           APU MODULE IMAGE CAROUSEL
       ===================================================== */}

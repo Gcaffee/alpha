@@ -4714,7 +4714,7 @@ img {
 .exhibition-next {
   width: 46px;
   height: 46px;
-  border: 1px solid rgba(0,0,0,0.2);
+ 
   background: transparent;
   cursor: pointer;
 }
@@ -11885,7 +11885,7 @@ html {
 .exhibition-intro h2 {
   margin: 0;
 
-  font-size: clamp(38px, 4vw, 60px);
+  font-size: clamp(38px, 4vw, 59px);
 
   line-height: 0.95;
 
@@ -12220,7 +12220,7 @@ html {
 
   justify-content: center;
 
-  border: 1px solid #222;
+  
 
   background: transparent;
 
@@ -16226,7 +16226,7 @@ padding-right:10px;
 
   margin-top: 30px;
 
-  color: rgba(255,255,255,0.55);
+  color: #343f46;
 
   font-size: 14px;
   line-height: 1.8;
@@ -16590,9 +16590,9 @@ padding-right:10px;
 
   padding: 140px 0;
 
-  background: #080808;
+  background: #eef1f2;
 
-  color: #ffffff;
+  color: #fff;
 
   overflow: hidden;
 
@@ -16706,7 +16706,7 @@ padding-right:10px;
 
   margin-top: 30px;
 
-  color: rgba(255, 255, 255, 0.5);
+  color: 343f46;
 
   font-size: 14px;
 
@@ -16929,9 +16929,9 @@ padding-right:10px;
   transform:
     translateZ(70px);
 
-  background: ##b84a2b;
+  background: #b84a2b;
 
-  border-color: ##b84a2b;
+  border-color: #b84a2b;
 }
 
 
@@ -16967,7 +16967,7 @@ padding-right:10px;
 
   margin-bottom: 12px;
 
-  color: ##b84a2b;
+  color: #b84a2b;
 
   font-size: 9px;
 
@@ -17022,9 +17022,9 @@ padding-right:10px;
 
   padding: 140px 0;
 
-  background: #080808;
+  background: #eef1f2;
 
-  color: #ffffff;
+  color: #fff;
 
   overflow: hidden;
 
@@ -17108,7 +17108,7 @@ padding-right:10px;
 
   margin-bottom: 20px;
 
-  color: ##b84a2b;
+  color: #b84a2b;
 
   font-size: 11px;
 
@@ -17138,7 +17138,7 @@ padding-right:10px;
 
   margin-top: 30px;
 
-  color: rgba(255, 255, 255, 0.5);
+  color: #343f46;
 
   font-size: 14px;
 
@@ -17162,7 +17162,13 @@ padding-right:10px;
 
   transform-style: preserve-3d;
 }
-
+.alpha-apu-modules-header h2 {
+    margin: 0;
+    font-size: clamp(48px, 7vw, 100px);
+    line-height: 0.9;
+    font-weight: 600 !important;
+    letter-spacing: -5px;
+}
 
 /* =========================================================
    CARD
@@ -17173,7 +17179,7 @@ padding-right:10px;
 
   min-height: 450px;
 
-  background: #111111;
+  background: #082b4c;
 
   border: 1px solid
     rgba(255, 255, 255, 0.1);

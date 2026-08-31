@@ -149,7 +149,7 @@ export default function Header() {
 
         <div className="services-menu">
           <Link
-            href="/services"
+            href="#services"
             className={`nav-link services-link ${
               isServicesActive
                 ? "active"
@@ -189,10 +189,10 @@ export default function Header() {
           EXHIBITIONS
         </Link>
         <Link
-          href="/certifications"
+          href="#certifications"
           className={`nav-link ${
             pathname ===
-            "/certifications"
+            "#certifications"
               ? "active"
               : ""
           }`}

@@ -493,7 +493,7 @@ export default function WhatIfSection() {
   ======================================================= */
 
   return (
-    <section
+    <section id ="certifications"
       ref={sectionRef}
       className="what-if-sectionss"
     >
