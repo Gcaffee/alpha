@@ -16420,8 +16420,8 @@ padding-right:10px;
   transform:
     translateZ(70px);
 
-  background: ##b84a2b;
-  border-color: ##b84a2b;
+  background: #b84a2b;
+  border-color: #b84a2b;
 }
 
 
@@ -16455,7 +16455,7 @@ padding-right:10px;
   font-size: 9px;
   letter-spacing: 3px;
 
-  color: ##b84a2b;
+  color: #b84a2b;
 }
 
 .alpha-apu-module-content h3 {
@@ -16543,8 +16543,8 @@ padding-right:10px;
 }
 
 .alpha-apu-module-download:hover {
-  background: ##b84a2b;
-  border-color: ##b84a2b;
+  background: #b84a2b;
+  border-color: #b84a2b;
 
   transform: translateY(-3px);
 }
@@ -16575,7 +16575,7 @@ padding-right:10px;
   transform: rotate(45deg);
 
   
-  color: ##b84a2b;
+  color: #b84a2b;
 
   border-color: #fff;
 }
@@ -16676,7 +16676,7 @@ padding-right:10px;
 
   margin-bottom: 20px;
 
-  color: ##b84a2b;
+  color: #b84a2b;
 
   font-size: 11px;
 
@@ -17365,9 +17365,9 @@ padding-right:10px;
   transform:
     translateZ(70px);
 
-  background: ##b84a2b;
+  background: #b84a2b;
 
-  border-color: ##b84a2b;
+  border-color: #b84a2b;
 }
 
 
@@ -17398,7 +17398,7 @@ padding-right:10px;
 
   margin-bottom: 12px;
 
-  color: ##b84a2b;
+  color: #b84a2b;
 
   font-size: 9px;
 
@@ -17498,7 +17498,7 @@ padding-right:10px;
 
   inset: 0;
 
-  background: ##b84a2b;
+  background: #b84a2b;
 
   transform:
     translateX(-101%);
@@ -17559,7 +17559,7 @@ padding-right:10px;
 ========================================================= */
 
 .alpha-apu-modules-cta-button:hover {
-  border-color: ##b84a2b;
+  border-color: #b84a2b;
 
   transform:
     translateY(-5px);
@@ -31908,4 +31908,361 @@ button {
           }
 
         }
+
+/* =========================================================
+   SLIDER CONTROLS
+========================================================= */
+
+.sliderBottomControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.aboutButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.aboutButton svg {
+  transition: transform 0.3s ease;
+}
+
+.aboutButton:hover svg {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   ARROW BUTTONS
+========================================================= */
+
+.twoCardControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sliderArrowBtn {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.sliderArrowBtn svg {
+  transition: transform 0.3s ease;
+}
+
+
+/* HOVER */
+
+.sliderArrowBtn:hover {
+  background: #c80000;
+  border-color: #c80000;
+  transform: translateY(-2px);
+}
+
+
+/* LEFT ARROW */
+
+.sliderArrowBtn:first-child:hover svg {
+  transform: translateX(-4px);
+}
+
+
+/* RIGHT ARROW */
+
+.sliderArrowBtn:last-child:hover svg {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   CARD ARROW
+========================================================= */
+
+.cardArrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardArrow svg {
+  transition: transform 0.3s ease;
+}
+
+.performanceCard:hover .cardArrow svg {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .sliderBottomControls {
+    align-items: center;
+  }
+
+  .sliderArrowBtn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .twoCardControls {
+    gap: 8px;
+  }
+
+}
+
+/* =========================================================
+   ABOUT BUTTON
+========================================================= */
+
+.aboutButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.aboutButton svg {
+  transition: transform 0.3s ease;
+}
+
+.aboutButton:hover svg {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   SLIDER CONTROLS
+========================================================= */
+
+.twoCardControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sliderArrowBtn {
+  width: 50px;
+  height: 50px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.sliderArrowBtn svg {
+  transition: transform 0.3s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.sliderArrowBtn:hover {
+  background: #c80000;
+  border-color: #c80000;
+  transform: translateY(-2px);
+}
+
+
+/* LEFT ARROW HOVER */
+
+.sliderArrowBtn:first-child:hover svg {
+  transform: translateX(-4px);
+}
+
+
+/* RIGHT ARROW HOVER */
+
+.sliderArrowBtn:last-child:hover svg {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   PERFORMANCE CARD ARROW
+========================================================= */
+
+.cardArrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardArrow svg {
+  transition: transform 0.3s ease;
+}
+
+.performanceCard:hover .cardArrow svg {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .sliderArrowBtn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .twoCardControls {
+    gap: 8px;
+  }
+
+}
+
+```css
+/* =========================================================
+   ARROW BUTTONS
+========================================================= */
+
+.twoCardControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sliderArrowBtn {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.sliderArrowBtn svg {
+  transition: transform 0.3s ease;
+}
+
+.sliderArrowBtn:hover {
+  background-color: #c80000;
+  border-color: #c80000;
+  transform: translateY(-2px);
+}
+
+/* Previous arrow */
+
+.sliderArrowBtn:first-child:hover svg {
+  transform: translateX(-4px);
+}
+
+/* Next arrow */
+
+.sliderArrowBtn:last-child:hover svg {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   ABOUT US ARROW
+========================================================= */
+
+.aboutButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.aboutButton svg {
+  transition: transform 0.3s ease;
+}
+
+.aboutButton:hover svg {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   PERFORMANCE CARD ARROW
+========================================================= */
+
+.cardArrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardArrow svg {
+  transition: transform 0.3s ease;
+}
+
+.performanceCard:hover .cardArrow svg {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .sliderArrowBtn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .twoCardControls {
+    gap: 8px;
+  }
+
+}
 

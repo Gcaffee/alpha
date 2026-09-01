@@ -59,7 +59,6 @@ const exhibitions = [
     image: "/MRO4.webp",
     category: "Recent Exhibition",
   },
-  
 ];
 
 /* =========================================================

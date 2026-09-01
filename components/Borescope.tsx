@@ -1,7 +1,14 @@
+
 "use client";
 
 import Image from "next/image";
 import { useState } from "react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  ArrowRight,
+  ArrowUpRight,
+} from "lucide-react";
 
 /* =========================================================
    PERFORMANCE CARDS
@@ -38,32 +45,26 @@ const sliderImages = [
   {
     src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
     alt: "Aircraft Hydraulic System",
-    
   },
   {
     src: "/Alpha-Aircraft-Systems_APU.webp",
     alt: "Aircraft APU System",
-   
   },
   {
     src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
     alt: "Aircraft Hydraulic Equipment",
-    
   },
   {
     src: "/Alpha-Aircraft-Systems_APU.webp",
     alt: "Aircraft Maintenance",
-    
   },
   {
     src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
     alt: "Hydraulic Maintenance",
-    
   },
   {
     src: "/Alpha-Aircraft-Systems_APU.webp",
     alt: "Aerospace Technology",
-   
   },
 ];
 
@@ -120,6 +121,7 @@ export default function HomePage() {
       ===================================================== */}
 
       <section className="hero">
+
         <div className="heroContent">
 
           {/* HERO TEXT */}
@@ -158,6 +160,7 @@ export default function HomePage() {
 
           </div>
 
+
           {/* HERO IMAGE */}
 
           <div className="heroImageArea">
@@ -174,6 +177,7 @@ export default function HomePage() {
           </div>
 
         </div>
+
       </section>
 
 
@@ -214,6 +218,7 @@ export default function HomePage() {
           </p>
 
         </div>
+
 
         {/* RIGHT IMAGE */}
 
@@ -263,6 +268,7 @@ export default function HomePage() {
         <div className="performanceGrid">
 
           {performanceCards.map((card, index) => (
+
             <div
               className="performanceCard"
               key={index}
@@ -288,11 +294,14 @@ export default function HomePage() {
                 {card.text}
               </p>
 
+              {/* CARD ARROW */}
+
               <span className="cardArrow">
-                →
+                <ArrowUpRight size={22} strokeWidth={1.8} />
               </span>
 
             </div>
+
           ))}
 
         </div>
@@ -368,6 +377,7 @@ export default function HomePage() {
                   sliderImages[firstIndex + 1];
 
                 return (
+
                   <div
                     className="twoCardSlide"
                     key={slideIndex}
@@ -378,6 +388,7 @@ export default function HomePage() {
                     =================================== */}
 
                     {firstCard && (
+
                       <div className="imageCard">
 
                         <Image
@@ -390,15 +401,10 @@ export default function HomePage() {
 
                         <div className="imageCardOverlay" />
 
-                        {/* CARD CONTENT */}
-
-                        <div className="imageCardContent">
-
-                          
-
-                        </div>
+                        <div className="imageCardContent" />
 
                       </div>
+
                     )}
 
 
@@ -407,6 +413,7 @@ export default function HomePage() {
                     =================================== */}
 
                     {secondCard && (
+
                       <div className="imageCard">
 
                         <Image
@@ -419,19 +426,16 @@ export default function HomePage() {
 
                         <div className="imageCardOverlay" />
 
-                        {/* CARD CONTENT */}
-
-                        <div className="imageCardContent">
-
-                          
-
-                        </div>
+                        <div className="imageCardContent" />
 
                       </div>
+
                     )}
 
                   </div>
+
                 );
+
               })}
 
             </div>
@@ -465,28 +469,46 @@ export default function HomePage() {
               className="aboutButton"
             >
               ABOUT US
-              <span>→</span>
+
+              <span>
+                <ArrowRight
+                  size={20}
+                  strokeWidth={1.8}
+                />
+              </span>
+
             </a>
 
 
-            {/* ARROWS */}
+            {/* SLIDER ARROWS */}
 
             <div className="twoCardControls">
+
+              {/* PREVIOUS */}
 
               <button
                 type="button"
                 onClick={prevSlide}
                 aria-label="Previous slide"
               >
-                ←
+                <ChevronLeft
+                  size={28}
+                  strokeWidth={1.5}
+                />
               </button>
+
+
+              {/* NEXT */}
 
               <button
                 type="button"
                 onClick={nextSlide}
                 aria-label="Next slide"
               >
-                →
+                <ChevronRight
+                  size={28}
+                  strokeWidth={1.5}
+                />
               </button>
 
             </div>
@@ -500,3 +522,4 @@ export default function HomePage() {
     </main>
   );
 }
+

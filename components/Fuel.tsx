@@ -3,6 +3,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 /* =========================================================
    PERFORMANCE CARDS
@@ -39,33 +40,26 @@ const sliderImages = [
   {
     src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
     alt: "Aircraft Hydraulic System",
-    
-    
   },
   {
     src: "/Alpha-Aircraft-Systems_APU.webp",
     alt: "Aircraft APU System",
-   
   },
   {
     src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
     alt: "Aircraft Hydraulic Equipment",
-
   },
   {
     src: "/Alpha-Aircraft-Systems_APU.webp",
     alt: "Aircraft Maintenance",
-   
   },
   {
     src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
     alt: "Hydraulic Maintenance",
-   
   },
   {
     src: "/Alpha-Aircraft-Systems_APU.webp",
     alt: "Aerospace Technology",
-   
   },
 ];
 
@@ -87,7 +81,7 @@ export default function HomePage() {
   );
 
   /* =======================================================
-     NEXT
+     NEXT SLIDE
   ======================================================= */
 
   const nextSlide = () => {
@@ -101,7 +95,7 @@ export default function HomePage() {
   };
 
   /* =======================================================
-     PREVIOUS
+     PREVIOUS SLIDE
   ======================================================= */
 
   const prevSlide = () => {
@@ -136,9 +130,9 @@ export default function HomePage() {
             </h1>
 
             <p>
-              Alpha Aircraft Systems provides specialised maintenance support
-              for aircraft fuel systems and fuel flow transmitters, with a
-              focus on accuracy, performance and dependable operation.
+              Alpha Aircraft Systems provides specialised maintenance
+              support for aircraft fuel systems and fuel flow transmitters,
+              with a focus on accuracy, performance and dependable operation.
             </p>
 
             <div className="heroButtons">
@@ -160,7 +154,6 @@ export default function HomePage() {
             </div>
 
           </div>
-
 
           {/* HERO IMAGE */}
 
@@ -188,7 +181,7 @@ export default function HomePage() {
 
       <section className="powerSection">
 
-        {/* LEFT */}
+        {/* LEFT CONTENT */}
 
         <div className="powerText">
 
@@ -217,7 +210,6 @@ export default function HomePage() {
           </p>
 
         </div>
-
 
         {/* RIGHT IMAGE */}
 
@@ -294,7 +286,10 @@ export default function HomePage() {
               </p>
 
               <span className="cardArrow">
-                →
+                <ArrowRight
+                  size={20}
+                  strokeWidth={1.8}
+                />
               </span>
 
             </div>
@@ -327,7 +322,6 @@ export default function HomePage() {
             technical expertise behind Alpha Aircraft Systems&apos;
             fuel-system maintenance capabilities.
           </p>
-
 
           <div className="workCounter">
 
@@ -399,11 +393,7 @@ export default function HomePage() {
 
                         <div className="imageCardOverlay" />
 
-                        <div className="imageCardContent">
-
-                          
-
-                        </div>
+                        <div className="imageCardContent" />
 
                       </div>
 
@@ -428,11 +418,7 @@ export default function HomePage() {
 
                         <div className="imageCardOverlay" />
 
-                        <div className="imageCardContent">
-
-                          
-
-                        </div>
+                        <div className="imageCardContent" />
 
                       </div>
 
@@ -450,7 +436,7 @@ export default function HomePage() {
 
 
           {/* =================================================
-              SLIDER BOTTOM
+              SLIDER BOTTOM TEXT
           ================================================= */}
 
           <div className="aboutBottom">
@@ -475,7 +461,12 @@ export default function HomePage() {
               className="aboutButton"
             >
               ABOUT US
-              <span>→</span>
+
+              <ArrowRight
+                size={18}
+                strokeWidth={1.8}
+              />
+
             </a>
 
 
@@ -483,20 +474,37 @@ export default function HomePage() {
 
             <div className="twoCardControls">
 
+              {/* PREVIOUS */}
+
               <button
                 type="button"
                 onClick={prevSlide}
                 aria-label="Previous slide"
+                className="sliderArrowBtn"
               >
-                ←
+
+                <ArrowLeft
+                  size={21}
+                  strokeWidth={1.8}
+                />
+
               </button>
+
+
+              {/* NEXT */}
 
               <button
                 type="button"
                 onClick={nextSlide}
                 aria-label="Next slide"
+                className="sliderArrowBtn"
               >
-                →
+
+                <ArrowRight
+                  size={21}
+                  strokeWidth={1.8}
+                />
+
               </button>
 
             </div>

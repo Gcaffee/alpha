@@ -3,6 +3,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 /* =========================================================
    PERFORMANCE CARDS
@@ -39,32 +40,26 @@ const sliderImages = [
   {
     src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
     alt: "Aircraft Hydraulic System",
-   
   },
   {
     src: "/Alpha-Aircraft-Systems_APU.webp",
     alt: "Aircraft APU System",
-   
   },
   {
     src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
     alt: "Aircraft Hydraulic Equipment",
-    
   },
   {
     src: "/Alpha-Aircraft-Systems_APU.webp",
     alt: "Aircraft Maintenance",
-    
   },
   {
     src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
     alt: "Hydraulic Maintenance",
-    
   },
   {
     src: "/Alpha-Aircraft-Systems_APU.webp",
     alt: "Aerospace Technology",
-   
   },
 ];
 
@@ -135,9 +130,9 @@ export default function HomePage() {
             </h1>
 
             <p>
-              Advanced 3D scanning solutions delivering precise measurements of
-              complex aircraft components while saving time, reducing costs,
-              and improving inspection accuracy.
+              Advanced 3D scanning solutions delivering precise measurements
+              of complex aircraft components while saving time, reducing
+              costs, and improving inspection accuracy.
             </p>
 
             <div className="heroButtons">
@@ -160,6 +155,7 @@ export default function HomePage() {
 
           </div>
 
+
           {/* HERO IMAGE */}
 
           <div className="heroImageArea">
@@ -179,6 +175,7 @@ export default function HomePage() {
 
       </section>
 
+
       {/* =====================================================
           FROM OBJECT TO DATA
       ===================================================== */}
@@ -194,25 +191,26 @@ export default function HomePage() {
           </h2>
 
           <p>
-            Alpha Aircraft Systems uses state-of-the-art measurement techniques
-            such as 3D laser scanning to provide precise and detailed
-            measurements. We have the ability to quickly and accurately measure
-            large and intricate aircraft components.
+            Alpha Aircraft Systems uses state-of-the-art measurement
+            techniques such as 3D laser scanning to provide precise and
+            detailed measurements. We have the ability to quickly and
+            accurately measure large and intricate aircraft components.
           </p>
 
           <p>
-            We use cutting-edge 3D scanning to solve complex, time-consuming,
-            and expensive issues in the aviation industry.
+            We use cutting-edge 3D scanning to solve complex,
+            time-consuming, and expensive issues in the aviation industry.
           </p>
 
           <p>
-            Our services and scanning methods get you results that are way more
-            precise than what you could get from traditional methods, saving you
-            time and money. Plus, we use experienced engineers to spot any
-            potential issues.
+            Our services and scanning methods get you results that are way
+            more precise than what you could get from traditional methods,
+            saving you time and money. Plus, we use experienced engineers
+            to spot any potential issues.
           </p>
 
         </div>
+
 
         {/* RIGHT IMAGE */}
 
@@ -230,6 +228,7 @@ export default function HomePage() {
         </div>
 
       </section>
+
 
       {/* =====================================================
           PERFORMANCE
@@ -256,6 +255,7 @@ export default function HomePage() {
           </p>
 
         </div>
+
 
         <div className="performanceGrid">
 
@@ -286,8 +286,13 @@ export default function HomePage() {
                 {card.text}
               </p>
 
+              {/* CARD ARROW */}
+
               <span className="cardArrow">
-                →
+                <ArrowRight
+                  size={20}
+                  strokeWidth={1.8}
+                />
               </span>
 
             </div>
@@ -297,6 +302,7 @@ export default function HomePage() {
         </div>
 
       </section>
+
 
       {/* =====================================================
           WHERE THE WORK HAPPENS
@@ -315,8 +321,9 @@ export default function HomePage() {
           </h2>
 
           <p>
-            A closer look at the technology, equipment and engineering expertise
-            behind Alpha Aircraft Systems&apos; aircraft scanning capabilities.
+            A closer look at the technology, equipment and engineering
+            expertise behind Alpha Aircraft Systems&apos; aircraft scanning
+            capabilities.
           </p>
 
           <div className="workCounter">
@@ -332,6 +339,7 @@ export default function HomePage() {
           </div>
 
         </div>
+
 
         {/* ===================================================
             RIGHT SLIDER
@@ -392,6 +400,7 @@ export default function HomePage() {
 
                     )}
 
+
                     {/* ===================================
                         CARD TWO
                     =================================== */}
@@ -424,6 +433,7 @@ export default function HomePage() {
 
           </div>
 
+
           {/* =================================================
               SLIDER BOTTOM
           ================================================= */}
@@ -436,6 +446,11 @@ export default function HomePage() {
 
           </div>
 
+
+          {/* =================================================
+              SLIDER BOTTOM CONTROLS
+          ================================================= */}
+
           <div className="sliderBottomControls">
 
             {/* ABOUT BUTTON */}
@@ -445,27 +460,46 @@ export default function HomePage() {
               className="aboutButton"
             >
               ABOUT US
-              <span>→</span>
+
+              <ArrowRight
+                size={18}
+                strokeWidth={1.8}
+              />
+
             </a>
 
-            {/* ARROWS */}
+
+            {/* SLIDER ARROWS */}
 
             <div className="twoCardControls">
+
+              {/* PREVIOUS */}
 
               <button
                 type="button"
                 onClick={prevSlide}
                 aria-label="Previous slide"
+                className="sliderArrowBtn"
               >
-                ←
+                <ArrowLeft
+                  size={22}
+                  strokeWidth={1.8}
+                />
               </button>
+
+
+              {/* NEXT */}
 
               <button
                 type="button"
                 onClick={nextSlide}
                 aria-label="Next slide"
+                className="sliderArrowBtn"
               >
-                →
+                <ArrowRight
+                  size={22}
+                  strokeWidth={1.8}
+                />
               </button>
 
             </div>

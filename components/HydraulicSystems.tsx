@@ -3,6 +3,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 /* =========================================================
    PERFORMANCE CARDS
@@ -39,32 +40,26 @@ const sliderImages = [
   {
     src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
     alt: "Aircraft Hydraulic System",
-    
   },
   {
     src: "/Alpha-Aircraft-Systems_APU.webp",
     alt: "Aircraft APU System",
-    
   },
   {
     src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
     alt: "Aircraft Hydraulic Equipment",
-  
   },
   {
     src: "/Alpha-Aircraft-Systems_APU.webp",
     alt: "Aircraft Maintenance",
-   
   },
   {
     src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
     alt: "Hydraulic Maintenance",
-   
   },
   {
     src: "/Alpha-Aircraft-Systems_APU.webp",
     alt: "Aerospace Technology",
-   
   },
 ];
 
@@ -135,8 +130,8 @@ export default function HomePage() {
             </h1>
 
             <p>
-              Dependable hydraulic repair and maintenance solutions engineered
-              for aircraft performance, safety, and reliability.
+              Dependable hydraulic repair and maintenance solutions
+              engineered for aircraft performance, safety, and reliability.
             </p>
 
             <div className="heroButtons">
@@ -202,8 +197,9 @@ export default function HomePage() {
           </p>
 
           <p>
-            We have extensive aircraft maintenance experience and an in-depth
-            knowledge of Hydraulic Systems interactions and aircraft systems.
+            We have extensive aircraft maintenance experience and an
+            in-depth knowledge of Hydraulic Systems interactions and
+            aircraft systems.
           </p>
 
           <p>
@@ -289,8 +285,13 @@ export default function HomePage() {
                 {card.text}
               </p>
 
+              {/* CARD ARROW */}
+
               <span className="cardArrow">
-                →
+                <ArrowRight
+                  size={20}
+                  strokeWidth={1.8}
+                />
               </span>
 
             </div>
@@ -394,13 +395,7 @@ export default function HomePage() {
 
                         <div className="imageCardOverlay" />
 
-                        <div className="imageCardContent">
-
-                          
-
-                          
-
-                        </div>
+                        <div className="imageCardContent" />
 
                       </div>
 
@@ -425,13 +420,7 @@ export default function HomePage() {
 
                         <div className="imageCardOverlay" />
 
-                        <div className="imageCardContent">
-
-                          
-
-                          
-
-                        </div>
+                        <div className="imageCardContent" />
 
                       </div>
 
@@ -461,6 +450,10 @@ export default function HomePage() {
           </div>
 
 
+          {/* =================================================
+              SLIDER BOTTOM CONTROLS
+          ================================================= */}
+
           <div className="sliderBottomControls">
 
             {/* ABOUT BUTTON */}
@@ -470,28 +463,50 @@ export default function HomePage() {
               className="aboutButton"
             >
               ABOUT US
-              <span>→</span>
+
+              <ArrowRight
+                size={18}
+                strokeWidth={1.8}
+              />
+
             </a>
 
 
-            {/* ARROWS */}
+            {/* SLIDER ARROWS */}
 
             <div className="twoCardControls">
+
+              {/* PREVIOUS */}
 
               <button
                 type="button"
                 onClick={prevSlide}
                 aria-label="Previous slide"
+                className="sliderArrowBtn"
               >
-                ←
+
+                <ArrowLeft
+                  size={22}
+                  strokeWidth={1.8}
+                />
+
               </button>
+
+
+              {/* NEXT */}
 
               <button
                 type="button"
                 onClick={nextSlide}
                 aria-label="Next slide"
+                className="sliderArrowBtn"
               >
-                →
+
+                <ArrowRight
+                  size={22}
+                  strokeWidth={1.8}
+                />
+
               </button>
 
             </div>
