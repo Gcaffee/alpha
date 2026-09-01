@@ -45,7 +45,8 @@ const cardsData: CardData[] = [
   {
     id: 2,
     text: "Fuel Systems & Fuel Flow Transmitter",
-    hoverText: "Reliable and durable overhauling",
+    hoverText:
+      "Reliable and durable overhauling",
     cta: "VIEW SERVICE",
     link: "https://alpha-hazel-five.vercel.app/fuel-systems-fuel-flow-transmitter",
     image: "/2-Fuel.jpg",
@@ -53,7 +54,8 @@ const cardsData: CardData[] = [
   {
     id: 3,
     text: "Plasma Spray & Professional Welding",
-    hoverText: "Cost-effective high-tech solutions",
+    hoverText:
+      "Cost-effective high-tech solutions",
     cta: "VIEW SERVICE",
     link: "https://alpha-hazel-five.vercel.app/plasma-spray-professional-welding",
     image: "/3-Plasma.jpg",
@@ -98,7 +100,6 @@ const cardsData: CardData[] = [
 
 /* =========================================================
    CREATE 3 COPIES
-   Makes slider visually infinite
 ========================================================= */
 
 const loopCards: CardData[] = [
@@ -131,7 +132,7 @@ export default function WhatIfSection() {
   const imagesRef = useRef<(HTMLImageElement | null)[]>([]);
 
   /* =========================================================
-     START FROM MIDDLE COPY
+     CURRENT SLIDE
   ========================================================= */
 
   const currentIndex = useRef<number>(
@@ -201,11 +202,6 @@ export default function WhatIfSection() {
     updateSlider(true);
 
     window.setTimeout(() => {
-      /*
-       * After reaching third copy,
-       * silently move to middle copy.
-       */
-
       if (
         currentIndex.current >=
         cardsData.length * 2
@@ -242,11 +238,6 @@ export default function WhatIfSection() {
     updateSlider(true);
 
     window.setTimeout(() => {
-      /*
-       * If we reach first copy,
-       * silently jump to middle copy.
-       */
-
       if (
         currentIndex.current <
         cardsData.length
@@ -273,42 +264,100 @@ export default function WhatIfSection() {
     currentIndex.current =
       cardsData.length;
 
-    /* =====================================================
-       INITIAL CARD POSITION
-    ===================================================== */
-
     updateSlider(false);
 
     /* =====================================================
-       SCROLL HEADING ANIMATION
+       SLOW 3D SCROLL HEADING
     ===================================================== */
+
+    const heading = document.querySelector(
+      ".what-if-heading"
+    );
 
     const headingChars =
       document.querySelectorAll(
         ".what-if-char"
       );
 
+    /* =============================================
+       HEADING PERSPECTIVE
+    ============================================= */
+
+    if (heading) {
+      gsap.set(heading, {
+        perspective: 1400,
+      });
+    }
+
+    /* =============================================
+       INITIAL 3D STATE
+    ============================================= */
+
     gsap.set(headingChars, {
       y: 100,
+      z: -120,
       opacity: 0,
-      rotateX: -45,
+
+      rotateX: -35,
+      rotateY: 8,
+
+      scale: 0.92,
+
+      transformOrigin: "50% 100%",
+      transformPerspective: 1400,
+
+      force3D: true,
     });
 
-    gsap.to(headingChars, {
-      y: 0,
-      opacity: 1,
-      rotateX: 0,
-      duration: 1.1,
-      stagger: 0.06,
-      ease: "power4.out",
+    /* =============================================
+       SLOW SCROLL ANIMATION
+    ============================================= */
 
-      scrollTrigger: {
-        trigger: ".what-if-heading",
-        start: "top 90%",
-        end: "top 35%",
-        scrub: 1,
-      },
-    });
+    const headingTween = gsap.to(
+      headingChars,
+      {
+        y: 0,
+        z: 0,
+        opacity: 1,
+
+        rotateX: 0,
+        rotateY: 0,
+
+        scale: 1,
+
+        duration: 2,
+
+        stagger: {
+          each: 0.12,
+          from: "start",
+        },
+
+        ease: "power2.out",
+
+        scrollTrigger: {
+          trigger: ".what-if-heading",
+
+          /*
+           * Animation starts when heading
+           * enters the viewport.
+           */
+          start: "top 85%",
+
+          /*
+           * Long scroll distance makes
+           * the animation feel slow.
+           */
+          end: "top 30%",
+
+          /*
+           * Higher scrub = smoother/slower feel.
+           */
+          scrub: 6,
+
+          invalidateOnRefresh: true,
+        },
+      }
+    );
 
     /* =====================================================
        CARD ENTRANCE
@@ -352,7 +401,7 @@ export default function WhatIfSection() {
     );
 
     /* =====================================================
-       COPY REF VALUES FOR CLEANUP
+       COPY REFS FOR CLEANUP
     ===================================================== */
 
     const cards = cardsRef.current;
@@ -370,19 +419,10 @@ export default function WhatIfSection() {
 
       gsap.killTweensOf(cards);
       gsap.killTweensOf(images);
+      gsap.killTweensOf(headingChars);
 
-      ScrollTrigger.getAll().forEach(
-        (trigger) => {
-          if (
-            trigger.trigger ===
-            document.querySelector(
-              ".what-if-heading"
-            )
-          ) {
-            trigger.kill();
-          }
-        }
-      );
+      headingTween.scrollTrigger?.kill();
+      headingTween.kill();
     };
   }, [
     nextSlide,
@@ -411,6 +451,7 @@ export default function WhatIfSection() {
 
             <h2>
               <span className="milestone-heading-line">
+
                 {"SERVICES".split("").map(
                   (char, index) => (
                     <span
@@ -423,6 +464,7 @@ export default function WhatIfSection() {
                     </span>
                   )
                 )}
+
               </span>
             </h2>
 
@@ -512,15 +554,11 @@ export default function WhatIfSection() {
 
                         <div className="what-if-hover-content">
 
-                          {/* HOVER TEXT */}
-
                           <p className="what-if-hover-text">
                             {card.hoverText}
                           </p>
 
-                          {/* =================================
-                              CTA LINK
-                          ================================= */}
+                          {/* CTA */}
 
                           <Link
                             href={card.link}
@@ -590,4 +628,3 @@ export default function WhatIfSection() {
     </section>
   );
 }
-

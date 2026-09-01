@@ -64,13 +64,12 @@ const cardsData: CertificateCard[] = [
     pdf: "/Certificate-of-Registration.pdf",
   },
   {
-    id: 4,
+    id: 5,
     text: "ISO Certificate",
     cta: "DOWNLOAD",
     image: "/ISO-Certificate.webp",
     pdf: "/ISO-Certificate-1.pdf",
   },
-  
 ];
 
 /* =========================================================
@@ -92,7 +91,8 @@ export default function WhatIfSection() {
      REFS
   ======================================================= */
 
-  const sectionRef = useRef<HTMLElement | null>(null);
+  const sectionRef =
+    useRef<HTMLElement | null>(null);
 
   const cardsRef = useRef<
     (HTMLDivElement | null)[]
@@ -102,15 +102,16 @@ export default function WhatIfSection() {
     (HTMLImageElement | null)[]
   >([]);
 
-  const currentIndex = useRef<number>(
-    cardsData.length
-  );
+  const currentIndex =
+    useRef<number>(cardsData.length);
 
-  const isAnimating = useRef<boolean>(false);
+  const isAnimating =
+    useRef<boolean>(false);
 
-  const timeoutRef = useRef<
-    ReturnType<typeof setTimeout> | null
-  >(null);
+  const timeoutRef =
+    useRef<ReturnType<typeof setTimeout> | null>(
+      null
+    );
 
   /* =======================================================
      STATE
@@ -196,25 +197,26 @@ export default function WhatIfSection() {
       clearTimeout(timeoutRef.current);
     }
 
-    timeoutRef.current = setTimeout(() => {
-      if (
-        currentIndex.current >=
-        cardsData.length * 2
-      ) {
-        currentIndex.current =
-          cardsData.length;
+    timeoutRef.current =
+      setTimeout(() => {
+        if (
+          currentIndex.current >=
+          cardsData.length * 2
+        ) {
+          currentIndex.current =
+            cardsData.length;
 
-        setActiveIndex(
-          getRealIndex(
-            currentIndex.current
-          )
-        );
+          setActiveIndex(
+            getRealIndex(
+              currentIndex.current
+            )
+          );
 
-        updateSlider(false);
-      }
+          updateSlider(false);
+        }
 
-      isAnimating.current = false;
-    }, 920);
+        isAnimating.current = false;
+      }, 920);
   }, [getRealIndex, updateSlider]);
 
   /* =======================================================
@@ -239,25 +241,26 @@ export default function WhatIfSection() {
         clearTimeout(timeoutRef.current);
       }
 
-      timeoutRef.current = setTimeout(() => {
-        if (
-          currentIndex.current <
-          cardsData.length
-        ) {
-          currentIndex.current =
-            cardsData.length * 2 - 1;
+      timeoutRef.current =
+        setTimeout(() => {
+          if (
+            currentIndex.current <
+            cardsData.length
+          ) {
+            currentIndex.current =
+              cardsData.length * 2 - 1;
 
-          setActiveIndex(
-            getRealIndex(
-              currentIndex.current
-            )
-          );
+            setActiveIndex(
+              getRealIndex(
+                currentIndex.current
+              )
+            );
 
-          updateSlider(false);
-        }
+            updateSlider(false);
+          }
 
-        isAnimating.current = false;
-      }, 920);
+          isAnimating.current = false;
+        }, 920);
     },
     [getRealIndex, updateSlider]
   );
@@ -283,7 +286,8 @@ export default function WhatIfSection() {
 
       link.target = "_blank";
 
-      link.rel = "noopener noreferrer";
+      link.rel =
+        "noopener noreferrer";
 
       document.body.appendChild(link);
 
@@ -295,7 +299,7 @@ export default function WhatIfSection() {
   );
 
   /* =======================================================
-     INITIAL SETUP + SCROLL ANIMATION
+     INITIAL SETUP + GSAP
   ======================================================= */
 
   useEffect(() => {
@@ -325,61 +329,113 @@ export default function WhatIfSection() {
 
       /* ===================================================
          CERTIFICATES HEADING
-         SCROLL ANIMATION
+         SLOW 3D SCROLL ANIMATION
       =================================================== */
+
+      const heading =
+        sectionRef.current?.querySelector(
+          ".what-if-heading"
+        );
 
       const headingChars =
         gsap.utils.toArray<HTMLElement>(
           ".what-if-char"
         );
 
-      if (headingChars.length) {
+      if (
+        heading &&
+        headingChars.length
+      ) {
 
-        /* -----------------------------------------------
-           INITIAL POSITION
-        ------------------------------------------------ */
+        /* ===============================================
+           3D PERSPECTIVE
+        =============================================== */
 
-        gsap.set(headingChars, {
-          y: 100,
-          opacity: 0,
-          rotateX: -70,
-          transformOrigin:
-            "center bottom",
+        gsap.set(heading, {
+          perspective: 1600,
+          transformStyle:
+            "preserve-3d",
         });
 
-        /* -----------------------------------------------
-           SCROLL REVEAL
-        ------------------------------------------------ */
+        /* ===============================================
+           INITIAL 3D POSITION
+        =============================================== */
+
+        gsap.set(headingChars, {
+          y: 120,
+
+          z: -180,
+
+          opacity: 0,
+
+          rotateX: -65,
+
+          rotateY: 12,
+
+          scale: 0.88,
+
+          transformOrigin:
+            "50% 100%",
+
+          transformPerspective: 1600,
+
+          force3D: true,
+        });
+
+        /* ===============================================
+           SLOW 3D SCROLL REVEAL
+        =============================================== */
 
         gsap.to(headingChars, {
           y: 0,
+
+          z: 0,
+
           opacity: 1,
+
           rotateX: 0,
 
-          duration: 1,
+          rotateY: 0,
 
-          stagger: 0.06,
+          scale: 1,
 
-          ease: "power4.out",
+          duration: 2,
+
+          stagger: {
+            each: 0.14,
+            from: "start",
+          },
+
+          ease: "power2.out",
 
           scrollTrigger: {
-            trigger:
-              ".what-if-heading",
+            trigger: heading,
 
+            /*
+             * Animation starts when heading
+             * enters viewport.
+             */
             start: "top 88%",
 
-            end: "top 35%",
+            /*
+             * Long animation area
+             * creates slow movement.
+             */
+            end: "top 25%",
 
-            scrub: 1,
+            /*
+             * Slow + smooth scroll sync.
+             */
+            scrub: 4,
 
             invalidateOnRefresh: true,
           },
         });
       }
 
-      /* =================================================
+      /* ===================================================
          CARD ENTRANCE
-      ================================================= */
+      =================================================== */
 
       gsap.fromTo(
         cards,
@@ -405,7 +461,8 @@ export default function WhatIfSection() {
     const keyboardHandler = (
       event: KeyboardEvent
     ): void => {
-      const target = event.target;
+      const target =
+        event.target;
 
       if (
         target instanceof
@@ -418,13 +475,19 @@ export default function WhatIfSection() {
         return;
       }
 
-      if (event.key === "ArrowRight") {
+      if (
+        event.key ===
+        "ArrowRight"
+      ) {
         event.preventDefault();
 
         nextSlide();
       }
 
-      if (event.key === "ArrowLeft") {
+      if (
+        event.key ===
+        "ArrowLeft"
+      ) {
         event.preventDefault();
 
         previousSlide();
@@ -488,18 +551,24 @@ export default function WhatIfSection() {
           ================================================= */}
 
           <div className="what-if-heading">
+
             <h2>
+
               <span className="milestone-heading-line">
 
                 {"CERTIFICATES"
                   .split("")
                   .map(
-                    (char, index) => (
+                    (
+                      char,
+                      index
+                    ) => (
                       <span
                         key={`certificate-${index}`}
                         className="what-if-char"
                       >
-                        {char === " "
+                        {char ===
+                        " "
                           ? "\u00A0"
                           : char}
                       </span>
@@ -507,7 +576,9 @@ export default function WhatIfSection() {
                   )}
 
               </span>
+
             </h2>
+
           </div>
 
           {/* =================================================
@@ -519,10 +590,15 @@ export default function WhatIfSection() {
             <div className="what-if-track">
 
               {loopCards.map(
-                (card, index) => {
+                (
+                  card,
+                  index
+                ) => {
 
                   const realIndex =
-                    getRealIndex(index);
+                    getRealIndex(
+                      index
+                    );
 
                   const isActive =
                     activeIndex ===
@@ -531,10 +607,13 @@ export default function WhatIfSection() {
                   return (
                     <div
                       key={`${card.id}-${index}`}
-                      ref={(element) => {
+                      ref={(
+                        element
+                      ) => {
                         cardsRef.current[
                           index
-                        ] = element;
+                        ] =
+                          element;
                       }}
                       className={`what-if-card ${
                         isActive
@@ -550,13 +629,20 @@ export default function WhatIfSection() {
                         ================================= */}
 
                         <Image
-                          ref={(element) => {
+                          ref={(
+                            element
+                          ) => {
                             imagesRef.current[
                               index
-                            ] = element;
+                            ] =
+                              element;
                           }}
-                          src={card.image}
-                          alt={card.text}
+                          src={
+                            card.image
+                          }
+                          alt={
+                            card.text
+                          }
                           fill
                           sizes="
                             (max-width: 768px) 85vw,
@@ -583,11 +669,13 @@ export default function WhatIfSection() {
                         <div className="what-if-content">
 
                           <p className="what-if-main-text">
-                            {card.text}
+                            {
+                              card.text
+                            }
                           </p>
 
                           {/* =================================
-                              DOWNLOAD CTA
+                              DOWNLOAD
                           ================================= */}
 
                           <div className="what-if-hover-content">
@@ -606,14 +694,22 @@ export default function WhatIfSection() {
                                 );
                               }}
                             >
+
                               <span>
-                                {card.cta}
+                                {
+                                  card.cta
+                                }
                               </span>
 
                               <Download
-                                size={16}
-                                strokeWidth={1.5}
+                                size={
+                                  16
+                                }
+                                strokeWidth={
+                                  1.5
+                                }
                               />
+
                             </button>
 
                           </div>
@@ -628,6 +724,7 @@ export default function WhatIfSection() {
               )}
 
             </div>
+
           </div>
 
           {/* =================================================
@@ -638,32 +735,44 @@ export default function WhatIfSection() {
 
             <button
               type="button"
-              onClick={previousSlide}
+              onClick={
+                previousSlide
+              }
               className="what-if-arrow"
               aria-label="Previous certificate"
             >
               <ArrowLeft
                 size={42}
-                strokeWidth={1.2}
+                strokeWidth={
+                  1.2
+                }
               />
             </button>
 
             <button
               type="button"
-              onClick={nextSlide}
+              onClick={
+                nextSlide
+              }
               className="what-if-arrow"
               aria-label="Next certificate"
             >
               <ArrowRight
                 size={42}
-                strokeWidth={1.2}
+                strokeWidth={
+                  1.2
+                }
               />
             </button>
 
           </div>
 
         </div>
+
       </div>
     </section>
   );
 }
+
+
+

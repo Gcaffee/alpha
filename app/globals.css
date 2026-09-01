@@ -32287,3 +32287,103 @@ padding-left:10px;
     background: currentColor;
     display: none ! IMPORTANT;
 }
+.what-if-heading {
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+  overflow: visible;
+}
+
+.what-if-heading h2 {
+  transform-style: preserve-3d;
+}
+
+.milestone-heading-line {
+  display: inline-flex;
+  transform-style: preserve-3d;
+}
+
+.what-if-char {
+  display: inline-block;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+.what-if-heading {
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+  overflow: visible;
+}
+
+.what-if-heading h2 {
+  transform-style: preserve-3d;
+  perspective: 1400px;
+  overflow: visible;
+}
+
+.milestone-heading-line {
+  display: inline-flex;
+  transform-style: preserve-3d;
+  perspective: 1400px;
+}
+
+.what-if-char {
+  display: inline-block;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  will-change: transform, opacity;
+
+  transform-origin: 50% 100%;
+}
+/* =========================================================
+   CERTIFICATES HEADING
+========================================================= */
+
+.what-if-heading {
+  position: relative;
+
+  perspective: 1600px;
+  perspective-origin: 50% 50%;
+
+  transform-style: preserve-3d;
+
+  overflow: visible;
+}
+
+.what-if-heading h2 {
+  position: relative;
+
+  perspective: 1600px;
+
+  transform-style: preserve-3d;
+
+  overflow: visible;
+}
+
+.milestone-heading-line {
+  display: inline-flex;
+
+  perspective: 1600px;
+
+  transform-style: preserve-3d;
+
+  overflow: visible;
+}
+
+.what-if-char {
+  display: inline-block;
+
+  transform-style: preserve-3d;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  transform-origin: 50% 100%;
+
+  will-change:
+    transform,
+    opacity;
+
+  -webkit-font-smoothing: antialiased;
+}
