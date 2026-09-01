@@ -4070,7 +4070,7 @@ img {
 
   color: #343f46;
 
-  font-size: 18px;
+  font-size: 21px;
 
   font-weight: 300;
 
@@ -11869,6 +11869,7 @@ html {
 
 .exhibition-intro {
   max-width: 430px;
+  margin-top: 40px;
 }
 
 .exhibition-label {
@@ -11899,7 +11900,7 @@ html {
 
   margin-top: 30px;
 
-  font-size: 20px;
+  font-size: 21px;
 
   line-height: 1.7;
 
@@ -12076,7 +12077,7 @@ html {
 .exhibition-card-title {
   margin: 0;
 
-  font-size: clamp(26px, 2.5vw, 42px);
+  font-size: clamp(26px, 2.5vw, 32px);
 
   line-height: 1;
 

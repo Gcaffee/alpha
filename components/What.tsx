@@ -1,18 +1,15 @@
 
 "use client";
 
-import {
+import React, {
   useCallback,
   useEffect,
   useRef,
   useState,
 } from "react";
 import Image from "next/image";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Download,
-} from "lucide-react";
+import Link from "next/link";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -22,78 +19,120 @@ gsap.registerPlugin(ScrollTrigger);
    TYPES
 ========================================================= */
 
-type CertificateCard = {
+type CardData = {
   id: number;
   text: string;
+  hoverText: string;
   cta: string;
+  link: string;
   image: string;
 };
 
 /* =========================================================
-   DATA
+   CARD DATA
 ========================================================= */
 
-const cardsData: CertificateCard[] = [
+const cardsData: CardData[] = [
   {
     id: 1,
-    text: "Certificate of Registration",
-    cta: "DOWNLOAD",
-    image: "/Certificate-of-Registration.webp",
+    text: "A.P.U. Overhaul & Repairs",
+    hoverText:
+      "Specialization is all types of APU overhaul and repair",
+    cta: "VIEW SERVICE",
+    link: "https://alpha-hazel-five.vercel.app/a-p-u-overhaul-repairs",
+    image: "/1-APU.jpg",
   },
   {
     id: 2,
-    text: "EASA Approved",
-    cta: "DOWNLOAD",
-    image: "/EASA-Approved.webp",
+    text: "Fuel Systems & Fuel Flow Transmitter",
+    hoverText: "Reliable and durable overhauling",
+    cta: "VIEW SERVICE",
+    link: "https://alpha-hazel-five.vercel.app/fuel-systems-fuel-flow-transmitter",
+    image: "/2-Fuel.jpg",
   },
   {
     id: 3,
-    text: "FAA Approved",
-    cta: "DOWNLOAD",
-    image: "/FAA-Approved.webp",
+    text: "Plasma Spray & Professional Welding",
+    hoverText: "Cost-effective high-tech solutions",
+    cta: "VIEW SERVICE",
+    link: "https://alpha-hazel-five.vercel.app/plasma-spray-professional-welding",
+    image: "/3-Plasma.jpg",
   },
   {
     id: 4,
-    text: "ISO Certificate",
-    cta: "DOWNLOAD",
-    image: "/ISO-Certificate.webp",
+    text: "Hydraulic Systems",
+    hoverText:
+      "Long-lasting and reliable component overhaul",
+    cta: "VIEW SERVICE",
+    link: "https://alpha-hazel-five.vercel.app/hydraulic-systems",
+    image: "/4-Hydraulic.jpg",
   },
   {
     id: 5,
-    text: "FAMO Certificate",
-    cta: "DOWNLOAD",
-    image: "/FAMO-Certificate.webp",
+    text: "C.S.D. & Pneumatic Systems",
+    hoverText:
+      "Dealt with precision and accuracy",
+    cta: "VIEW SERVICE",
+    link: "https://alpha-hazel-five.vercel.app/c-s-d-pneumatic-systems",
+    image: "/5-CSD.jpg",
+  },
+  {
+    id: 6,
+    text: "Aircraft Scanning",
+    hoverText:
+      "CNN 3D scan measurements with FARO instrument",
+    cta: "VIEW SERVICE",
+    link: "https://alpha-hazel-five.vercel.app/aircraft-scanning",
+    image: "/6-Aircraft-Scanning.jpg",
+  },
+  {
+    id: 7,
+    text: "Borescope Services",
+    hoverText:
+      "Optimised instrument to take accurate measurements",
+    cta: "VIEW SERVICE",
+    link: "https://alpha-hazel-five.vercel.app/borescope-services",
+    image: "/7-Borescope.jpg",
   },
 ];
 
 /* =========================================================
    CREATE 3 COPIES
+   Makes slider visually infinite
 ========================================================= */
 
-const loopCards: CertificateCard[] = [
+const loopCards: CardData[] = [
   ...cardsData,
   ...cardsData,
   ...cardsData,
 ];
+
+/* =========================================================
+   GET REAL CARD INDEX
+========================================================= */
+
+const getRealIndex = (index: number): number => {
+  return (
+    ((index % cardsData.length) +
+      cardsData.length) %
+    cardsData.length
+  );
+};
 
 /* =========================================================
    COMPONENT
 ========================================================= */
 
 export default function WhatIfSection() {
-  /* =======================================================
-     REFS
-  ======================================================= */
-
   const sectionRef = useRef<HTMLElement | null>(null);
+  const sliderRef = useRef<HTMLDivElement | null>(null);
 
-  const cardsRef = useRef<
-    (HTMLDivElement | null)[]
-  >([]);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const imagesRef = useRef<(HTMLImageElement | null)[]>([]);
 
-  const imagesRef = useRef<
-    (HTMLImageElement | null)[]
-  >([]);
+  /* =========================================================
+     START FROM MIDDLE COPY
+  ========================================================= */
 
   const currentIndex = useRef<number>(
     cardsData.length
@@ -101,76 +140,52 @@ export default function WhatIfSection() {
 
   const isAnimating = useRef<boolean>(false);
 
-  const timeoutRef = useRef<
-    ReturnType<typeof setTimeout> | null
-  >(null);
-
-  /* =======================================================
-     STATE
-  ======================================================= */
-
   const [activeIndex, setActiveIndex] =
     useState<number>(0);
 
-  /* =======================================================
-     REAL INDEX
-  ======================================================= */
-
-  const getRealIndex = useCallback(
-    (index: number): number => {
-      return (
-        ((index % cardsData.length) +
-          cardsData.length) %
-        cardsData.length
-      );
-    },
-    []
-  );
-
-  /* =======================================================
+  /* =========================================================
      UPDATE SLIDER
-  ======================================================= */
+  ========================================================= */
 
   const updateSlider = useCallback(
     (animate = true): void => {
       const index = currentIndex.current;
 
-      cardsRef.current.forEach(
-        (card, i) => {
-          if (!card) return;
+      cardsRef.current.forEach((card, i) => {
+        if (!card) return;
 
-          const position = i - index;
+        const position = i - index;
 
-          gsap.to(card, {
-            x: position * 380,
-            duration: animate ? 0.9 : 0,
-            ease: "power4.inOut",
-            overwrite: true,
-          });
+        gsap.to(card, {
+          x: position * 380,
+          duration: animate ? 0.9 : 0,
+          ease: "power4.inOut",
+          overwrite: true,
+        });
 
-          const image =
-            imagesRef.current[i];
+        /* =============================================
+           IMAGE PARALLAX / ZOOM
+        ============================================= */
 
-          if (!image) return;
+        const image = imagesRef.current[i];
 
+        if (image) {
           gsap.to(image, {
-            scale:
-              i === index ? 1.08 : 1,
-            yPercent:
-              i === index ? -4 : 0,
+            scale: i === index ? 1.08 : 1,
+            yPercent: i === index ? -4 : 0,
             duration: animate ? 1.2 : 0,
             ease: "power3.out",
             overwrite: true,
           });
         }
-      );
+      });
     },
     []
   );
 
-  /* =======================================================
+  /* =========================================================
      NEXT SLIDE
-  ======================================================= */
+  ========================================================= */
 
   const nextSlide = useCallback((): void => {
     if (isAnimating.current) return;
@@ -185,11 +200,12 @@ export default function WhatIfSection() {
 
     updateSlider(true);
 
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
+    window.setTimeout(() => {
+      /*
+       * After reaching third copy,
+       * silently move to middle copy.
+       */
 
-    timeoutRef.current = setTimeout(() => {
       if (
         currentIndex.current >=
         cardsData.length * 2
@@ -197,256 +213,135 @@ export default function WhatIfSection() {
         currentIndex.current =
           cardsData.length;
 
-        setActiveIndex(
-          getRealIndex(
-            currentIndex.current
-          )
-        );
-
         updateSlider(false);
+
+        setActiveIndex(
+          getRealIndex(currentIndex.current)
+        );
       }
 
       isAnimating.current = false;
     }, 920);
-  }, [getRealIndex, updateSlider]);
+  }, [updateSlider]);
 
-  /* =======================================================
+  /* =========================================================
      PREVIOUS SLIDE
-  ======================================================= */
+  ========================================================= */
 
-  const previousSlide = useCallback(
-    (): void => {
-      if (isAnimating.current) return;
+  const previousSlide = useCallback((): void => {
+    if (isAnimating.current) return;
 
-      isAnimating.current = true;
+    isAnimating.current = true;
 
-      currentIndex.current -= 1;
+    currentIndex.current -= 1;
 
-      setActiveIndex(
-        getRealIndex(currentIndex.current)
-      );
+    setActiveIndex(
+      getRealIndex(currentIndex.current)
+    );
 
-      updateSlider(true);
+    updateSlider(true);
 
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
+    window.setTimeout(() => {
+      /*
+       * If we reach first copy,
+       * silently jump to middle copy.
+       */
 
-      timeoutRef.current = setTimeout(() => {
-        if (
-          currentIndex.current <
-          cardsData.length
-        ) {
-          currentIndex.current =
-            cardsData.length * 2 - 1;
+      if (
+        currentIndex.current <
+        cardsData.length
+      ) {
+        currentIndex.current =
+          cardsData.length * 2 - 1;
 
-          setActiveIndex(
-            getRealIndex(
-              currentIndex.current
-            )
-          );
+        updateSlider(false);
 
-          updateSlider(false);
-        }
-
-        isAnimating.current = false;
-      }, 920);
-    },
-    [getRealIndex, updateSlider]
-  );
-
-  /* =======================================================
-     DOWNLOAD CERTIFICATE
-  ======================================================= */
-
-  const downloadImage = useCallback(
-    async (
-      imageUrl: string,
-      index: number
-    ): Promise<void> => {
-      try {
-        const response =
-          await fetch(imageUrl);
-
-        if (!response.ok) {
-          throw new Error(
-            "Certificate download failed"
-          );
-        }
-
-        const blob =
-          await response.blob();
-
-        const blobUrl =
-          window.URL.createObjectURL(
-            blob
-          );
-
-        const link =
-          document.createElement("a");
-
-        link.href = blobUrl;
-
-        link.download =
-          `certificate-${String(
-            index + 1
-          ).padStart(2, "0")}.webp`;
-
-        document.body.appendChild(
-          link
-        );
-
-        link.click();
-
-        document.body.removeChild(
-          link
-        );
-
-        window.URL.revokeObjectURL(
-          blobUrl
-        );
-      } catch {
-        window.open(
-          imageUrl,
-          "_blank",
-          "noopener,noreferrer"
+        setActiveIndex(
+          getRealIndex(currentIndex.current)
         );
       }
-    },
-    []
-  );
 
-  /* =======================================================
-     INITIAL SETUP + SCROLL ANIMATION
-  ======================================================= */
+      isAnimating.current = false;
+    }, 920);
+  }, [updateSlider]);
+
+  /* =========================================================
+     INITIAL SETUP
+  ========================================================= */
 
   useEffect(() => {
-    const cards = cardsRef.current;
-    const images = imagesRef.current;
-
     currentIndex.current =
       cardsData.length;
 
-    setActiveIndex(
-      getRealIndex(
-        currentIndex.current
-      )
+    /* =====================================================
+       INITIAL CARD POSITION
+    ===================================================== */
+
+    updateSlider(false);
+
+    /* =====================================================
+       SCROLL HEADING ANIMATION
+    ===================================================== */
+
+    const headingChars =
+      document.querySelectorAll(
+        ".what-if-char"
+      );
+
+    gsap.set(headingChars, {
+      y: 100,
+      opacity: 0,
+      rotateX: -45,
+    });
+
+    gsap.to(headingChars, {
+      y: 0,
+      opacity: 1,
+      rotateX: 0,
+      duration: 1.1,
+      stagger: 0.06,
+      ease: "power4.out",
+
+      scrollTrigger: {
+        trigger: ".what-if-heading",
+        start: "top 90%",
+        end: "top 35%",
+        scrub: 1,
+      },
+    });
+
+    /* =====================================================
+       CARD ENTRANCE
+    ===================================================== */
+
+    gsap.fromTo(
+      cardsRef.current,
+      {
+        y: 80,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.05,
+        delay: 0.35,
+        ease: "power4.out",
+      }
     );
 
     /* =====================================================
-       GSAP CONTEXT
-    ===================================================== */
-
-    const ctx = gsap.context(() => {
-
-      /* ===================================================
-         INITIAL SLIDER
-      =================================================== */
-
-      updateSlider(false);
-
-      /* ===================================================
-         CERTIFICATES HEADING
-         SCROLL ANIMATION
-      =================================================== */
-
-      const headingChars =
-        gsap.utils.toArray<HTMLElement>(
-          ".what-if-char"
-        );
-
-      if (headingChars.length) {
-
-        /* -----------------------------------------------
-           INITIAL POSITION
-        ------------------------------------------------ */
-
-        gsap.set(headingChars, {
-          y: 100,
-          opacity: 0,
-          rotateX: -70,
-          transformOrigin:
-            "center bottom",
-        });
-
-        /* -----------------------------------------------
-           SCROLL REVEAL
-        ------------------------------------------------ */
-
-        gsap.to(headingChars, {
-          y: 0,
-          opacity: 1,
-          rotateX: 0,
-
-          duration: 1,
-
-          stagger: 0.06,
-
-          ease: "power4.out",
-
-          scrollTrigger: {
-            trigger:
-              ".what-if-heading",
-
-            start: "top 88%",
-
-            end: "top 35%",
-
-            scrub: 1,
-
-            invalidateOnRefresh: true,
-          },
-        });
-      }
-
-      /* =================================================
-         CARD ENTRANCE
-      ================================================= */
-
-      gsap.fromTo(
-        cards,
-        {
-          y: 80,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          stagger: 0.05,
-          delay: 0.35,
-          ease: "power4.out",
-        }
-      );
-    }, sectionRef);
-
-    /* =====================================================
-       KEYBOARD
+       KEYBOARD CONTROLS
     ===================================================== */
 
     const keyboardHandler = (
       event: KeyboardEvent
     ): void => {
-      const target = event.target;
-
-      if (
-        target instanceof
-          HTMLInputElement ||
-        target instanceof
-          HTMLTextAreaElement ||
-        target instanceof
-          HTMLSelectElement
-      ) {
-        return;
-      }
-
       if (event.key === "ArrowRight") {
-        event.preventDefault();
         nextSlide();
       }
 
       if (event.key === "ArrowLeft") {
-        event.preventDefault();
         previousSlide();
       }
     };
@@ -455,6 +350,13 @@ export default function WhatIfSection() {
       "keydown",
       keyboardHandler
     );
+
+    /* =====================================================
+       COPY REF VALUES FOR CLEANUP
+    ===================================================== */
+
+    const cards = cardsRef.current;
+    const images = imagesRef.current;
 
     /* =====================================================
        CLEANUP
@@ -466,193 +368,193 @@ export default function WhatIfSection() {
         keyboardHandler
       );
 
-      ctx.revert();
-
       gsap.killTweensOf(cards);
       gsap.killTweensOf(images);
 
-      if (timeoutRef.current) {
-        clearTimeout(
-          timeoutRef.current
-        );
-
-        timeoutRef.current = null;
-      }
-
-      isAnimating.current = false;
+      ScrollTrigger.getAll().forEach(
+        (trigger) => {
+          if (
+            trigger.trigger ===
+            document.querySelector(
+              ".what-if-heading"
+            )
+          ) {
+            trigger.kill();
+          }
+        }
+      );
     };
   }, [
-    getRealIndex,
     nextSlide,
     previousSlide,
     updateSlider,
   ]);
 
-  /* =======================================================
+  /* =========================================================
      JSX
-  ======================================================= */
+  ========================================================= */
 
   return (
-    <section id ="certifications"
+    <section
       ref={sectionRef}
-      className="what-if-sectionss"
+      className="what-if-section"
     >
       <div className="what-if-container">
 
         <div className="what-if-box">
 
-          {/* =================================================
+          {/* =========================================
               HEADING
-          ================================================= */}
+          ========================================= */}
 
           <div className="what-if-heading">
-            <div className="our-story__eyebrow"><span>WHAT WE DO</span></div>
-           
+
             <h2>
               <span className="milestone-heading-line">
-MORE THANAN <br />
-                {"APU SPECIALIST"
-                  .split("")
-                  .map(
-                    (char, index) => (
-                      <span
-                        key={`certificate-${index}`}
-                        className="what-if-char"
-                      >
-                        {char === " "
-                          ? "\u00A0"
-                          : char}
-                      </span>
-                    )
-                  )}
-
+                {"SERVICES".split("").map(
+                  (char, index) => (
+                    <span
+                      key={`service-char-${index}`}
+                      className="what-if-char"
+                    >
+                      {char === " "
+                        ? "\u00A0"
+                        : char}
+                    </span>
+                  )
+                )}
               </span>
             </h2>
+
           </div>
 
-          {/* =================================================
+          {/* =========================================
               SLIDER
-          ================================================= */}
+          ========================================= */}
 
-          <div className="what-if-slider">
-
+          <div
+            ref={sliderRef}
+            className="what-if-slider"
+          >
             <div className="what-if-track">
 
               {loopCards.map(
-                (card, index) => {
+                (card, index) => (
 
-                  const realIndex =
-                    getRealIndex(index);
+                  <div
+                    key={`${card.id}-${index}`}
+                    ref={(element) => {
+                      cardsRef.current[index] =
+                        element;
+                    }}
+                    className={`what-if-card ${
+                      getRealIndex(
+                        activeIndex
+                      ) ===
+                      getRealIndex(index)
+                        ? "is-active"
+                        : ""
+                    }`}
+                  >
 
-                  const isActive =
-                    activeIndex ===
-                    realIndex;
+                    <div className="what-if-card-inner">
 
-                  return (
-                    <div
-                      key={`${card.id}-${index}`}
-                      ref={(element) => {
-                        cardsRef.current[
-                          index
-                        ] = element;
-                      }}
-                      className={`what-if-card ${
-                        isActive
-                          ? "is-active"
-                          : ""
-                      }`}
-                    >
+                      {/* =================================
+                          IMAGE
+                      ================================= */}
 
-                      <div className="what-if-card-inner">
+                      <Image
+                        ref={(element) => {
+                          imagesRef.current[index] =
+                            element;
+                        }}
+                        src={card.image}
+                        alt={card.text}
+                        width={800}
+                        height={1000}
+                        className="what-if-image"
+                        priority={
+                          index <
+                          cardsData.length
+                        }
+                      />
+
+                      {/* =================================
+                          OVERLAY
+                      ================================= */}
+
+                      <div className="what-if-overlay" />
+
+                      {/* =================================
+                          CONTENT
+                      ================================= */}
+
+                      <div className="what-if-content">
+
+                        {/* NUMBER */}
+
+                        <span className="what-if-number">
+                          {String(card.id).padStart(
+                            2,
+                            "0"
+                          )}
+                        </span>
+
+                        {/* MAIN TEXT */}
+
+                        <p className="what-if-main-text">
+                          {card.text}
+                        </p>
 
                         {/* =================================
-                            IMAGE
+                            HOVER CONTENT
                         ================================= */}
 
-                        <Image
-                          ref={(element) => {
-                            imagesRef.current[
-                              index
-                            ] = element;
-                          }}
-                          src={card.image}
-                          alt={card.text}
-                          fill
-                          sizes="
-                            (max-width: 768px) 85vw,
-                            (max-width: 1200px) 50vw,
-                            380px
-                          "
-                          className="what-if-image"
-                          priority={
-                            index <
-                            cardsData.length
-                          }
-                        />
+                        <div className="what-if-hover-content">
 
-                        {/* =================================
-                            OVERLAY
-                        ================================= */}
+                          {/* HOVER TEXT */}
 
-                        <div className="what-if-overlay" />
-
-                        {/* =================================
-                            CONTENT
-                        ================================= */}
-
-                        <div className="what-if-content">
-
-                          <p className="what-if-main-text">
-                            {card.text}
+                          <p className="what-if-hover-text">
+                            {card.hoverText}
                           </p>
 
                           {/* =================================
-                              DOWNLOAD CTA
+                              CTA LINK
                           ================================= */}
 
-                          <div className="what-if-hover-content">
+                          <Link
+                            href={card.link}
+                            className="what-if-card-cta"
+                            onClick={(event) => {
+                              event.stopPropagation();
+                            }}
+                          >
+                            <span>
+                              {card.cta}
+                            </span>
 
-                            <button
-                              type="button"
-                              className="what-if-download-cta"
-                              onClick={(
-                                event
-                              ) => {
-                                event.stopPropagation();
-
-                                void downloadImage(
-                                  card.image,
-                                  realIndex
-                                );
-                              }}
-                            >
-                              <span>
-                                {card.cta}
-                              </span>
-
-                              <Download
-                                size={16}
-                                strokeWidth={1.5}
-                              />
-                            </button>
-
-                          </div>
+                            <ArrowRight
+                              size={16}
+                              strokeWidth={1.5}
+                            />
+                          </Link>
 
                         </div>
 
                       </div>
 
                     </div>
-                  );
-                }
+
+                  </div>
+                )
               )}
 
             </div>
           </div>
 
-          {/* =================================================
+          {/* =========================================
               ARROWS
-          ================================================= */}
+          ========================================= */}
 
           <div className="what-if-arrows">
 
@@ -660,7 +562,7 @@ MORE THANAN <br />
               type="button"
               onClick={previousSlide}
               className="what-if-arrow"
-              aria-label="Previous certificate"
+              aria-label="Previous slide"
             >
               <ArrowLeft
                 size={42}
@@ -672,7 +574,7 @@ MORE THANAN <br />
               type="button"
               onClick={nextSlide}
               className="what-if-arrow"
-              aria-label="Next certificate"
+              aria-label="Next slide"
             >
               <ArrowRight
                 size={42}
@@ -683,7 +585,9 @@ MORE THANAN <br />
           </div>
 
         </div>
+
       </div>
     </section>
   );
 }
+

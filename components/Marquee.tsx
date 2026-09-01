@@ -8,6 +8,7 @@ import React, {
   useState,
 } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -23,6 +24,7 @@ type CardData = {
   text: string;
   hoverText: string;
   cta: string;
+  link: string;
   image: string;
 };
 
@@ -37,22 +39,23 @@ const cardsData: CardData[] = [
     hoverText:
       "Specialization is all types of APU overhaul and repair",
     cta: "VIEW SERVICE",
+    link: "https://alpha-hazel-five.vercel.app/a-p-u-overhaul-repairs",
     image: "/1-APU.jpg",
   },
   {
     id: 2,
     text: "Fuel Systems & Fuel Flow Transmitter",
-    hoverText:
-      "Reliable and durable overhauling",
+    hoverText: "Reliable and durable overhauling",
     cta: "VIEW SERVICE",
+    link: "https://alpha-hazel-five.vercel.app/fuel-systems-fuel-flow-transmitter",
     image: "/2-Fuel.jpg",
   },
   {
     id: 3,
     text: "Plasma Spray & Professional Welding",
-    hoverText:
-      "Cost-effective high-tech solutions",
+    hoverText: "Cost-effective high-tech solutions",
     cta: "VIEW SERVICE",
+    link: "https://alpha-hazel-five.vercel.app/plasma-spray-professional-welding",
     image: "/3-Plasma.jpg",
   },
   {
@@ -61,6 +64,7 @@ const cardsData: CardData[] = [
     hoverText:
       "Long-lasting and reliable component overhaul",
     cta: "VIEW SERVICE",
+    link: "https://alpha-hazel-five.vercel.app/hydraulic-systems",
     image: "/4-Hydraulic.jpg",
   },
   {
@@ -69,6 +73,7 @@ const cardsData: CardData[] = [
     hoverText:
       "Dealt with precision and accuracy",
     cta: "VIEW SERVICE",
+    link: "https://alpha-hazel-five.vercel.app/c-s-d-pneumatic-systems",
     image: "/5-CSD.jpg",
   },
   {
@@ -77,6 +82,7 @@ const cardsData: CardData[] = [
     hoverText:
       "CNN 3D scan measurements with FARO instrument",
     cta: "VIEW SERVICE",
+    link: "https://alpha-hazel-five.vercel.app/aircraft-scanning",
     image: "/6-Aircraft-Scanning.jpg",
   },
   {
@@ -85,6 +91,7 @@ const cardsData: CardData[] = [
     hoverText:
       "Optimised instrument to take accurate measurements",
     cta: "VIEW SERVICE",
+    link: "https://alpha-hazel-five.vercel.app/borescope-services",
     image: "/7-Borescope.jpg",
   },
 ];
@@ -260,7 +267,7 @@ export default function WhatIfSection() {
 
   /* =========================================================
      INITIAL SETUP
-========================================================= */
+  ========================================================= */
 
   useEffect(() => {
     currentIndex.current =
@@ -385,7 +392,7 @@ export default function WhatIfSection() {
 
   /* =========================================================
      JSX
-========================================================= */
+  ========================================================= */
 
   return (
     <section
@@ -403,7 +410,6 @@ export default function WhatIfSection() {
           <div className="what-if-heading">
 
             <h2>
-
               <span className="milestone-heading-line">
                 {"SERVICES".split("").map(
                   (char, index) => (
@@ -418,7 +424,6 @@ export default function WhatIfSection() {
                   )
                 )}
               </span>
-
             </h2>
 
           </div>
@@ -513,13 +518,14 @@ export default function WhatIfSection() {
                             {card.hoverText}
                           </p>
 
-                          {/* CTA */}
+                          {/* =================================
+                              CTA LINK
+                          ================================= */}
 
-                          <a
-                            href="#"
+                          <Link
+                            href={card.link}
                             className="what-if-card-cta"
                             onClick={(event) => {
-                              event.preventDefault();
                               event.stopPropagation();
                             }}
                           >
@@ -531,7 +537,7 @@ export default function WhatIfSection() {
                               size={16}
                               strokeWidth={1.5}
                             />
-                          </a>
+                          </Link>
 
                         </div>
 
@@ -584,3 +590,4 @@ export default function WhatIfSection() {
     </section>
   );
 }
+

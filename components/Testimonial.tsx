@@ -27,6 +27,7 @@ type CertificateCard = {
   text: string;
   cta: string;
   image: string;
+  pdf: string;
 };
 
 /* =========================================================
@@ -36,34 +37,40 @@ type CertificateCard = {
 const cardsData: CertificateCard[] = [
   {
     id: 1,
-    text: "Certificate of Registration",
+    text: "DGCA, India",
     cta: "DOWNLOAD",
-    image: "/Certificate-of-Registration.webp",
+    image: "/FAMO-Certificate.webp",
+    pdf: "/FAMO-Certificate.pdf",
   },
   {
     id: 2,
-    text: "EASA Approved",
-    cta: "DOWNLOAD",
-    image: "/EASA-Approved.webp",
-  },
-  {
-    id: 3,
     text: "FAA Approved",
     cta: "DOWNLOAD",
     image: "/FAA-Approved.webp",
+    pdf: "/FAA-Approved.pdf",
+  },
+  {
+    id: 3,
+    text: "EASA Approved",
+    cta: "DOWNLOAD",
+    image: "/EASA-Approved.webp",
+    pdf: "/EASA-Approved.pdf",
+  },
+  {
+    id: 4,
+    text: "Certificate of Registration",
+    cta: "DOWNLOAD",
+    image: "/Certificate-of-Registration.webp",
+    pdf: "/Certificate-of-Registration.pdf",
   },
   {
     id: 4,
     text: "ISO Certificate",
     cta: "DOWNLOAD",
     image: "/ISO-Certificate.webp",
+    pdf: "/ISO-Certificate-1.pdf",
   },
-  {
-    id: 5,
-    text: "FAMO Certificate",
-    cta: "DOWNLOAD",
-    image: "/FAMO-Certificate.webp",
-  },
+  
 ];
 
 /* =========================================================
@@ -256,62 +263,33 @@ export default function WhatIfSection() {
   );
 
   /* =======================================================
-     DOWNLOAD CERTIFICATE
+     DOWNLOAD PDF
   ======================================================= */
 
-  const downloadImage = useCallback(
-    async (
-      imageUrl: string,
-      index: number
-    ): Promise<void> => {
-      try {
-        const response =
-          await fetch(imageUrl);
+  const downloadPDF = useCallback(
+    (
+      pdfUrl: string,
+      certificateName: string
+    ): void => {
+      const link =
+        document.createElement("a");
 
-        if (!response.ok) {
-          throw new Error(
-            "Certificate download failed"
-          );
-        }
+      link.href = pdfUrl;
 
-        const blob =
-          await response.blob();
+      link.download =
+        `${certificateName
+          .replace(/\s+/g, "-")
+          .toLowerCase()}.pdf`;
 
-        const blobUrl =
-          window.URL.createObjectURL(
-            blob
-          );
+      link.target = "_blank";
 
-        const link =
-          document.createElement("a");
+      link.rel = "noopener noreferrer";
 
-        link.href = blobUrl;
+      document.body.appendChild(link);
 
-        link.download =
-          `certificate-${String(
-            index + 1
-          ).padStart(2, "0")}.webp`;
+      link.click();
 
-        document.body.appendChild(
-          link
-        );
-
-        link.click();
-
-        document.body.removeChild(
-          link
-        );
-
-        window.URL.revokeObjectURL(
-          blobUrl
-        );
-      } catch {
-        window.open(
-          imageUrl,
-          "_blank",
-          "noopener,noreferrer"
-        );
-      }
+      document.body.removeChild(link);
     },
     []
   );
@@ -442,11 +420,13 @@ export default function WhatIfSection() {
 
       if (event.key === "ArrowRight") {
         event.preventDefault();
+
         nextSlide();
       }
 
       if (event.key === "ArrowLeft") {
         event.preventDefault();
+
         previousSlide();
       }
     };
@@ -469,6 +449,7 @@ export default function WhatIfSection() {
       ctx.revert();
 
       gsap.killTweensOf(cards);
+
       gsap.killTweensOf(images);
 
       if (timeoutRef.current) {
@@ -493,7 +474,8 @@ export default function WhatIfSection() {
   ======================================================= */
 
   return (
-    <section id ="certifications"
+    <section
+      id="certifications"
       ref={sectionRef}
       className="what-if-sectionss"
     >
@@ -618,9 +600,9 @@ export default function WhatIfSection() {
                               ) => {
                                 event.stopPropagation();
 
-                                void downloadImage(
-                                  card.image,
-                                  realIndex
+                                downloadPDF(
+                                  card.pdf,
+                                  card.text
                                 );
                               }}
                             >

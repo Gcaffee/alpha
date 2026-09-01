@@ -34,7 +34,7 @@ const exhibitions = [
   },
   {
     id: 2,
-    name: "Aero Engines",
+    name: "World Defense Show",
     location:
       "Riyadh International Convention & Exhibition Center",
     date: "February 09-10, 2026",
@@ -59,24 +59,7 @@ const exhibitions = [
     image: "/MRO4.webp",
     category: "Recent Exhibition",
   },
-  {
-    id: 5,
-    name: "MRO Europe",
-    location:
-      "Excel London, London",
-    date: "15-16 October, 2025",
-    image: "/MRO5.jpg",
-    category: "Recent Exhibition",
-  },
-  {
-    id: 6,
-    name: "Aero Engines",
-    location:
-      "CCH Congress Center, Hamburg Germany",
-    date: "09-10 September, 2025",
-    image: "/MRO.png",
-    category: "Recent Exhibition",
-  },
+  
 ];
 
 /* =========================================================
