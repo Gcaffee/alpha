@@ -356,7 +356,7 @@ export default function Hero() {
           loop
           playsInline
           preload="auto"
-          poster="/videoframe_18320.png"
+          poster="/APU-rotation.mp4"
           aria-hidden="true"
         >
           <source
