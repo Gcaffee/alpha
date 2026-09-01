@@ -13197,7 +13197,7 @@ padding-right:10px;
 
   font-weight: 600;
 
-  line-height: .83;
+  line-height: .91;
 
   letter-spacing: -7px;
 }
@@ -13588,7 +13588,7 @@ padding-right:10px;
 .alpha-apu-expertise {
   min-height: 100vh;
 
-  padding: 170px 0;
+  padding: 80px 0;
 
   background: #e6eaeb;
 }
@@ -13751,7 +13751,7 @@ padding-right:10px;
 ========================================== */
 
 .alpha-apu-process {
-  padding: 170px 0;
+  padding: 80px 0;
 
   background: #082b4c;
 }
@@ -14025,9 +14025,9 @@ padding-right:10px;
 
   align-items: center;
 
-  gap: 10px;
+  gap: 5px;
   font-weight:600;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
 
   padding: 12px 18px;
 
@@ -14039,7 +14039,7 @@ padding-right:10px;
 
   font-size: 16px;
 
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 
 .alpha-apu-support-badge i {
@@ -14059,7 +14059,7 @@ padding-right:10px;
 
   font-size: clamp(60px, 9vw, 96px);
 
-  line-height: .82;
+  line-height: .91;
 
   letter-spacing: -7px;
   color:#082b4c;
@@ -16138,7 +16138,7 @@ padding-right:10px;
 .alpha-apu-modules-section {
   position: relative;
   min-height: 100vh;
-  padding: 140px 0;
+  padding: 80px 0;
 
   background: #080808;
   color: #fff;
@@ -16209,7 +16209,7 @@ padding-right:10px;
 
   font-size: 18px;
   font-weight: 600;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
 
   color: #b84a2b;
 }
@@ -16593,7 +16593,7 @@ padding-right:10px;
 
   min-height: 100vh;
 
-  padding: 140px 0;
+  padding: 80px 0;
 
   background: #eef1f2;
 
@@ -17024,7 +17024,7 @@ padding-right:10px;
 
   min-height: 100vh;
 
-  padding: 140px 0;
+  padding: 80px 0;
 
   background: #eef1f2;
 
@@ -17118,7 +17118,7 @@ padding-right:10px;
 
   font-weight: 600;
 
-  letter-spacing: 5px;
+  letter-spacing: 3px;
 }
 
 .alpha-apu-modules-header h2 {
@@ -32386,4 +32386,12 @@ padding-left:10px;
     opacity;
 
   -webkit-font-smoothing: antialiased;
+}
+.alpha-apu-support-badge i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #b84a2b;
+    box-shadow: 0 0 15px #b84a2b;
+    display: none !important;
 }
