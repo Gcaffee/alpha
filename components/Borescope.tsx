@@ -38,44 +38,32 @@ const sliderImages = [
   {
     src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
     alt: "Aircraft Hydraulic System",
-    number: "01",
-    title: "HYDRAULIC",
-    subtitle: "SYSTEMS",
+    
   },
   {
     src: "/Alpha-Aircraft-Systems_APU.webp",
     alt: "Aircraft APU System",
-    number: "02",
-    title: "AIRCRAFT",
-    subtitle: "EQUIPMENT",
+   
   },
   {
     src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
     alt: "Aircraft Hydraulic Equipment",
-    number: "03",
-    title: "PRECISION",
-    subtitle: "ENGINEERING",
+    
   },
   {
     src: "/Alpha-Aircraft-Systems_APU.webp",
     alt: "Aircraft Maintenance",
-    number: "04",
-    title: "MRO",
-    subtitle: "CAPABILITIES",
+    
   },
   {
     src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
     alt: "Hydraulic Maintenance",
-    number: "05",
-    title: "ADVANCED",
-    subtitle: "MAINTENANCE",
+    
   },
   {
     src: "/Alpha-Aircraft-Systems_APU.webp",
     alt: "Aerospace Technology",
-    number: "06",
-    title: "AEROSPACE",
-    subtitle: "TECHNOLOGY",
+   
   },
 ];
 
@@ -406,15 +394,7 @@ export default function HomePage() {
 
                         <div className="imageCardContent">
 
-                          <span className="imageCardNumber">
-                            {firstCard.number}
-                          </span>
-
-                          <h3>
-                            {firstCard.title}
-                            <br />
-                            {firstCard.subtitle}
-                          </h3>
+                          
 
                         </div>
 
@@ -443,15 +423,7 @@ export default function HomePage() {
 
                         <div className="imageCardContent">
 
-                          <span className="imageCardNumber">
-                            {secondCard.number}
-                          </span>
-
-                          <h3>
-                            {secondCard.title}
-                            <br />
-                            {secondCard.subtitle}
-                          </h3>
+                          
 
                         </div>
 
