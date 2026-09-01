@@ -13195,7 +13195,7 @@ padding-right:10px;
 
   font-size: clamp(60px, 8.7vw, 125px);
 
-  font-weight: 700;
+  font-weight: 600;
 
   line-height: .83;
 
@@ -13213,9 +13213,9 @@ padding-right:10px;
 
   margin-top: 38px;
 
-  color: var(--alpha-apu-muted);
+  color: #eef1f2;
 
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.9;
 }
 
@@ -13606,12 +13606,13 @@ padding-right:10px;
 .alpha-apu-expertise-copy h2 {
   margin: 0;
 
-  font-size: clamp(50px, 6vw, 88px);
+  font-size: clamp(50px, 6vw, 84px);
 
   line-height: .9;
 
   letter-spacing: -5px;
   color:#082b4c;
+  font-weight:600;
 }
 
 .alpha-apu-expertise-copy p {
@@ -13621,7 +13622,7 @@ padding-right:10px;
 
   color: #343f46;
 
-  font-size: 15px;
+  font-size: 18px;
 
   line-height: 1.9;
 }
@@ -13831,9 +13832,9 @@ padding-right:10px;
 }
 
 .alpha-apu-process-card p {
-  color: var(--alpha-apu-muted);
+  color: #eef1f2;
 
-  font-size: 12px;
+  font-size: 16px;
 
   line-height: 1.8;
 
@@ -14025,7 +14026,7 @@ padding-right:10px;
   align-items: center;
 
   gap: 10px;
-
+  font-weight:600;
   margin-bottom: 35px;
 
   padding: 12px 18px;
@@ -14036,7 +14037,7 @@ padding-right:10px;
 
   color: #b84a2b;
 
-  font-size: 9px;
+  font-size: 16px;
 
   letter-spacing: 2px;
 }
@@ -14056,13 +14057,13 @@ padding-right:10px;
 .alpha-apu-support-title {
   margin: 0;
 
-  font-size: clamp(60px, 9vw, 135px);
+  font-size: clamp(60px, 9vw, 96px);
 
   line-height: .82;
 
   letter-spacing: -7px;
   color:#082b4c;
-}
+  font-weight:600;}
 
 .alpha-apu-support-title span {
   color: transparent;
@@ -14077,7 +14078,7 @@ padding-right:10px;
 
   color: #343f46;
 
-  font-size: 14px;
+  font-size: 18px;
 
   line-height: 1.9;
 }
@@ -16206,7 +16207,7 @@ padding-right:10px;
 
   margin-bottom: 18px;
 
-  font-size: 11px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 5px;
 
@@ -16233,7 +16234,7 @@ padding-right:10px;
 
   color: #343f46;
 
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.8;
 }
 
@@ -16456,7 +16457,7 @@ padding-right:10px;
 
   margin-bottom: 12px;
 
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 3px;
 
   color: #b84a2b;
@@ -16682,7 +16683,7 @@ padding-right:10px;
 
   color: #b84a2b;
 
-  font-size: 11px;
+  font-size: 18px;
 
   font-weight: 600;
 
@@ -16712,7 +16713,7 @@ padding-right:10px;
 
   color: 343f46;
 
-  font-size: 14px;
+  font-size: 18px;
 
   line-height: 1.8;
 }
@@ -16972,7 +16973,7 @@ padding-right:10px;
 
   color: #b84a2b;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 700;
 
@@ -17113,7 +17114,7 @@ padding-right:10px;
 
   color: #b84a2b;
 
-  font-size: 11px;
+  font-size: 18px;
 
   font-weight: 600;
 
@@ -17143,7 +17144,7 @@ padding-right:10px;
 
   color: #343f46;
 
-  font-size: 14px;
+  font-size: 18px;
 
   line-height: 1.8;
 }
@@ -17404,7 +17405,7 @@ padding-right:10px;
 
   color: #b84a2b;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 700;
 
@@ -32158,7 +32159,7 @@ body {
 
 }
 
-```css
+
 /* =========================================================
    ARROW BUTTONS
 ========================================================= */
