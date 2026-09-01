@@ -22956,7 +22956,7 @@ span.contact-plane-icon {
     108px
   );
 
-  line-height: 0.86;
+  line-height: 0.91;
 
   letter-spacing: -5px;
 
@@ -24290,11 +24290,12 @@ body {
   font-size:
     clamp(60px, 8vw, 120px);
 
-  line-height: 0.82;
+  line-height: 0.91;
 
   font-weight: 600;
 
   letter-spacing: -6px;
+      font-family: sans-serif;
 }
 
 .heroText h1 span {
@@ -24341,9 +24342,9 @@ body {
   padding:
     0 25px;
 
-  font-size: 12px;
+  font-size: 20px;
 
-  font-weight: 800;
+  font-weight: 600;
 
   letter-spacing: 1.5px;
 
@@ -24511,11 +24512,12 @@ body {
   font-size:
     clamp(48px, 6vw, 76px);
 
-  line-height: 0.9;
+  line-height: 0.95;
 
-  font-weight: 600;
+  font-weight: 700;
 
-  letter-spacing: -4px;
+  letter-spacing: -2px;
+  font-family: sans-serif;
 }
 
 .powerText p {
@@ -24689,11 +24691,11 @@ body {
   font-size:
     clamp(48px, 6vw, 85px);
 
-  line-height: 0.9;
+  line-height: 0.95;
 
-  font-weight: 600;
+  font-weight: 700;
 
-  letter-spacing: -4px;
+  letter-spacing: -2px;
 }
 
 .sectionHeading p {
@@ -24863,11 +24865,11 @@ body {
   font-size:
     clamp(52px, 6vw, 82px);
 
-  line-height: 0.86;
+  line-height: 0.91;
 
-  font-weight: 600;
+  font-weight: 700;
 
-  letter-spacing: -5px;
+  letter-spacing: -2px;
 }
 
 .workLeft h2 span {
@@ -25272,9 +25274,9 @@ body {
 
   color: #eef1f2;
 
-  font-size: 11px;
+  font-size: 20px;
 
-  font-weight: 800;
+  font-weight: 600;
 
   letter-spacing: 1.5px;
 
