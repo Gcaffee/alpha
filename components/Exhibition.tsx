@@ -667,7 +667,7 @@ export default function Exhibition() {
                 href={exhibitionDetailUrl}
                 className="expo-explore-button"
               >
-                EXPLORE
+                EXPLORE 
               </Link>
 
             </div>
