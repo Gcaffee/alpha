@@ -4797,11 +4797,12 @@ img {
 
 .exhibition-card-button {
   margin-top: 18px;
-  padding: 11px 22px;
+  padding: 11px 18px;
   border: 1px solid rgba(255,255,255,0.6);
   background: transparent;
   color: #fff;
   cursor: pointer;
+  font-family: sans-serif;
 }
 
 
@@ -13237,11 +13238,11 @@ padding-right:10px;
 
   gap: 15px;
 
-  
+  font-weight:600;
 
   text-decoration: none;
 
-  font-size: 16px;
+  font-size: 20px;
   letter-spacing: 1.5px;
 
   transition: .4s ease;
@@ -14037,7 +14038,7 @@ padding-right:10px;
 
   color: #b84a2b;
 
-  font-size: 16px;
+  font-size: 18px;
 
   letter-spacing: 3px;
 }
@@ -16141,7 +16142,7 @@ padding-right:10px;
   padding: 80px 0;
 
   background: #080808;
-  color: #fff;
+  color: #082b4c;
 
   overflow: hidden;
   perspective: 1600px;
@@ -16524,7 +16525,7 @@ padding-right:10px;
   align-items: center;
   justify-content: space-between;
 
-  width: 60%;
+  width: 77%;
 
   margin-top: 24px;
   padding: 13px 15px;
@@ -16534,8 +16535,8 @@ padding-right:10px;
   color: #fff;
   text-decoration: none;
 
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 600;
   letter-spacing: 2px;
 
   background: transparent;
@@ -16597,7 +16598,7 @@ padding-right:10px;
 
   background: #eef1f2;
 
-  color: #fff;
+  color: #082b4c;
 
   overflow: hidden;
 
@@ -17028,7 +17029,7 @@ padding-right:10px;
 
   background: #eef1f2;
 
-  color: #fff;
+  color: #082b4c;
 
   overflow: hidden;
 
@@ -17470,15 +17471,15 @@ padding-right:10px;
     1px solid
     rgba(255, 255, 255, 0.25);
 
-  color: #eef1f2;
+  color: #eef1f2 ! important;
 
   text-decoration: none;
 
   background: #b84a2b;
 
-  font-size: 13px;
+  font-size: 20px;
 
-  font-weight: 700;
+  font-weight: 600;
 
   letter-spacing: 2.5px;
 
@@ -17698,7 +17699,7 @@ padding-right:10px;
 
   justify-content: space-between;
 
-  width: 60%;
+  width: 77%;
 
   margin-top: 24px;
 
@@ -17710,9 +17711,9 @@ padding-right:10px;
 
   text-decoration: none;
 
-  font-size: 12px;
+  font-size: 18px;
 
-  font-weight: 700;
+  font-weight: 600;
 
   letter-spacing: 2px;
 
@@ -32396,4 +32397,12 @@ padding-left:10px;
     background: #b84a2b;
     box-shadow: 0 0 15px #b84a2b;
     display: none !important;
+}
+
+.alpha-apu-module-content h3 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #fff ! IMPORTANT;
 }

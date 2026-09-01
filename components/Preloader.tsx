@@ -781,6 +781,7 @@ export default function APUOverhaulPage() {
                 className="alpha-apu-button alpha-apu-button-outline"
               >
                 REQUEST A DEMO
+                <b>↗</b>
               </a>
             </div>
           </div>
