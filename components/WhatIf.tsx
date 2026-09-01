@@ -321,11 +321,11 @@ export default function WhatIf() {
 
       <div className="milestones-heading-wrap">
         <h2 className="milestones-heading">
-          <span className="milestone-heading-line">
+          <span className="milestone-heading-linee">
             OUR MAJOR
           </span>
 
-          <span className="milestone-heading-line">
+          <span className="milestone-heading-linee">
             MILESTONES
           </span>
         </h2>
