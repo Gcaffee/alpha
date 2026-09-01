@@ -32266,3 +32266,12 @@ button {
 
 }
 
+.cardArrow {
+    position: absolute;
+    right: 30px;
+    bottom: 25px;
+    color: #b84a2b;
+    font-size: 25px;
+    transition: transform .3s ease;
+    display: none ! IMPORTANT;
+}
