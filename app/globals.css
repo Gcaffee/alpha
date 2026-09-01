@@ -26002,9 +26002,7 @@ button {
 
   border: none;
 
-  background: #b84a2b;
-
-  color: #07385f;
+  color: #b84a2b;
 
   cursor: pointer;
 
@@ -26015,7 +26013,7 @@ button {
 
 
 .expo-arrow-button:hover {
-  color: #fff;
+  color: #b84a2b;
 
   transform:
     translateY(-2px);
@@ -27289,11 +27287,10 @@ button {
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  
 
-  background: #b84a2b;
 
-  color: #fff;
+  color: #b84a2b;
 
   cursor: pointer;
 
@@ -27303,13 +27300,13 @@ button {
 }
 
 .expo-arrow-button:hover {
-  background: #b84a2b;
+ 
   border-color: #b84a2b;
 }
 
 .expo-arrow-button svg {
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 50px;
 }
 
 .expo-recent-content {

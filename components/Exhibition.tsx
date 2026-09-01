@@ -35,7 +35,7 @@ const exhibitionData: ExhibitionYear = {
     {
       title: "MRO XPO India",
       image:
-        "/Alpha-Aircraft-Systems-Exhibition-America-3.webp",
+        "/Alpha-Aircraft-Systems-at-MRO-XPO-at-Indian-Airforce-Stall-1.webp",
       location: "ICC, Dwarka, New Delhi",
       address:
         "India International Convention & Expo Centre, Dwarka, New Delhi, India",
@@ -45,59 +45,58 @@ const exhibitionData: ExhibitionYear = {
     },
 
     {
-      title: "Aero India 2026",
+      title: "World Defense Show",
       image:
-        "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-      location: "Bengaluru, India",
+        "/MRO2.webp",
+      location: "Riyadh International Convention and Exhibition Center",
       address:
-        "Air Force Station Yelahanka, Bengaluru, Karnataka, India",
-      date: "2026",
+        "Riyadh International Convention and Exhibition Center",
+      date: "09-10 February , 2025",
       description:
-        "Connecting with aviation leaders and industry professionals to explore new opportunities, technologies and partnerships.",
+        "Extending a sincere appreciation to the aviation professionals who took the time to connect with us at the World Defense Show, Riyadh. Mr. Shubhesh Thakore from Alpha Aircraft Systems had the opportunity to engage in meaningful conversations with Harab Alharabi, Ron Taylo and Amyr Qureshi.",
     },
 
     {
-      title: "Aircraft Expo 2026",
+      title: "MRO Middle East",
       image:
-        "/Alpha-Aircraft-Systems-Exhibition-America-3.webp",
-      location: "India",
+        "/MRO3.webp",
+      location: "Dubai World Trade Centre, UAE",
       address:
-        "India International Convention & Expo Centre, New Delhi, India",
-      date: "2026",
+        "Dubai World Trade Centre, UAE",
+      date: "2-3 February, 2026",
       description:
-        "Showcasing aircraft component repair, overhaul and maintenance capabilities.",
+        "A valuable exchange of insights and perspectives at MRO Middle East, Dubai. It was a privilege to engage with the global MRO community and be part of conversations shaping the future of aircraft maintenance and support worldwide.",
     },
 
     {
-      title: "Aero India 2026",
+      title: "Wings India",
       image:
         "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-      location: "Bengaluru, India",
+      location: "Begumpet Airport, Hyderabad",
       address:
-        "Air Force Station Yelahanka, Bengaluru, Karnataka, India",
-      date: "2026",
+        "Begumpet Airport, Hyderabad",
+      date: "28-31 January, 2026",
       description:
-        "Connecting with aviation leaders and industry professionals to explore new opportunities, technologies and partnerships.",
+        "Grateful for the conversations, insights, and collaborations at Wings India 2026. Our first aviation event of the year, it was a privilege to engage with the ecosystem shaping the future of Indian aviation and aerospace growth.",
     },
   ],
 
   2025: [
     {
-      title: "MRO India 2025",
-      image:
-        "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-      location: "New Delhi, India",
+      title: "MRO Europe",
+      image: "/Alpha-exhibition-in-london-scaled.jpg",
+      location: "Excel London, London",
       address:
-        "New Delhi, National Capital Territory of Delhi, India",
-      date: "2025",
+        "Excel London, London",
+      date: "15-16 Oct, 2025",
       description:
-        "Meeting aviation professionals and strengthening partnerships across the aircraft maintenance industry.",
+        "Grateful for the connections, ideas, and innovations at AeroEngines Europe. It is always great  to be part of the conversations shaping the future of aviation.",
     },
 
     {
-      title: "Aero India 2025",
+      title: "Aero India",
       image:
-        "/Alpha-Aircraft-Systems-Exhibition-America-3.webp",
+        "/Alpha-Aircraft-Systems-at-Aero-Engines-Hamburg-Germany.jpg",
       location: "Bengaluru, India",
       address:
         "Air Force Station Yelahanka, Bengaluru, Karnataka, India",
@@ -107,127 +106,183 @@ const exhibitionData: ExhibitionYear = {
     },
 
     {
-      title: "Aviation Expo 2025",
+      title: "Paris Air Show",
       image:
-        "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-      location: "India",
+        "/International-Paris-Air-Show-2 (1).webp",
+      location: "Le Bourget, Pairs",
       address:
-        "Bengaluru International Exhibition Centre, Bengaluru, India",
-      date: "2025",
+        "Le Bourget, Pairs",
+      date: "16-22 June, 2025",
       description:
-        "Connecting with aviation businesses and professionals from around the world.",
+        "International Pairs Air Show will be remembered as a milestone. It was in this event that we signed an agreement with RSR Aviation Services to establish an APU facility in India by second quarter of 2026. This will make our presence in Asia-Pacific stronger.",
     },
 
     {
-      title: "Aviation Expo 2025",
+      title: "EBACE 2025",
       image:
-        "/Alpha-Aircraft-Systems-Exhibition-America-3.webp",
-      location: "India",
+        "/EBACE-2025.webp",
+      location: "Palexpo Convention Centre, Geneva, Switzerland",
       address:
-        "India International Convention & Expo Centre, New Delhi, India",
-      date: "2025",
+        "Palexpo Convention Centre, Geneva, Switzerland",
+      date: "20-22 May, 2025",
       description:
-        "Connecting with aviation businesses and professionals from around the world.",
+        "It was our first participation in EBACE and the aviation community gripped us. It was an awesome event. EBACE landed us to new markets and provided us valued connections.",
+    },
+    {
+      title: "PB Expo 2025",
+      image:
+        "/PB-Expo-2025-scaled.webp",
+      location: "Miami Beach Convention Center, Florida",
+      address:
+        "Miami Beach Convention Center, Florida",
+      date: "27-28 Feb, 2025",
+      description:
+        "The first exhibition of 2025 that too in Miami. It was brilliant! We had bouquet of offerings for maintenance and overhauling of APUs and aircraft accessories.",
     },
   ],
 
   2024: [
     {
-      title: "Aviation Expo 2024",
+      title: "Singapore Air Show",
       image:
-        "/Alpha-Aircraft-Systems-Exhibition-America-3.webp",
-      location: "India",
+        "/Singapore-Air-Show-scaled.webp",
+      location: "Changi Exhibition Centre, Singapore",
       address:
-        "New Delhi, National Capital Territory of Delhi, India",
-      date: "2024",
+        "Changi Exhibition Centre, Singapore",
+      date: "20-25 Feb, 2024",
       description:
-        "A platform for connecting with aviation and MRO professionals.",
+        "Singapore Airshow was our first grand exhibition of the year. We had an exclusive coverage of the show and witnessed the grandeur and innovations of the aviation industry.",
     },
 
     {
-      title: "MRO Exhibition 2024",
+      title: "HAI Heli Expo",
       image:
-        "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-      location: "New Delhi, India",
+        "/HAI-Heli-Expo.webp",
+      location: "Anaheim Convention Center, Anaheim, California",
       address:
-        "New Delhi, National Capital Territory of Delhi, India",
-      date: "2024",
+        "Anaheim Convention Center, Anaheim, California",
+      date: "27-29 Feb, 2024",
       description:
-        "Discovering new technologies and opportunities within aircraft maintenance.",
+        "It was for the first time that we participated in a helicopter expo. HAI Heli Expo set the stage for our entry into Helicopter APU MRO services.",
     },
 
     {
-      title: "Aero Exhibition 2024",
+      title: "MRO Middle East",
       image:
-        "/Alpha-Aircraft-Systems-Exhibition-America-3.webp",
-      location: "India",
+        "/MRO-Middle-East.webp",
+      location: "Dubai World Trade Center",
       address:
-        "Bengaluru, Karnataka, India",
-      date: "2024",
+        "Dubai World Trade Center",
+      date: "5-6 March, 2024",
       description:
-        "Building new relationships across the aerospace industry.",
+        "MRO Middle East provided us a platform to drive collaboration and new commercial opportunities, discover the latest trends and explore innovative solutions.",
     },
 
     {
-      title: "Aero Exhibition 2024",
+      title: "PB Expo 2024",
       image:
-        "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-      location: "India",
+        "/PB-Expo.webp",
+      location: "Miami Beach Convention Center, Florida",
       address:
-        "Bengaluru, Karnataka, India",
-      date: "2024",
+        "Miami Beach Convention Center, Florida",
+      date: "7-8 March, 2024",
       description:
-        "Building new relationships across the aerospace industry.",
+        "At the PB Expo, our focus was on making the right connections and meet some of aviation’s finest personnels. The attendees loved our exhibition.",
+    },
+    {
+      title: "MRO Asia-Pacific",
+      image:
+        "/Alpha-Aircraft-Systems-at-MRO-Asia-Pacific-Singapore-scaled.webp",
+      location: "Singapore Expo, Singapore",
+      address:
+        "Singapore Expo, Singapore",
+      date: "25-26 Sep, 2024",
+      description:
+        "After Singapore Airshow in February, we headed back to Singapore in the month of September to showcase our APU maintenance capabilities.  We signed MoU with Aviaris Pte. Ltd. which was a strategic agreement to increase bandwidth of each other’s business and deepen our roots in Asia-Pacific.",
+    },
+    {
+      title: "MRO Europe",
+      image:
+        "/IMG_5297-scaled.jpg",
+      location: "Fira, Barcelona, Spain",
+      address:
+        "Fira, Barcelona, Spain",
+      date: "22-24 Oct, 2024",
+      description:
+        "We attended MRO Europe to expand our business in Europe and shared our expertise as leading APU expert and learnt about their technologies.",
+    },
+    {
+      title: "C-130 TCG",
+      image:
+        "/C-130-TCG-Exhibition.webp",
+      location: "Caribe Royale Hotel and Convention Center, Orlando, Florida",
+      address:
+        "Caribe Royale Hotel and Convention Center, Orlando, Florida",
+      date: "28 Oct-01 Nov, 2024",
+      description:
+        "Grateful to have attended the 34th World Wide Review organised by the Technical Coordination Group (TCG) that gave us in-depth information about improved technologies in C-130 aircraft and helped us to brush our expertise in APU overhauling and maintenance of C-130 aircraft.",
     },
   ],
 
   2023: [
     {
-      title: "Aviation Expo 2023",
+      title: "TCG Exhibition",
       image:
-        "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-      location: "India",
+        "/Alpha-Aircraft-TCG-Exhibition-3.webp",
+      location: "Orlando, Florida",
       address:
-        "New Delhi, National Capital Territory of Delhi, India",
-      date: "2023",
+        "Orlando, Florida",
+      date: "24 October, 2023",
       description:
-        "Connecting aviation professionals and exploring new opportunities.",
+        "We are experts in overhauling C-130 aircraft APU and therefore we always look forward to participating in TCG (Technical Coordination Group).",
+    },
+
+    
+
+    {
+      title: "MRO Europe",
+      image:
+        "/mro-europe-2023-2.webp",
+      location: "RAI, Amsterdam, Netherlands",
+      address:
+        "RAI, Amsterdam, Netherlands",
+      date: "18-19 Oct, 2023",
+      description:
+        "As the leading experts in APU Overhaul, Maintenance and Repair, we showcased our top-notch technologies at MRO Europe in Amsterdam.",
     },
 
     {
-      title: "MRO Expo 2023",
+      title: "MRO Americas",
       image:
         "/Alpha-Aircraft-Systems-Exhibition-America-3.webp",
-      location: "India",
+      location: "Georgia World Congress, Atlanta, Georgia, USA",
       address:
-        "New Delhi, National Capital Territory of Delhi, India",
-      date: "2023",
+        "Georgia World Congress, Atlanta, Georgia, USA",
+      date: "18-20 April, 2023",
       description:
-        "Engaging with the MRO industry and its global community.",
+        "We proudly participated in MRO Americas in Atlanta, showcasing quality APU Components and best Military Maintenance Facility of Alpha Aircraft Systems.",
     },
-
     {
-      title: "Aero India 2023",
+      title: "ALTA CCMA & MRO Conference",
       image:
-        "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-      location: "Bengaluru, India",
+        "/Alpha-Aircraft-Systems-Exhibition-Alta.webp",
+      location: "Hilton, Cancun, Mexico",
       address:
-        "Air Force Station Yelahanka, Bengaluru, Karnataka, India",
-      date: "2023",
+        "Hilton, Cancun, Mexico",
+      date: "21-23 May, 2023",
       description:
-        "Connecting with aerospace leaders and industry experts.",
+        "Demonstrating at the ALTA CCMA & MRO Conference was important for us as it is the premier and longest-standing conference in Latin America and the Caribbean for aviation Maintenance and Technical Purchasing.",
     },
-
     {
-      title: "MRO Expo 2023",
+      title: "MRO Middle East",
       image:
-        "/Alpha-Aircraft-Systems-Exhibition-America-3.webp",
-      location: "India",
+        "/Alpha-Aircarft-Systems-Exhibition-Middle-East-2.webp",
+      location: "Dubai World Trade Centre, UAE",
       address:
-        "New Delhi, National Capital Territory of Delhi, India",
-      date: "2023",
+        "Dubai World Trade Centre, UAE",
+      date: "1-2 March, 2023",
       description:
-        "Engaging with the MRO industry and its global community.",
+        "Glimpses of the MRO show at Dubai World Trade Centre: An initiative from our side to give an opportunity to those who want to fly high and achieve their goals.",
     },
   ],
 };
