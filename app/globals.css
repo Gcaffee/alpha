@@ -29532,7 +29532,7 @@ button {
 
   color: #b84a2b;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 8px;
 }
@@ -29998,9 +29998,9 @@ button {
   font-size: 18px;
   line-height: 1.2;
 
-  font-weight: 800;
+  font-weight: 600;
 
-  color: #e63b0b;
+  color: #b84a2b;
 
   text-transform: uppercase;
 }
@@ -30219,7 +30219,7 @@ button {
   width: 35px;
   height: 5px;
 
-  background: #092f57;
+  background: #b84a2b;
 
   border-radius: 5px;
 
@@ -30239,10 +30239,10 @@ button {
   height: 18px;
 
   border-top:
-    5px solid #092f57;
+    5px solid #b84a2b;
 
   border-left:
-    5px solid #092f57;
+    5px solid #b84a2b;
 
   transform:
     translateY(-50%)

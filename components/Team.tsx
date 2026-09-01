@@ -22,38 +22,38 @@ const team = [
     image: "/male-profile-pic.webp",
   },
   {
-    name: "Michael Smith",
-    role: "Director",
+    name: "Cesar Leppe",
+    role: "Accessories Shop Supervisor",
     description:
-      "Leads company operations and develops long-term strategic business initiatives.",
+      "Oversees and motivates employees toward achieving departmental goals for safety, quality, training, on-time work orders",
     image: "/male-profile-pic.webp",
   },
   {
-    name: "Sarah Johnson",
-    role: "Operations Manager",
+    name: "Ulises Guerrero",
+    role: "Customer Support",
     description:
-      "Builds strong teams and manages operational performance across the organization.",
+      "Manages incoming calls and customer service inquiries, generating leads that develop into new customers",
     image: "/male-profile-pic.webp",
   },
   {
-    name: "David Wilson",
-    role: "Technical Director",
+    name: "Dario Abascal",
+    role: "Quality Control",
     description:
-      "Provides technical leadership and ensures quality across every project.",
+      "Reads blueprints, specifications and monitors operations to ensure that they meet production standards",
     image: "/male-profile-pic.webp",
   },
   {
-    name: "James Anderson",
-    role: "Finance Director",
+    name: "Israel Leppe",
+    role: "General Manager",
     description:
-      "Manages financial planning, reporting and business growth strategies.",
+      "Oversees budgets, staff, executives and evaluates the success of the company",
     image: "/male-profile-pic.webp",
   },
   {
-    name: "Emily Davis",
-    role: "HR Manager",
+    name: "Alberto Rodriguez",
+    role: "Quality Assurance",
     description:
-      "Develops people, culture and organizational strategies to support the team.",
+      "Monitors, inspects, and implements measures to meet established quality standards",
     image: "/male-profile-pic.webp",
   },
 ];
