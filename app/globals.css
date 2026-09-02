@@ -8955,8 +8955,8 @@ display: none !important;
 }
 
 .footer-socials a:hover {
-  background: var(--orange);
-  border-color: var(--orange);
+  background: #b84a2b;
+  border-color: #b84a2b;
   color: #fff;
   transform: translateY(-2px);
 }
