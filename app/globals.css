@@ -14242,11 +14242,7 @@ padding-right:10px;
     right: 0;
   }
 
-  .alpha-apu-expertise,
-  .alpha-apu-process,
-  .alpha-apu-capabilities {
-    padding: 110px 0;
-  }
+ 
 
   .alpha-apu-expertise-copy h2 {
     font-size: 48px;
@@ -14254,9 +14250,7 @@ padding-right:10px;
     letter-spacing: -3px;
   }
 
-  .alpha-apu-expertise-visual {
-    height: 420px;
-  }
+  
 
   .alpha-apu-visual-circle {
     width: 270px;
