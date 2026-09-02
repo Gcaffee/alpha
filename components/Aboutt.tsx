@@ -8,7 +8,6 @@ const images = [
   "/Cam.jpg",
   "/Cam1.jpg",
   "/1.jpg",
-  
   "/3.jpg",
   "/5.jpg",
   "/6.jpg",
