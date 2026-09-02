@@ -37,28 +37,49 @@ const performanceCards = [
 ========================================================= */
 
 const sliderImages = [
-  {
-    src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
+   {
+    src: "/A1.webp",
     alt: "Aircraft Hydraulic System",
   },
   {
-    src: "/Alpha-Aircraft-Systems_APU.webp",
+    src: "/A2.webp",
     alt: "Aircraft APU System",
   },
   {
-    src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
+    src: "/A3.webp",
     alt: "Aircraft Hydraulic Equipment",
   },
   {
-    src: "/Alpha-Aircraft-Systems_APU.webp",
+    src: "/A4.webp",
     alt: "Aircraft Maintenance",
   },
   {
-    src: "/Alpha_Aircraft_Systems-Fuel-Systems.webp",
+    src: "/21.webp",
     alt: "Hydraulic Maintenance",
   },
   {
-    src: "/Alpha-Aircraft-Systems_APU.webp",
+    src: "/22.webp",
+    alt: "Aerospace Technology",
+  },
+  
+  {
+    src: "/24.webp",
+    alt: "Aerospace Technology",
+  },
+  {
+    src: "/15.webp",
+    alt: "Aerospace Technology",
+  },
+  {
+    src: "/16.webp",
+    alt: "Aerospace Technology",
+  },
+  {
+    src: "/17.webp",
+    alt: "Aerospace Technology",
+  },
+  {
+    src: "/18.webp",
     alt: "Aerospace Technology",
   },
 ];
@@ -137,7 +158,7 @@ export default function HomePage() {
 
             <div className="heroButtons">
 <a
-              href="#contact"
+              href="https://alpha-hazel-five.vercel.app/contact"
               className="aboutButton"
             >
               CONTACT US
@@ -215,7 +236,7 @@ export default function HomePage() {
         <div className="powerImage">
 
           <Image
-            src="/Alpha-Aircraft-Systems_APU.webp"
+            src="/15.webp"
             alt="Aircraft Fuel System Equipment"
             fill
             className="coverImage"
@@ -325,7 +346,7 @@ export default function HomePage() {
           <div className="workCounter">
 
             <Image
-              src="/Alpha-Aircraft-Plasma_Spray.webp"
+              src="/warehouse-3.jpg"
               alt="Aircraft Fuel System Maintenance"
               width={750}
               height={550}
