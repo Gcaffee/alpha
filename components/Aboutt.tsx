@@ -4,12 +4,17 @@ import { useState } from "react";
 import Image from "next/image";
 
 const images = [
-  "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-  "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-  "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-  "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-  "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-  "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
+  "/A1.webp",
+  "/A2.webp",
+  "/A3.webp",
+  "/A4.webp",
+  "/A5.webp",
+  "/A6.webp",
+  "/A7.webp",
+"/A8.webp",
+  "/A9.webp",
+  "/A10.webp",
+
 ];
 
 export default function FacilitySection() {
