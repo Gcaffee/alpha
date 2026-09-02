@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 const images = [
+  "/4.jpg",
   "/A1.webp",
   "/A2.webp",
   "/A3.webp",
@@ -14,7 +15,19 @@ const images = [
 "/A8.webp",
   "/A9.webp",
   "/A10.webp",
-
+ "/11.webp",
+  "/12.webp",
+  "/13.webp",
+  "/14.webp",
+  "/15.webp",
+  "/16.webp",
+  "/17.webp",
+"/18.webp",
+  "/19.webp",
+  "/20.webp",
+"/21.webp",
+  "/22.webp",
+  
 ];
 
 export default function FacilitySection() {
