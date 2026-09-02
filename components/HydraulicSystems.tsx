@@ -236,7 +236,7 @@ export default function HomePage() {
         <div className="powerImage">
 
           <Image
-            src="/c23.jpg"
+            src="/A10.webp"
             alt="Aircraft Hydraulic Pipes"
             fill
             className="coverImage"
