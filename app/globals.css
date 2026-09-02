@@ -7496,6 +7496,7 @@ section.what-if-sectionss {
 
   border:
     1px solid #b84a2b;
+     width: max-content;
 }
 
 .hero-button-primary:hover {
@@ -7507,6 +7508,7 @@ section.what-if-sectionss {
 
   transform:
     translateY(-3px);
+    width: max-content;
 }
 
 
