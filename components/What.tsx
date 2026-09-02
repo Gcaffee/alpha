@@ -409,9 +409,9 @@ export default function WhatIfSection() {
 
           <div className="what-if-heading">
 
-            <h2>
+            <h2>MORE THAN<br />
               <span className="milestone-heading-line">
-                {"SERVICES".split("").map(
+                {"AN APU SPECIALIST".split("").map(
                   (char, index) => (
                     <span
                       key={`service-char-${index}`}
