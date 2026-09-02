@@ -32727,3 +32727,644 @@ padding-left:10px;
   }
 }
 
+/* =========================================================
+   CSS
+========================================================= */
+
+/*
+  Put the following CSS in your global.css / page.css.
+*/
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  width: 100%;
+  overflow: hidden;
+}
+
+.heroContent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.heroText {
+  width: 48%;
+  position: relative;
+  z-index: 2;
+}
+
+.heroText h1 {
+  margin: 0;
+  font-size: clamp(50px, 6vw, 100px);
+  line-height: 0.95;
+  font-weight: 700;
+}
+
+.heroText h1 span {
+  display: inline-block;
+}
+
+.heroText p {
+  max-width: 600px;
+  margin: 30px 0;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.heroButtons {
+  display: flex;
+  align-items: center;
+}
+
+.aboutButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+  padding: 14px 24px;
+  border: 1px solid currentColor;
+  transition: all 0.3s ease;
+}
+
+.aboutButton:hover {
+  gap: 18px;
+}
+
+.heroImageArea {
+  width: 52%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hydraulicImage {
+  width: 100%;
+  max-width: 750px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   POWER UNDER PRESSURE
+========================================================= */
+
+.powerSection {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
+
+.powerText {
+  padding: 80px;
+}
+
+.powerText h2 {
+  margin: 0 0 30px;
+  font-size: clamp(38px, 4vw, 65px);
+  line-height: 0.95;
+}
+
+.powerText p {
+  margin: 0 0 22px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.powerImage {
+  position: relative;
+  min-height: 550px;
+  overflow: hidden;
+}
+
+.coverImage {
+  object-fit: cover;
+}
+
+.powerImageOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   PERFORMANCE
+========================================================= */
+
+.performance {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.performanceBackgroundDots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+.sectionHeading {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 50px;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  font-size: clamp(40px, 5vw, 75px);
+  line-height: 0.95;
+}
+
+.sectionHeading p {
+  max-width: 600px;
+  margin-top: 25px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.performanceGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.performanceCard {
+  position: relative;
+  min-height: 330px;
+  padding: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.performanceCard:hover {
+  transform: translateY(-6px);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardIcon {
+  font-size: 28px;
+}
+
+.cardNumber {
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+.performanceCard h3 {
+  margin-top: auto;
+  margin-bottom: 15px;
+  font-size: 21px;
+}
+
+.performanceCard p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cardArrow {
+  margin-top: 25px;
+  display: flex;
+}
+
+
+/* =========================================================
+   WHERE THE WORK HAPPENS
+========================================================= */
+
+.workSection {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.workLeft h2 {
+  margin: 0 0 25px;
+  font-size: clamp(40px, 4vw, 65px);
+  line-height: 0.95;
+}
+
+.workLeft > p {
+  max-width: 550px;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.workCounter {
+  width: 100%;
+  overflow: hidden;
+}
+
+.workCounter img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* =========================================================
+   TWO CARD SLIDER
+========================================================= */
+
+.workRight {
+  min-width: 0;
+}
+
+.twoCardSlider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.twoCardTrack {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.twoCardSlide {
+  flex: 0 0 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.imageCard {
+  position: relative;
+  min-height: 450px;
+  overflow: hidden;
+}
+
+.sliderCardImage {
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.imageCard:hover .sliderCardImage {
+  transform: scale(1.04);
+}
+
+.imageCardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.03) 5%,
+    rgba(0, 0, 0, 0.12) 35%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+.imageCardContent {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.aboutBottom {
+  margin-top: 25px;
+}
+
+.aboutBottom p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.sliderBottomControls {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.twoCardControls {
+  display: flex;
+  gap: 10px;
+}
+
+.sliderArrowBtn {
+  width: 48px;
+  height: 48px;
+  border: 1px solid currentColor;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sliderArrowBtn:hover {
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  .heroContent {
+    gap: 30px;
+  }
+
+  .heroText h1 {
+    font-size: 60px;
+  }
+
+  .powerText {
+    padding: 50px;
+  }
+
+  .performanceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .workSection {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* =======================================================
+     HERO
+     IMAGE FIRST
+     TEXT SECOND
+  ======================================================= */
+
+  .heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  /* IMAGE COMES FIRST */
+  .heroImageArea {
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  /* TEXT COMES SECOND */
+  .heroText {
+    order: 2;
+    width: 100%;
+    padding: 0 20px 50px;
+  }
+
+  .hydraulicImage {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .heroText h1 {
+    font-size: clamp(44px, 13vw, 65px);
+    line-height: 0.9;
+  }
+
+  .heroText p {
+    margin: 22px 0;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+
+  /* =======================================================
+     POWER UNDER PRESSURE
+     IMAGE FIRST
+     TEXT SECOND
+  ======================================================= */
+
+  .powerSection {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* IMAGE FIRST */
+  .powerImage {
+    order: 1;
+    width: 100%;
+    min-height: 380px;
+  }
+
+  /* TEXT SECOND */
+  .powerText {
+    order: 2;
+    width: 100%;
+    padding: 45px 20px;
+  }
+
+  .powerText h2 {
+    font-size: clamp(38px, 11vw, 55px);
+    line-height: 0.95;
+    margin-bottom: 25px;
+  }
+
+  .powerText p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+
+
+  /* =======================================================
+     PERFORMANCE
+  ======================================================= */
+
+  .performance {
+    padding: 60px 20px;
+  }
+
+  .sectionHeading {
+    margin-bottom: 35px;
+  }
+
+  .sectionHeading h2 {
+    font-size: clamp(38px, 11vw, 55px);
+  }
+
+  .sectionHeading p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .performanceGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .performanceCard {
+    min-height: 280px;
+    padding: 25px;
+  }
+
+
+  /* =======================================================
+     WHERE THE WORK HAPPENS
+  ======================================================= */
+
+  .workSection {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 50px 20px;
+  }
+
+  .workLeft {
+    width: 100%;
+  }
+
+  .workLeft h2 {
+    font-size: clamp(38px, 11vw, 55px);
+  }
+
+  .workLeft > p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .workRight {
+    width: 100%;
+  }
+
+
+  /* =======================================================
+     MOBILE SLIDER
+     ONE IMAGE PER SLIDE
+  ======================================================= */
+
+  .twoCardSlide {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .imageCard {
+    min-height: 400px;
+  }
+
+  /* Hide second image on mobile.
+     The slider still moves through two-card groups. */
+  .twoCardSlide .imageCard:nth-child(2) {
+    display: none;
+  }
+
+  .sliderBottomControls {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .aboutBottom {
+    margin-top: 20px;
+  }
+
+  .aboutBottom p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .sliderArrowBtn {
+    width: 44px;
+    height: 44px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .heroText {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .heroText h1 {
+    font-size: 43px;
+  }
+
+  .heroText p {
+    font-size: 14px;
+  }
+
+  .powerText {
+    padding: 40px 16px;
+  }
+
+  .powerImage {
+    min-height: 300px;
+  }
+
+  .performance {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .performanceCard {
+    min-height: 250px;
+    padding: 22px;
+  }
+
+  .workSection {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .imageCard {
+    min-height: 330px;
+  }
+
+  .sliderBottomControls {
+    gap: 10px;
+  }
+
+  .aboutButton {
+    padding: 12px 18px;
+    font-size: 13px;
+    width: auto;
+  }
+
+  .sliderArrowBtn {
+    width: 42px;
+    height: 42px;
+  }
+
+}

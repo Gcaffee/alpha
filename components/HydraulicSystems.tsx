@@ -37,7 +37,7 @@ const performanceCards = [
 ========================================================= */
 
 const sliderImages = [
-   {
+  {
     src: "/A1.webp",
     alt: "Aircraft Hydraulic System",
   },
@@ -61,7 +61,6 @@ const sliderImages = [
     src: "/22.webp",
     alt: "Aerospace Technology",
   },
-  
   {
     src: "/24.webp",
     alt: "Aerospace Technology",
@@ -102,7 +101,7 @@ export default function HomePage() {
   );
 
   /* =======================================================
-     NEXT
+     NEXT SLIDE
   ======================================================= */
 
   const nextSlide = () => {
@@ -116,7 +115,7 @@ export default function HomePage() {
   };
 
   /* =======================================================
-     PREVIOUS
+     PREVIOUS SLIDE
   ======================================================= */
 
   const prevSlide = () => {
@@ -140,7 +139,9 @@ export default function HomePage() {
 
         <div className="heroContent">
 
-          {/* HERO TEXT */}
+          {/* =================================================
+              HERO TEXT
+          ================================================= */}
 
           <div className="heroText">
 
@@ -157,25 +158,25 @@ export default function HomePage() {
 
             <div className="heroButtons">
 
-            <a
-              href="https://alpha-hazel-five.vercel.app/contact"
-              className="aboutButton"
-            >
-              CONTACT US
+              <a
+                href="https://alpha-hazel-five.vercel.app/contact"
+                className="aboutButton"
+              >
+                CONTACT US
 
-              <ArrowRight
-                size={18}
-                strokeWidth={1.8}
-              />
-
-            </a>
+                <ArrowRight
+                  size={18}
+                  strokeWidth={1.8}
+                />
+              </a>
 
             </div>
 
           </div>
 
-
-          {/* HERO IMAGE */}
+          {/* =================================================
+              HERO IMAGE
+          ================================================= */}
 
           <div className="heroImageArea">
 
@@ -201,7 +202,9 @@ export default function HomePage() {
 
       <section className="powerSection">
 
-        {/* LEFT */}
+        {/* =================================================
+            LEFT CONTENT
+        ================================================= */}
 
         <div className="powerText">
 
@@ -230,8 +233,9 @@ export default function HomePage() {
 
         </div>
 
-
-        {/* RIGHT IMAGE */}
+        {/* =================================================
+            RIGHT IMAGE
+        ================================================= */}
 
         <div className="powerImage">
 
@@ -305,13 +309,13 @@ export default function HomePage() {
                 {card.text}
               </p>
 
-              {/* CARD ARROW */}
-
               <span className="cardArrow">
+
                 <ArrowRight
                   size={20}
                   strokeWidth={1.8}
                 />
+
               </span>
 
             </div>
@@ -329,9 +333,9 @@ export default function HomePage() {
 
       <section className="workSection">
 
-        {/* ===================================================
+        {/* =================================================
             LEFT CONTENT
-        =================================================== */}
+        ================================================= */}
 
         <div className="workLeft">
 
@@ -360,13 +364,15 @@ export default function HomePage() {
         </div>
 
 
-        {/* ===================================================
+        {/* =================================================
             RIGHT SLIDER
-        =================================================== */}
+        ================================================= */}
 
         <div className="workRight">
 
-          {/* IMAGE SLIDER */}
+          {/* =================================================
+              IMAGE SLIDER
+          ================================================= */}
 
           <div className="twoCardSlider">
 
@@ -458,7 +464,7 @@ export default function HomePage() {
 
 
           {/* =================================================
-              SLIDER BOTTOM
+              SLIDER BOTTOM TEXT
           ================================================= */}
 
           <div className="aboutBottom">
@@ -471,7 +477,7 @@ export default function HomePage() {
 
 
           {/* =================================================
-              SLIDER BOTTOM CONTROLS
+              SLIDER CONTROLS
           ================================================= */}
 
           <div className="sliderBottomControls">
@@ -496,8 +502,6 @@ export default function HomePage() {
 
             <div className="twoCardControls">
 
-              {/* PREVIOUS */}
-
               <button
                 type="button"
                 onClick={prevSlide}
@@ -512,8 +516,6 @@ export default function HomePage() {
 
               </button>
 
-
-              {/* NEXT */}
 
               <button
                 type="button"
