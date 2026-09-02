@@ -139,18 +139,17 @@ export default function HomePage() {
             <div className="heroButtons">
 
               <a
-                href="#contact"
-                className="primaryBtn"
-              >
-                CONTACT US
-              </a>
+              href="https://alpha-hazel-five.vercel.app/contact"
+              className="aboutButton"
+            >
+              CONTACT US
 
-              <a
-                href="#solutions"
-                className="secondaryBtn"
-              >
-                EXPLORE OTHER SERVICES
-              </a>
+              <ArrowRight
+                size={18}
+                strokeWidth={1.8}
+              />
+
+            </a>
 
             </div>
 

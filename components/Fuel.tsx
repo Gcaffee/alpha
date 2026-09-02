@@ -136,21 +136,19 @@ export default function HomePage() {
             </p>
 
             <div className="heroButtons">
+<a
+              href="#contact"
+              className="aboutButton"
+            >
+              CONTACT US
 
-              <a
-                href="#contact"
-                className="primaryBtn"
-              >
-                CONTACT US
-                
-              </a>
+              <ArrowRight
+                size={18}
+                strokeWidth={1.8}
+              />
 
-              <a
-                href="#solutions"
-                className="secondaryBtn"
-              >
-                EXPLORE OTHER SERVICES
-              </a>
+            </a>
+              
 
             </div>
 
