@@ -24604,12 +24604,7 @@ body {
 
   inset: 0;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(5, 28, 48, 0.5),
-      transparent
-    );
+  
 }
 
 .powerImageText {
@@ -25025,13 +25020,7 @@ body {
 
   inset: 0;
 
-  background:
-    linear-gradient(
-      to top,
-      rgba(3, 23, 41, 0.94) 0%,
-      rgba(3, 23, 41, 0.35) 55%,
-      rgba(3, 23, 41, 0.05) 100%
-    );
+  
 }
 
 
@@ -32737,3 +32726,4 @@ padding-left:10px;
     grid-row: 5;
   }
 }
+
