@@ -4,32 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 
 const images = [
-  "/4.jpg",
-  "/Cam.jpg",
-  "/Cam1.jpg",
-  "/c1.jpg",
-  "/c2.jpg",
-  "/c3.jpg",
-  "/c5.jpg",
-  "/c6.jpg",
-  "/c7.jpg",
-  "/c8.jpg",
-  "/c9.jpg",
-  "/c10.jpg",
-  "/c11.jpg",
-  "/c12.jpg",
-  "/c13.jpg",
-   "/c14.jpg",
-  "/c15.jpg",
-  "/c16.jpg",
-  "/c17.jpg",
-  "/c18.jpg",
-  "/c19.jpg",
-  "/c20.jpg",
-  "/c21.jpg",
-  "/c22.jpg",
-  "/c23.jpg",
-  "/c24.jpg",
+  "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
+  "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
+  "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
+  "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
+  "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
+  "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
 ];
 
 export default function FacilitySection() {
