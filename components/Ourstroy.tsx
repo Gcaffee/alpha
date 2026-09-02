@@ -46,7 +46,7 @@ export default function OurStory() {
         <div className="our-story__image-wrapper">
 
           <Image
-            src="/our.png"
+            src="/warehouse-3.jpg"
             alt="Aircraft flying over runway"
             fill
             priority

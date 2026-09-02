@@ -1038,22 +1038,14 @@ export default function APUOverhaulPage() {
 
         <div className="alpha-apu-modules-cta">
 
-          <a
-            href="/documents/apu-capabilities.pdf"
-            download
-            className="alpha-apu-modules-cta-button"
-          >
-
-            <span>
-              EXPLORE OUR CAPABILITIES
-            </span>
-
-            <span className="alpha-apu-modules-cta-arrow">
-              ↗
-            </span>
-
-          </a>
-
+          
+<a style={{ color: "#fff"}}
+                href="#capabilities"
+                className="alpha-apu-button alpha-apu-button-primary"
+              >
+                EXPLORE OUR CAPABILITIES
+                <b>↗</b>
+              </a>
         </div>
 
       </div>
