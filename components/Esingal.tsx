@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -10,8 +11,6 @@ import {
 } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,7 +49,6 @@ const exhibition = {
 ========================================================= */
 
 export default function ExhibitionPage() {
-
   const alphaExhibitionPageRef =
     useRef<HTMLDivElement>(null);
 
@@ -60,30 +58,23 @@ export default function ExhibitionPage() {
   ======================================================= */
 
   useEffect(() => {
-
-    const page =
-      alphaExhibitionPageRef.current;
+    const page = alphaExhibitionPageRef.current;
 
     if (!page) return;
 
-
     const ctx = gsap.context(() => {
-
 
       /* ===================================================
          HERO
       =================================================== */
 
-      const heroTimeline =
-        gsap.timeline({
-          defaults: {
-            ease: "power3.out",
-          },
-        });
-
+      const heroTimeline = gsap.timeline({
+        defaults: {
+          ease: "power3.out",
+        },
+      });
 
       heroTimeline
-
         .from(
           ".alpha-exhibition-hero-title",
           {
@@ -122,20 +113,14 @@ export default function ExhibitionPage() {
         ".alpha-exhibition-about-content",
         {
           scrollTrigger: {
-            trigger:
-              ".alpha-exhibition-about",
-
+            trigger: ".alpha-exhibition-about",
             start: "top 75%",
-
             once: true,
           },
 
           x: -80,
-
           opacity: 0,
-
           duration: 1,
-
           ease: "power3.out",
         }
       );
@@ -149,20 +134,14 @@ export default function ExhibitionPage() {
         ".alpha-exhibition-about-image",
         {
           scrollTrigger: {
-            trigger:
-              ".alpha-exhibition-about",
-
+            trigger: ".alpha-exhibition-about",
             start: "top 75%",
-
             once: true,
           },
 
           x: 80,
-
           opacity: 0,
-
           duration: 1,
-
           ease: "power3.out",
         }
       );
@@ -176,20 +155,14 @@ export default function ExhibitionPage() {
         ".alpha-exhibition-highlights-heading",
         {
           scrollTrigger: {
-            trigger:
-              ".alpha-exhibition-highlights",
-
+            trigger: ".alpha-exhibition-highlights",
             start: "top 75%",
-
             once: true,
           },
 
           y: 60,
-
           opacity: 0,
-
           duration: 0.9,
-
           ease: "power3.out",
         }
       );
@@ -203,22 +176,15 @@ export default function ExhibitionPage() {
         ".alpha-exhibition-gallery-item",
         {
           scrollTrigger: {
-            trigger:
-              ".alpha-exhibition-gallery",
-
+            trigger: ".alpha-exhibition-gallery",
             start: "top 80%",
-
             once: true,
           },
 
           y: 70,
-
           opacity: 0,
-
           duration: 0.8,
-
           stagger: 0.12,
-
           ease: "power3.out",
         }
       );
@@ -232,24 +198,17 @@ export default function ExhibitionPage() {
         ".alpha-exhibition-cta-content",
         {
           scrollTrigger: {
-            trigger:
-              ".alpha-exhibition-cta",
-
+            trigger: ".alpha-exhibition-cta",
             start: "top 80%",
-
             once: true,
           },
 
           y: 70,
-
           opacity: 0,
-
           duration: 1,
-
           ease: "power3.out",
         }
       );
-
 
     }, page);
 
@@ -266,29 +225,20 @@ export default function ExhibitionPage() {
   ========================================================= */
 
   return (
-
     <main
       ref={alphaExhibitionPageRef}
       className="alpha-exhibition-page"
     >
 
-
       {/* =====================================================
           HERO SECTION
       ===================================================== */}
 
-      <section
-        className="alpha-exhibition-hero"
-      >
-
+      <section className="alpha-exhibition-hero">
 
         {/* HERO BACKGROUND */}
 
-        <div
-          className="
-            alpha-exhibition-hero-background
-          "
-        >
+        <div className="alpha-exhibition-hero-background">
 
           <Image
             src={exhibition.heroImage}
@@ -303,76 +253,40 @@ export default function ExhibitionPage() {
 
         {/* HERO OVERLAY */}
 
-        <div
-          className="
-            alpha-exhibition-hero-overlay
-          "
-        />
+        <div className="alpha-exhibition-hero-overlay" />
 
 
         {/* HERO CONTENT */}
 
-        <div
-          className="
-            alpha-exhibition-container
-            alpha-exhibition-hero-inner
-          "
-        >
-
+        <div className="alpha-exhibition-container alpha-exhibition-hero-inner">
 
           {/* HERO TITLE */}
 
-          <div
-            className="
-              alpha-exhibition-hero-heading
-            "
-          >
+          <div className="alpha-exhibition-hero-heading">
 
-            
-
-            <h1
-              className="
-                alpha-exhibition-hero-title
-              "
-            >
+            <h1 className="alpha-exhibition-hero-title">
               EXHIBITIONS
             </h1>
+
+            <span className="alpha-exhibition-hero-line" />
 
           </div>
 
 
-          {/* =================================================
-              INFO CARD
-          ================================================= */}
+          {/* INFO CARD */}
 
-          <div
-            className="
-              alpha-exhibition-info-card
-            "
-          >
+          <div className="alpha-exhibition-info-card">
 
-            <h2
-              className="
-                alpha-exhibition-info-title
-              "
-            >
+            <h2 className="alpha-exhibition-info-title">
               {exhibition.name}
             </h2>
 
 
             {/* DATE */}
 
-            <div
-              className="
-                alpha-exhibition-info-row
-              "
-            >
+            <div className="alpha-exhibition-info-row">
 
-              <div
-                className="
-                  alpha-exhibition-info-icon
-                "
-              >
+              <div className="alpha-exhibition-info-icon">
 
                 <CalendarDays
                   size={25}
@@ -380,7 +294,6 @@ export default function ExhibitionPage() {
                 />
 
               </div>
-
 
               <span>
                 {exhibition.date}
@@ -391,17 +304,9 @@ export default function ExhibitionPage() {
 
             {/* LOCATION */}
 
-            <div
-              className="
-                alpha-exhibition-info-row
-              "
-            >
+            <div className="alpha-exhibition-info-row">
 
-              <div
-                className="
-                  alpha-exhibition-info-icon
-                "
-              >
+              <div className="alpha-exhibition-info-icon">
 
                 <MapPin
                   size={25}
@@ -409,7 +314,6 @@ export default function ExhibitionPage() {
                 />
 
               </div>
-
 
               <span>
                 {exhibition.location}
@@ -428,35 +332,15 @@ export default function ExhibitionPage() {
           ABOUT EXHIBITION
       ===================================================== */}
 
-      <section
-        className="
-          alpha-exhibition-about
-        "
-      >
+      <section className="alpha-exhibition-about">
 
-        <div
-          className="
-            alpha-exhibition-container
-            alpha-exhibition-about-grid
-          "
-        >
-
+        <div className="alpha-exhibition-container alpha-exhibition-about-grid">
 
           {/* LEFT CONTENT */}
 
-          <div
-            className="
-              alpha-exhibition-about-content
-            "
-          >
+          <div className="alpha-exhibition-about-content">
 
-            {/* SECTION LABEL */}
-
-            <div
-              className="
-                alpha-exhibition-section-label
-              "
-            >
+            <div className="alpha-exhibition-section-label">
 
               <span />
 
@@ -467,13 +351,7 @@ export default function ExhibitionPage() {
             </div>
 
 
-            {/* TITLE */}
-
-            <h2
-              className="
-                alpha-exhibition-about-title
-              "
-            >
+            <h2 className="alpha-exhibition-about-title">
 
               CONNECTING AVIATION
 
@@ -484,51 +362,27 @@ export default function ExhibitionPage() {
             </h2>
 
 
-            {/* DESCRIPTION */}
-
-            <p
-              className="
-                alpha-exhibition-about-description
-              "
-            >
+            <p className="alpha-exhibition-about-description">
               {exhibition.description}
             </p>
 
 
-            {/* RED LINE */}
-
-            <span
-              className="
-                alpha-exhibition-about-bottom-line
-              "
-            />
+            <span className="alpha-exhibition-about-bottom-line" />
 
           </div>
 
 
           {/* RIGHT IMAGE */}
 
-          <div
-            className="
-              alpha-exhibition-about-image
-            "
-          >
+          <div className="alpha-exhibition-about-image">
 
-            <div
-              className="
-                alpha-exhibition-about-image-wrapper
-              "
-            >
+            <div className="alpha-exhibition-about-image-wrapper">
 
               <Image
                 src={exhibition.aboutImage}
                 alt="Alpha Aircraft Systems Exhibition"
                 fill
-                sizes="
-                  (max-width: 768px)
-                  100vw,
-                  50vw
-                "
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
 
             </div>
@@ -541,133 +395,78 @@ export default function ExhibitionPage() {
 
 
       {/* =====================================================
-          EXHIBITION HIGHLIGHTS
+          EXHIBITION HIGHLIGHTS — FULL WIDTH
       ===================================================== */}
 
-      <section
-        className="
-          alpha-exhibition-highlights
-        "
-      >
+      <section className="alpha-exhibition-highlights">
 
-        <div
-          className="
-            alpha-exhibition-container
-          "
-        >
+        {/* =================================================
+            FULL WIDTH HEADING
+        ================================================= */}
 
+        <div className="alpha-exhibition-highlights-heading">
 
-          {/* HIGHLIGHTS HEADING */}
+          <div className="alpha-exhibition-section-label">
 
-          <div
-            className="
-              alpha-exhibition-highlights-heading
-            "
-          >
+            <span />
 
-            <div
-              className="
-                alpha-exhibition-section-label
-              "
-            >
-
-              <span />
-
-              <p>
-                EXHIBITION HIGHLIGHTS
-              </p>
-
-            </div>
-
-
-            <h2
-              className="
-                alpha-exhibition-highlights-title
-              "
-            >
-
-              A LOOK INSIDE
-
-              <br />
-
-              {exhibition.name}
-
-            </h2>
+            <p>
+              EXHIBITION HIGHLIGHTS
+            </p>
 
           </div>
 
 
-          {/* =================================================
-              GALLERY
-          ================================================= */}
+          <h2 className="alpha-exhibition-highlights-title">
 
-          <div
-            className="
-              alpha-exhibition-gallery
-            "
-          >
+            A LOOK INSIDE
 
-            {exhibition.highlights.map(
-              (image, index) => (
+            <br />
 
-                <div
-                  key={`${image}-${index}`}
-                  className={`
-                    alpha-exhibition-gallery-item
-                    alpha-exhibition-gallery-${index + 1}
-                  `}
-                >
+            {exhibition.name}
 
-                  <div
-                    className="
-                      alpha-exhibition-gallery-image
-                    "
-                  >
+          </h2>
 
-                    <Image
-                      src={image}
-                      alt={`
-                        ${exhibition.name}
-                        highlight ${index + 1}
-                      `}
-                      fill
-                      sizes="
-                        (max-width: 768px)
-                        100vw,
-                        33vw
-                      "
-                    />
+        </div>
 
 
-                    {/* HOVER OVERLAY */}
+        {/* =================================================
+            FULL WIDTH GALLERY
+        ================================================= */}
 
-                    <div
-                      className="
-                        alpha-exhibition-gallery-overlay
-                      "
-                    >
+        <div className="alpha-exhibition-gallery">
 
-                      <span>
+          {exhibition.highlights.map(
+            (image, index) => (
 
-                        VIEW
+              <div
+                key={`${image}-${index}`}
+                className={`
+                  alpha-exhibition-gallery-item
+                  alpha-exhibition-gallery-${index + 1}
+                `}
+              >
 
-                        <ArrowRight
-                          size={18}
-                          strokeWidth={2}
-                        />
+                <div className="alpha-exhibition-gallery-image">
 
-                      </span>
+                  <Image
+                    src={image}
+                    alt={`${exhibition.name} highlight ${index + 1}`}
+                    fill
+                    sizes="100vw"
+                  />
 
-                    </div>
 
-                  </div>
+                  {/* IMAGE OVERLAY */}
+
+                  <div className="alpha-exhibition-gallery-overlay" />
 
                 </div>
 
-              )
-            )}
+              </div>
 
-          </div>
+            )
+          )}
 
         </div>
 
@@ -678,19 +477,12 @@ export default function ExhibitionPage() {
           VIDEO CTA SECTION
       ===================================================== */}
 
-      <section
-        className="
-          alpha-exhibition-cta
-        "
-      >
-
+      <section className="alpha-exhibition-cta">
 
         {/* BACKGROUND VIDEO */}
 
         <video
-          className="
-            alpha-exhibition-cta-video
-          "
+          className="alpha-exhibition-cta-video"
           autoPlay
           muted
           loop
@@ -708,26 +500,14 @@ export default function ExhibitionPage() {
 
         {/* VIDEO OVERLAY */}
 
-        <div
-          className="
-            alpha-exhibition-cta-overlay
-          "
-        />
+        <div className="alpha-exhibition-cta-overlay" />
 
 
         {/* CTA CONTENT */}
 
-        <div
-          className="
-            alpha-exhibition-cta-content
-          "
-        >
+        <div className="alpha-exhibition-cta-content">
 
-          <h2
-            className="
-              alpha-exhibition-cta-title
-            "
-          >
+          <h2 className="alpha-exhibition-cta-title">
 
             THE NEXT CONNECTION STARTS
 
@@ -738,19 +518,12 @@ export default function ExhibitionPage() {
           </h2>
 
 
-          {/* CTA BUTTONS */}
-
-          <div
-            className="
-              alpha-exhibition-cta-buttons
-            "
-          >
-
+          <div className="alpha-exhibition-cta-buttons">
 
             {/* EXPLORE */}
 
             <Link
-              href="https://alpha-hazel-five.vercel.app/exhibition-singal"
+              href="/exhibition-singal"
               className="
                 alpha-exhibition-button
                 alpha-exhibition-button-primary
@@ -772,7 +545,7 @@ export default function ExhibitionPage() {
             {/* CONTACT */}
 
             <Link
-              href="https://alpha-hazel-five.vercel.app/exhibition-singal"
+              href="/exhibition-singal"
               className="
                 alpha-exhibition-button
                 alpha-exhibition-button-secondary
