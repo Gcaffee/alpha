@@ -17689,7 +17689,7 @@ padding-right:10px;
 
   justify-content: space-between;
 
-  width: 100%;
+  width: max-content;
 
   margin-top: 24px;
 
@@ -33371,9 +33371,9 @@ padding-left:10px;
     }
 }
 
-@media (max-width: 480px) {.hero-button-outline {
-    color: #fff;
-    background: rgba(255, 255, 255, .05);
+.hero-button-outline1 {
+    color: #082b4c;
+    background: #082b4c;
     border: 1px solid #082b4c;
     backdrop-filter: blur(8px);
-}}
+}

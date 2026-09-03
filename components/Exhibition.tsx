@@ -7,7 +7,7 @@ import {
   ArrowLeft,
   ArrowRight,
 } from "lucide-react";
-
+import { ArrowUpRight } from "lucide-react";
 /* =========================================================
    TYPES
 ========================================================= */
@@ -663,12 +663,19 @@ export default function Exhibition() {
                   RECENT EXPLORE CTA
               ================================================= */}
 <br /><br />
-              <Link
-                href={exhibitionDetailUrl}
-                className="expo-explore-button"
-              >
-                EXPLORE 
-              </Link>
+              
+              <a
+              href="https://alpha-hazel-five.vercel.app/contact"
+              className="aboutButton"
+            >
+               EXPLORE
+
+              <ArrowRight
+                size={18}
+                strokeWidth={1.8}
+              />
+
+            </a>
 
             </div>
 
@@ -1069,22 +1076,41 @@ export default function Exhibition() {
           <div className="expo-cta-buttons">
 
 
-            <Link
-              href="/capabilities"
-              className="expo-cta-primary"
-            >
+           
+
+<a
+            href="https://alpha-hazel-five.vercel.app/a-p-u-overhaul-repairs"
+            className="hero-button hero-button-primary"
+          >
+
+            <span>
               EXPLORE CAPABILITIES
-            </Link>
+            </span>
+
+            <ArrowUpRight
+              size={16}
+              strokeWidth={1.8}
+            />
+
+          </a>
 
 
-            <Link
-              href="/contact"
-              className="expo-cta-secondary"
-            >
+          <a
+            href="https://alpha-hazel-five.vercel.app/contact"
+            className="hero-button hero-button-outline1"
+          >
+
+            <span style={{ color: "#fff", borderColor: "#fff" }}>
               CONTACT US
-            </Link>
+            </span>
 
+            <ArrowUpRight
+              size={16}
+              strokeWidth={1.8}
+              color="#fff"
+            />
 
+          </a>
           </div>
 
         </div>
