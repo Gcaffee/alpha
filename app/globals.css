@@ -6424,7 +6424,7 @@ section.what-if-sectionss {
   display: flex;
   align-items: center;
 
-  padding: 50px 0 70px;
+  padding: 50px 10px 70px;
 }
 /* =====================================================
    CONTAINER
@@ -6692,7 +6692,7 @@ section.what-if-sectionss {
   gap: 10px;
 
   margin-top: 28px;
-
+padding-bottom: 20px;
   margin-left: 58px;
 }
 
@@ -6808,7 +6808,7 @@ section.what-if-sectionss {
   }
 
   .what-if-heading {
-    padding-left: 35px;
+    
     padding-right: 30px;
   }
 
@@ -6817,7 +6817,7 @@ section.what-if-sectionss {
   }
 
   .what-if-slider {
-    margin-left: 35px;
+    
 
     width: calc(100% + 100px);
 
@@ -6830,7 +6830,7 @@ section.what-if-sectionss {
   }
 
   .what-if-arrows {
-    margin-left: 30px;
+    margin-left: 40px;
   }
 
 }
@@ -6855,7 +6855,7 @@ section.what-if-sectionss {
   }
 
   .what-if-heading {
-    padding-left: 25px;
+   
 
     padding-right: 20px;
 
@@ -6873,7 +6873,7 @@ section.what-if-sectionss {
   }
 
   .what-if-slider {
-    margin-left: 25px;
+    
 
     width: calc(100% + 40px);
 
@@ -6904,7 +6904,7 @@ section.what-if-sectionss {
   }
 
   .what-if-arrows {
-    margin-left: 20px;
+    
     margin-top: 22px;
   }
 
@@ -6922,7 +6922,7 @@ section.what-if-sectionss {
   }
 
   .what-if-box {
-    min-height: 600px;
+    min-height: 530px;
   }
 
   .what-if-slider {
@@ -12630,7 +12630,7 @@ padding-right:10px;
   }
 
   .mro-letter {
-    font-size: 120px;
+    font-size: 80px;
   }
 
   .mro-divider {
@@ -33353,4 +33353,20 @@ padding-left:10px;
     height: 42px;
   }
 
+}
+@media (max-width: 480px) {
+    .milestone-mobile-content p {
+        font-size: 20px;
+        color: #fff !important;
+    }
+}
+@media (max-width: 899px) {
+    .milestone-mobile-number {
+        display: block;
+        margin-bottom: 12px;
+        color: #b84a2b;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+    }
 }
