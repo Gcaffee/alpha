@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   description:
     "Strategic design partner to bold digital brands.",
   icons: {
-    icon: "/logo2.png",
-    shortcut: "/logo2.png",
-    apple: "/logo2.png",
+    icon: "/logo.webp",
+    shortcut: "/logo.webp",
+    apple: "/logo.webp",
   },
 };
 

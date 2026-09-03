@@ -1326,7 +1326,7 @@ img {
 
   .hero-section {
     min-height: 100svh;
-    padding: 95px 18px 25px;
+    
   }
 
   .hero-meta {
@@ -3735,13 +3735,7 @@ img {
   ===================================== */
 
   .hero-section::after {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.20) 0%,
-        rgba(0, 0, 0, 0.34) 35%,
-        rgba(0, 0, 0, 0.93) 100%
-      );
+    
   }
 
   /* =====================================
