@@ -66,18 +66,19 @@ export default function Footer() {
 
           <div className="footer-links-column">
             <h3>Company</h3>
-            <Link href="/about">About</Link>
-            <Link href="/contact">Contact</Link>
-            <Link href="/exhibition">Exhibitions</Link>
-            <Link href="/certifications">Certifications</Link>
+            <Link href="/aircraft-scanning">Aircraft Scanning</Link>
+            <Link href="/borescope-services">Borescope Services</Link>
+            <Link href="/c-s-d-pneumatic-systems">C.S.D. &amp; Pneumatic Systems</Link>
+           
           </div>
 
           <div className="footer-links-column">
             <h3>Quick Links</h3>
             <Link href="/">Home</Link>
-            <Link href="/aircraft-scanning">Aircraft Scanning</Link>
-            <Link href="/borescope-services">Borescope Services</Link>
-            <Link href="/c-s-d-pneumatic-systems">C.S.D. &amp; Pneumatic Systems</Link>
+             <Link href="/about">About</Link>
+            <Link href="/contact">Contact</Link>
+            <Link href="/exhibition">Exhibitions</Link>
+            <Link href="/certifications">Certifications</Link>
           </div>
         </div>
 
