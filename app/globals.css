@@ -33370,3 +33370,10 @@ padding-left:10px;
         letter-spacing: 0.14em;
     }
 }
+
+@media (max-width: 480px) {.hero-button-outline {
+    color: #fff;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid #fff;
+    backdrop-filter: blur(8px);
+}}
