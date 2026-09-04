@@ -178,7 +178,7 @@ export default function Header() {
 
         {/* CERTIFICATIONS */}
  <Link
-          href="https://alpha-hazel-five.vercel.app/exhibition"
+          href="/exhibition"
           className={`nav-link ${
             pathname ===
             "/certifications"
@@ -189,7 +189,7 @@ export default function Header() {
           EXHIBITIONS
         </Link>
         <Link
-          href="#certifications"
+          href="/#certifications"
           className={`nav-link ${
             pathname ===
             "#certifications"
@@ -204,7 +204,7 @@ export default function Header() {
         {/* ABOUT */}
 
         <Link
-          href="https://alpha-hazel-five.vercel.app/about"
+          href="/about"
           className={`nav-link ${
             pathname === "/about"
               ? "active"
@@ -217,7 +217,7 @@ export default function Header() {
         {/* CONTACT */}
 
         <Link
-          href="https://alpha-hazel-five.vercel.app/contact"
+          href="/contact"
           className={`nav-link ${
             pathname === "/contact"
               ? "active"
@@ -295,7 +295,7 @@ export default function Header() {
 
           {/* EXHIBITIONS */}
           <Link
-            href="https://alpha-hazel-five.vercel.app/exhibition"
+            href="/exhibition"
             className="mobile-nav-link"
             onClick={handleMenuClose}
           >
@@ -304,7 +304,7 @@ export default function Header() {
 
           {/* CERTIFICATIONS */}
           <Link
-            href="/certifications"
+            href="/#certifications"
             className="mobile-nav-link"
             onClick={handleMenuClose}
           >
@@ -313,7 +313,7 @@ export default function Header() {
 
           {/* ABOUT */}
           <Link
-            href="https://alpha-hazel-five.vercel.app/about"
+            href="/about"
             className="mobile-nav-link"
             onClick={handleMenuClose}
           >
@@ -322,7 +322,7 @@ export default function Header() {
 
           {/* CONTACT */}
           <Link
-            href="https://alpha-hazel-five.vercel.app/contact"
+            href="/contact"
             className="mobile-nav-link"
             onClick={handleMenuClose}
           >
