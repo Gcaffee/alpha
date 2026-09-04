@@ -19,25 +19,25 @@ gsap.registerPlugin(ScrollTrigger);
 ========================================================= */
 
 const exhibition = {
-  name: "AERO INDIA 2025",
+  name: "TCG Exhibition",
 
-  date: "10 – 14 FEBRUARY 2025",
+  date: "24 October, 2023",
 
-  location: "BENGALURU, INDIA",
+  location: "Orlando, Florida",
 
   heroImage: "/hero.png",
 
-  aboutImage: "/videoframe_18320.png",
+  aboutImage: "/Alpha-Aircraft-TCG-Exhibition-4.webp",
 
   description:
-    "Alpha Aircraft Systems participates in leading aviation and MRO exhibitions, connecting with industry professionals, partners and customers across the global aviation ecosystem. We can add event specific text here instead as well. This is just dummy text text that you are reading which I am continuing to write until I reach the word limit that I want.",
+    "We are experts in overhauling C-130 aircraft APU and therefore we always look forward to participating in TCG (Technical Coordination Group).",
 
   highlights: [
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-    "/MRO.webp",
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-    "/MRO.webp",
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
+    "/Alpha-Aircraft-TCG-Exhibition-2.webp",
+    "/Alpha-Aircraft-TCG-Exhibition-3.webp",
+    "/Alpha-Aircraft-TCG-Exhibition-4.webp",
+    "/Alpha-Aircraft-TCG-Exhibition-1.webp",
+    
   ],
 
   video: "/Alpha-Aircraft-Systems-Facility-at-Hialeah.mp4",
@@ -523,10 +523,9 @@ export default function ExhibitionPage() {
             {/* EXPLORE */}
 
             <Link
-              href="/exhibition-singal"
+              href="/exhibition"
               className="
-                alpha-exhibition-button
-                alpha-exhibition-button-primary
+                hero-button hero-button-primary
               "
             >
 
@@ -544,11 +543,10 @@ export default function ExhibitionPage() {
 
             {/* CONTACT */}
 
-            <Link
-              href="/exhibition-singal"
+            <Link style={{ color: "white"}}
+              href="/contact"
               className="
-                alpha-exhibition-button
-                alpha-exhibition-button-secondary
+                hero-button hero-button-outline1
               "
             >
 

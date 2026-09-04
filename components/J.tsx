@@ -19,25 +19,25 @@ gsap.registerPlugin(ScrollTrigger);
 ========================================================= */
 
 const exhibition = {
-  name: "AERO INDIA 2025",
+  name: "MRO Middle East",
 
-  date: "10 – 14 FEBRUARY 2025",
+  date: "1-2 March, 2023",
 
-  location: "BENGALURU, INDIA",
+  location: "Dubai World Trade Centre, UAE",
 
   heroImage: "/hero.png",
 
-  aboutImage: "/videoframe_18320.png",
+  aboutImage: "/Alpha-Aircraft-Exhibition-MRO-Middle-East-2023-5.webp",
 
   description:
-    "Alpha Aircraft Systems participates in leading aviation and MRO exhibitions, connecting with industry professionals, partners and customers across the global aviation ecosystem. We can add event specific text here instead as well. This is just dummy text text that you are reading which I am continuing to write until I reach the word limit that I want.",
+    "Glimpses of the MRO show at Dubai World Trade Centre: An initiative from our side to give an opportunity to those who want to fly high and achieve their goals.",
 
   highlights: [
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-    "/MRO.webp",
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-    "/MRO.webp",
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
+    "/Alpha-Aircraft-Exhibition-MRO-Middle-East-2023-1.webp",
+    "/Alpha-Aircraft-Exhibition-MRO-Middle-East-2023-4.webp",
+    "/Alpha-Aircraft-Exhibition-MRO-Middle-East-2023-2.webp",
+    "/Alpha-Aircarft-Systems-Exhibition-Middle-East-2.webp",
+    "/Alpha-Aircraft-Exhibition-MRO-Middle-East-2023-3.webp",
   ],
 
   video: "/Alpha-Aircraft-Systems-Facility-at-Hialeah.mp4",
@@ -523,10 +523,8 @@ export default function ExhibitionPage() {
             {/* EXPLORE */}
 
             <Link
-              href="/exhibition-singal"
-              className="
-                alpha-exhibition-button
-                alpha-exhibition-button-primary
+              href="/exhibition"
+              className="hero-button hero-button-primary
               "
             >
 
@@ -544,12 +542,9 @@ export default function ExhibitionPage() {
 
             {/* CONTACT */}
 
-            <Link
-              href="/exhibition-singal"
-              className="
-                alpha-exhibition-button
-                alpha-exhibition-button-secondary
-              "
+            <Link style={{ color: "white"}}
+              href="/contact"
+              className="hero-button hero-button-outline1"
             >
 
               <span>

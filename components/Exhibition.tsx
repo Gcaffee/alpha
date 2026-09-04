@@ -366,7 +366,7 @@ const exhibitionData: ExhibitionYear = {
         "We are experts in overhauling C-130 aircraft APU and therefore we always look forward to participating in TCG (Technical Coordination Group).",
 
       ctaUrl:
-        "/tcg-exhibition-2023",
+        "/exhibition-tcg",
 
       ctaText: "EXPLORE",
     },
@@ -384,7 +384,7 @@ const exhibitionData: ExhibitionYear = {
         "As the leading experts in APU Overhaul, Maintenance and Repair, we showcased our top-notch technologies at MRO Europe in Amsterdam.",
 
       ctaUrl:
-        "/mro-europe-2023",
+        "/exhibition-mro-europe-2023",
 
       ctaText: "EXPLORE",
     },
@@ -402,7 +402,7 @@ const exhibitionData: ExhibitionYear = {
         "We proudly participated in MRO Americas in Atlanta, showcasing quality APU Components and best Military Maintenance Facility of Alpha Aircraft Systems.",
 
       ctaUrl:
-        "/mro-americas-2023",
+        "/exhibition-mro-americas",
 
       ctaText: "EXPLORE",
     },
@@ -420,7 +420,7 @@ const exhibitionData: ExhibitionYear = {
         "Demonstrating at the ALTA CCMA & MRO Conference was important for us as it is the premier and longest-standing conference in Latin America and the Caribbean for aviation Maintenance and Technical Purchasing.",
 
       ctaUrl:
-        "/alta-ccma-mro-2023",
+        "/exhibition-alta-ccma-mro",
 
       ctaText: "EXPLORE",
     },
@@ -438,7 +438,7 @@ const exhibitionData: ExhibitionYear = {
         "Glimpses of the MRO show at Dubai World Trade Centre: An initiative from our side to give an opportunity to those who want to fly high and achieve their goals.",
 
       ctaUrl:
-        "/mro-middle-east-2023",
+        "/exhibition-mro-middle-east-2023",
 
       ctaText: "EXPLORE",
     },
