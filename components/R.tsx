@@ -19,25 +19,25 @@ gsap.registerPlugin(ScrollTrigger);
 ========================================================= */
 
 const exhibition = {
-  name: "AERO INDIA 2025",
+  name: "EBACE 2025",
 
-  date: "10 – 14 FEBRUARY 2025",
+  date: "20-22 May, 2025",
 
-  location: "BENGALURU, INDIA",
+  location: "Palexpo Convention Centre, Geneva, Switzerland",
 
   heroImage: "/hero.png",
 
-  aboutImage: "/videoframe_18320.png",
+  aboutImage: "/Exhibition-EBACE-2025-2.webp",
 
   description:
-    "Alpha Aircraft Systems participates in leading aviation and MRO exhibitions, connecting with industry professionals, partners and customers across the global aviation ecosystem. We can add event specific text here instead as well. This is just dummy text text that you are reading which I am continuing to write until I reach the word limit that I want.",
+    "It was our first participation in EBACE and the aviation community gripped us. It was an awesome event. EBACE landed us to new markets and provided us valued connections.",
 
   highlights: [
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-    "/MRO.webp",
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-    "/MRO.webp",
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
+    "/Exhibition-EBACE-2025-6.webp",
+    "/Exhibition-EBACE-2025-3.webp",
+    "/Exhibition-EBACE-2025-4.webp",
+    "/Exhibition-EBACE-2025-5.webp",
+    "/EBACE-2025.webp",
   ],
 
   video: "/Alpha-Aircraft-Systems-Facility-at-Hialeah.mp4",
@@ -523,11 +523,8 @@ export default function ExhibitionPage() {
             {/* EXPLORE */}
 
             <Link
-              href="/exhibition-singal"
-              className="
-                alpha-exhibition-button
-                alpha-exhibition-button-primary
-              "
+              href="/exhibition"
+              className="hero-button hero-button-primary "
             >
 
               <span>
@@ -544,12 +541,9 @@ export default function ExhibitionPage() {
 
             {/* CONTACT */}
 
-            <Link
+            <Link style={{ color: "white"}}
               href="/exhibition-singal"
-              className="
-                alpha-exhibition-button
-                alpha-exhibition-button-secondary
-              "
+              className="hero-button hero-button-outline1"
             >
 
               <span>
@@ -564,7 +558,6 @@ export default function ExhibitionPage() {
             </Link>
 
           </div>
-
         </div>
 
       </section>

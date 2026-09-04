@@ -134,7 +134,7 @@ const exhibitionData: ExhibitionYear = {
         "Grateful for the connections, ideas, and innovations at AeroEngines Europe. It is always great to be part of the conversations shaping the future of aviation.",
 
       ctaUrl:
-        "/mro-europe-2025",
+        "/exhibition-mro-london-2025",
 
       ctaText: "EXPLORE",
     },
@@ -152,7 +152,7 @@ const exhibitionData: ExhibitionYear = {
         "Exploring aerospace technologies and building meaningful industry connections.",
 
       ctaUrl:
-        "/aero-india-2025",
+        "/exhibition-aero-engines",
 
       ctaText: "EXPLORE",
     },
@@ -170,7 +170,7 @@ const exhibitionData: ExhibitionYear = {
         "International Pairs Air Show will be remembered as a milestone. It was in this event that we signed an agreement with RSR Aviation Services to establish an APU facility in India by second quarter of 2026. This will make our presence in Asia-Pacific stronger.",
 
       ctaUrl:
-        "/paris-air-show-2025",
+        "/exhibition-paris-air-show",
 
       ctaText: "EXPLORE",
     },
@@ -188,7 +188,7 @@ const exhibitionData: ExhibitionYear = {
         "It was our first participation in EBACE and the aviation community gripped us. It was an awesome event. EBACE landed us to new markets and provided us valued connections.",
 
       ctaUrl:
-        "/ebace-2025",
+        "/exhibition-ebace-2025",
 
       ctaText: "EXPLORE",
     },
