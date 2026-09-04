@@ -7,7 +7,7 @@ import Header from "@/components/Header";
 // import Hero from "@/components/Preloader";
 
 import Footer from "@/components/Footer";
-import Esingal from "@/components/Esingal";
+import F from "@/components/F";
 
 
 export default function Home() {
@@ -39,7 +39,7 @@ export default function Home() {
       <Header />
 
       <main>
-        <Esingal />
+        <F />
     
         </main>
 

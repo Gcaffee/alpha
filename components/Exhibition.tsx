@@ -6,8 +6,9 @@ import { useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
+  ArrowUpRight,
 } from "lucide-react";
-import { ArrowUpRight } from "lucide-react";
+
 /* =========================================================
    TYPES
 ========================================================= */
@@ -19,6 +20,10 @@ type ExhibitionItem = {
   address?: string;
   date: string;
   description?: string;
+
+  // UNIQUE CTA FOR EVERY EXHIBITION
+  ctaUrl: string;
+  ctaText?: string;
 };
 
 type ExhibitionYear = {
@@ -31,7 +36,13 @@ type ExhibitionYear = {
 ========================================================= */
 
 const exhibitionData: ExhibitionYear = {
+
+  /* =======================================================
+     2026
+  ======================================================= */
+
   2026: [
+
     {
       title: "MRO XPO India",
       image:
@@ -42,247 +53,394 @@ const exhibitionData: ExhibitionYear = {
       date: "11–12 March, 2026",
       description:
         "Glimpses from MRO XPO India, where leaders and professionals from across the Indian aviation and MRO industry came together to exchange ideas, build partnerships, and explore the future of aircraft maintenance and support.",
+
+      ctaUrl:
+        "/mro-xpo-india",
+      ctaText: "EXPLORE",
     },
 
     {
       title: "World Defense Show",
       image:
         "/MRO2.webp",
-      location: "Riyadh International Convention and Exhibition Center",
+      location:
+        "Riyadh International Convention and Exhibition Center",
       address:
         "Riyadh International Convention and Exhibition Center",
-      date: "09-10 February , 2025",
+      date: "09-10 February, 2025",
       description:
         "Extending a sincere appreciation to the aviation professionals who took the time to connect with us at the World Defense Show, Riyadh. Mr. Shubhesh Thakore from Alpha Aircraft Systems had the opportunity to engage in meaningful conversations with Harab Alharabi, Ron Taylo and Amyr Qureshi.",
+
+      ctaUrl:
+        "/exhibition-world-defense-show",
+
+      ctaText: "EXPLORE",
     },
 
     {
       title: "MRO Middle East",
       image:
         "/MRO3.webp",
-      location: "Dubai World Trade Centre, UAE",
+      location:
+        "Dubai World Trade Centre, UAE",
       address:
         "Dubai World Trade Centre, UAE",
       date: "2-3 February, 2026",
       description:
         "A valuable exchange of insights and perspectives at MRO Middle East, Dubai. It was a privilege to engage with the global MRO community and be part of conversations shaping the future of aircraft maintenance and support worldwide.",
+
+      ctaUrl:
+        "/exhibition-mro-middle-east-2026",
+
+      ctaText: "EXPLORE",
     },
 
     {
       title: "Wings India",
       image:
         "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-      location: "Begumpet Airport, Hyderabad",
+      location:
+        "Begumpet Airport, Hyderabad",
       address:
         "Begumpet Airport, Hyderabad",
       date: "28-31 January, 2026",
       description:
         "Grateful for the conversations, insights, and collaborations at Wings India 2026. Our first aviation event of the year, it was a privilege to engage with the ecosystem shaping the future of Indian aviation and aerospace growth.",
+
+      ctaUrl:
+        "/exhibition-wings-india",
+
+      ctaText: "EXPLORE",
     },
   ],
 
+
+  /* =======================================================
+     2025
+  ======================================================= */
+
   2025: [
+
     {
       title: "MRO Europe",
-      image: "/Alpha-exhibition-in-london-scaled.jpg",
-      location: "Excel London, London",
+      image:
+        "/Alpha-exhibition-in-london-scaled.jpg",
+      location:
+        "Excel London, London",
       address:
         "Excel London, London",
       date: "15-16 Oct, 2025",
       description:
-        "Grateful for the connections, ideas, and innovations at AeroEngines Europe. It is always great  to be part of the conversations shaping the future of aviation.",
+        "Grateful for the connections, ideas, and innovations at AeroEngines Europe. It is always great to be part of the conversations shaping the future of aviation.",
+
+      ctaUrl:
+        "/mro-europe-2025",
+
+      ctaText: "EXPLORE",
     },
 
     {
       title: "Aero India",
       image:
         "/Alpha-Aircraft-Systems-at-Aero-Engines-Hamburg-Germany.jpg",
-      location: "Bengaluru, India",
+      location:
+        "Bengaluru, India",
       address:
         "Air Force Station Yelahanka, Bengaluru, Karnataka, India",
       date: "2025",
       description:
         "Exploring aerospace technologies and building meaningful industry connections.",
+
+      ctaUrl:
+        "/aero-india-2025",
+
+      ctaText: "EXPLORE",
     },
 
     {
       title: "Paris Air Show",
       image:
         "/International-Paris-Air-Show-2 (1).webp",
-      location: "Le Bourget, Pairs",
+      location:
+        "Le Bourget, Pairs",
       address:
         "Le Bourget, Pairs",
       date: "16-22 June, 2025",
       description:
         "International Pairs Air Show will be remembered as a milestone. It was in this event that we signed an agreement with RSR Aviation Services to establish an APU facility in India by second quarter of 2026. This will make our presence in Asia-Pacific stronger.",
+
+      ctaUrl:
+        "/paris-air-show-2025",
+
+      ctaText: "EXPLORE",
     },
 
     {
       title: "EBACE 2025",
       image:
         "/EBACE-2025.webp",
-      location: "Palexpo Convention Centre, Geneva, Switzerland",
+      location:
+        "Palexpo Convention Centre, Geneva, Switzerland",
       address:
         "Palexpo Convention Centre, Geneva, Switzerland",
       date: "20-22 May, 2025",
       description:
         "It was our first participation in EBACE and the aviation community gripped us. It was an awesome event. EBACE landed us to new markets and provided us valued connections.",
+
+      ctaUrl:
+        "/ebace-2025",
+
+      ctaText: "EXPLORE",
     },
+
     {
       title: "PB Expo 2025",
       image:
         "/PB-Expo-2025-scaled.webp",
-      location: "Miami Beach Convention Center, Florida",
+      location:
+        "Miami Beach Convention Center, Florida",
       address:
         "Miami Beach Convention Center, Florida",
       date: "27-28 Feb, 2025",
       description:
         "The first exhibition of 2025 that too in Miami. It was brilliant! We had bouquet of offerings for maintenance and overhauling of APUs and aircraft accessories.",
+
+      ctaUrl:
+        "/pb-expo-2025",
+
+      ctaText: "EXPLORE",
     },
   ],
 
+
+  /* =======================================================
+     2024
+  ======================================================= */
+
   2024: [
+
     {
       title: "Singapore Air Show",
       image:
         "/Singapore-Air-Show-scaled.webp",
-      location: "Changi Exhibition Centre, Singapore",
+      location:
+        "Changi Exhibition Centre, Singapore",
       address:
         "Changi Exhibition Centre, Singapore",
       date: "20-25 Feb, 2024",
       description:
         "Singapore Airshow was our first grand exhibition of the year. We had an exclusive coverage of the show and witnessed the grandeur and innovations of the aviation industry.",
+
+      ctaUrl:
+        "/singapore-air-show-2024",
+
+      ctaText: "EXPLORE",
     },
 
     {
       title: "HAI Heli Expo",
       image:
         "/HAI-Heli-Expo.webp",
-      location: "Anaheim Convention Center, Anaheim, California",
+      location:
+        "Anaheim Convention Center, Anaheim, California",
       address:
         "Anaheim Convention Center, Anaheim, California",
       date: "27-29 Feb, 2024",
       description:
         "It was for the first time that we participated in a helicopter expo. HAI Heli Expo set the stage for our entry into Helicopter APU MRO services.",
+
+      ctaUrl:
+        "/hai-heli-expo-2024",
+
+      ctaText: "EXPLORE",
     },
 
     {
       title: "MRO Middle East",
       image:
         "/MRO-Middle-East.webp",
-      location: "Dubai World Trade Center",
+      location:
+        "Dubai World Trade Center",
       address:
         "Dubai World Trade Center",
       date: "5-6 March, 2024",
       description:
         "MRO Middle East provided us a platform to drive collaboration and new commercial opportunities, discover the latest trends and explore innovative solutions.",
+
+      ctaUrl:
+        "/mro-middle-east-2024",
+
+      ctaText: "EXPLORE",
     },
 
     {
       title: "PB Expo 2024",
       image:
         "/PB-Expo.webp",
-      location: "Miami Beach Convention Center, Florida",
+      location:
+        "Miami Beach Convention Center, Florida",
       address:
         "Miami Beach Convention Center, Florida",
       date: "7-8 March, 2024",
       description:
         "At the PB Expo, our focus was on making the right connections and meet some of aviation’s finest personnels. The attendees loved our exhibition.",
+
+      ctaUrl:
+        "/pb-expo-2024",
+
+      ctaText: "EXPLORE",
     },
+
     {
       title: "MRO Asia-Pacific",
       image:
         "/Alpha-Aircraft-Systems-at-MRO-Asia-Pacific-Singapore-scaled.webp",
-      location: "Singapore Expo, Singapore",
+      location:
+        "Singapore Expo, Singapore",
       address:
         "Singapore Expo, Singapore",
       date: "25-26 Sep, 2024",
       description:
-        "After Singapore Airshow in February, we headed back to Singapore in the month of September to showcase our APU maintenance capabilities.  We signed MoU with Aviaris Pte. Ltd. which was a strategic agreement to increase bandwidth of each other’s business and deepen our roots in Asia-Pacific.",
+        "After Singapore Airshow in February, we headed back to Singapore in the month of September to showcase our APU maintenance capabilities. We signed MoU with Aviaris Pte. Ltd. which was a strategic agreement to increase bandwidth of each other’s business and deepen our roots in Asia-Pacific.",
+
+      ctaUrl:
+        "/mro-asia-pacific-2024",
+
+      ctaText: "EXPLORE",
     },
+
     {
       title: "MRO Europe",
       image:
         "/IMG_5297-scaled.jpg",
-      location: "Fira, Barcelona, Spain",
+      location:
+        "Fira, Barcelona, Spain",
       address:
         "Fira, Barcelona, Spain",
       date: "22-24 Oct, 2024",
       description:
         "We attended MRO Europe to expand our business in Europe and shared our expertise as leading APU expert and learnt about their technologies.",
+
+      ctaUrl:
+        "/mro-europe-2024",
+
+      ctaText: "EXPLORE",
     },
+
     {
       title: "C-130 TCG",
       image:
         "/C-130-TCG-Exhibition.webp",
-      location: "Caribe Royale Hotel and Convention Center, Orlando, Florida",
+      location:
+        "Caribe Royale Hotel and Convention Center, Orlando, Florida",
       address:
         "Caribe Royale Hotel and Convention Center, Orlando, Florida",
       date: "28 Oct-01 Nov, 2024",
       description:
         "Grateful to have attended the 34th World Wide Review organised by the Technical Coordination Group (TCG) that gave us in-depth information about improved technologies in C-130 aircraft and helped us to brush our expertise in APU overhauling and maintenance of C-130 aircraft.",
+
+      ctaUrl:
+        "/c-130-tcg-2024",
+
+      ctaText: "EXPLORE",
     },
   ],
 
+
+  /* =======================================================
+     2023
+  ======================================================= */
+
   2023: [
+
     {
       title: "TCG Exhibition",
       image:
         "/Alpha-Aircraft-TCG-Exhibition-3.webp",
-      location: "Orlando, Florida",
+      location:
+        "Orlando, Florida",
       address:
         "Orlando, Florida",
       date: "24 October, 2023",
       description:
         "We are experts in overhauling C-130 aircraft APU and therefore we always look forward to participating in TCG (Technical Coordination Group).",
-    },
 
-    
+      ctaUrl:
+        "/tcg-exhibition-2023",
+
+      ctaText: "EXPLORE",
+    },
 
     {
       title: "MRO Europe",
       image:
         "/mro-europe-2023-2.webp",
-      location: "RAI, Amsterdam, Netherlands",
+      location:
+        "RAI, Amsterdam, Netherlands",
       address:
         "RAI, Amsterdam, Netherlands",
       date: "18-19 Oct, 2023",
       description:
         "As the leading experts in APU Overhaul, Maintenance and Repair, we showcased our top-notch technologies at MRO Europe in Amsterdam.",
+
+      ctaUrl:
+        "/mro-europe-2023",
+
+      ctaText: "EXPLORE",
     },
 
     {
       title: "MRO Americas",
       image:
         "/Alpha-Aircraft-Systems-Exhibition-America-3.webp",
-      location: "Georgia World Congress, Atlanta, Georgia, USA",
+      location:
+        "Georgia World Congress, Atlanta, Georgia, USA",
       address:
         "Georgia World Congress, Atlanta, Georgia, USA",
       date: "18-20 April, 2023",
       description:
         "We proudly participated in MRO Americas in Atlanta, showcasing quality APU Components and best Military Maintenance Facility of Alpha Aircraft Systems.",
+
+      ctaUrl:
+        "/mro-americas-2023",
+
+      ctaText: "EXPLORE",
     },
+
     {
       title: "ALTA CCMA & MRO Conference",
       image:
         "/Alpha-Aircraft-Systems-Exhibition-Alta.webp",
-      location: "Hilton, Cancun, Mexico",
+      location:
+        "Hilton, Cancun, Mexico",
       address:
         "Hilton, Cancun, Mexico",
       date: "21-23 May, 2023",
       description:
         "Demonstrating at the ALTA CCMA & MRO Conference was important for us as it is the premier and longest-standing conference in Latin America and the Caribbean for aviation Maintenance and Technical Purchasing.",
+
+      ctaUrl:
+        "/alta-ccma-mro-2023",
+
+      ctaText: "EXPLORE",
     },
+
     {
       title: "MRO Middle East",
       image:
         "/Alpha-Aircarft-Systems-Exhibition-Middle-East-2.webp",
-      location: "Dubai World Trade Centre, UAE",
+      location:
+        "Dubai World Trade Centre, UAE",
       address:
         "Dubai World Trade Centre, UAE",
       date: "1-2 March, 2023",
       description:
         "Glimpses of the MRO show at Dubai World Trade Centre: An initiative from our side to give an opportunity to those who want to fly high and achieve their goals.",
+
+      ctaUrl:
+        "/mro-middle-east-2023",
+
+      ctaText: "EXPLORE",
     },
   ],
 };
@@ -298,14 +456,6 @@ const exhibitionYears: number[] = [
   2024,
   2023,
 ];
-
-
-/* =========================================================
-   EXHIBITION DETAIL URL
-========================================================= */
-
-const exhibitionDetailUrl =
-  "https://alpha-hazel-five.vercel.app/exhibition-singal";
 
 
 /* =========================================================
@@ -526,11 +676,7 @@ export default function Exhibition() {
 
               Meet Alpha Aircraft Systems at
 
-             
-
               leading aviation, defence and MRO
-
-              
 
               exhibitions.
 
@@ -662,20 +808,30 @@ export default function Exhibition() {
               {/* =================================================
                   RECENT EXPLORE CTA
               ================================================= */}
-<br /><br />
-              
-              <a
-              href="https://alpha-hazel-five.vercel.app/contact"
-              className="aboutButton"
-            >
-               EXPLORE
 
-              <ArrowRight
-                size={18}
-                strokeWidth={1.8}
-              />
+              <br />
+              <br />
 
-            </a>
+              {currentRecent && (
+
+                <Link
+                  href={currentRecent.ctaUrl}
+                  className="aboutButton"
+                  aria-label={`Explore ${currentRecent.title}`}
+                >
+
+                  <span>
+                    {currentRecent.ctaText || "EXPLORE"}
+                  </span>
+
+                  <ArrowRight
+                    size={18}
+                    strokeWidth={1.8}
+                  />
+
+                </Link>
+
+              )}
 
             </div>
 
@@ -962,18 +1118,18 @@ export default function Exhibition() {
 
 
                           {/* =================================================
-                              CARD CTA
-                              LINK ADDED HERE
+                              UNIQUE CARD CTA
                           ================================================= */}
 
                           <Link
-                            href={exhibitionDetailUrl}
+                            href={exhibition.ctaUrl}
                             className="expo-hover-cta"
                             aria-label={`Explore ${exhibition.title}`}
                           >
 
                             <span>
-                              EXPLORE
+                              {exhibition.ctaText ||
+                                "EXPLORE"}
                             </span>
 
 
@@ -1076,41 +1232,49 @@ export default function Exhibition() {
           <div className="expo-cta-buttons">
 
 
-           
+            {/* CAPABILITIES */}
 
-<a
-            href="https://alpha-hazel-five.vercel.app/a-p-u-overhaul-repairs"
-            className="hero-button hero-button-primary"
-          >
+            <Link
+              href="/a-p-u-overhaul-repairs"
+              className="hero-button hero-button-primary"
+            >
 
-            <span>
-              EXPLORE CAPABILITIES
-            </span>
+              <span>
+                EXPLORE CAPABILITIES
+              </span>
 
-            <ArrowUpRight
-              size={16}
-              strokeWidth={1.8}
-            />
+              <ArrowUpRight
+                size={16}
+                strokeWidth={1.8}
+              />
 
-          </a>
+            </Link>
 
 
-          <a
-            href="https://alpha-hazel-five.vercel.app/contact"
-            className="hero-button hero-button-outline1"
-          >
+            {/* CONTACT */}
 
-            <span style={{ color: "#fff", borderColor: "#fff" }}>
-              CONTACT US
-            </span>
+            <Link
+              href="/contact"
+              className="hero-button hero-button-outline1"
+            >
 
-            <ArrowUpRight
-              size={16}
-              strokeWidth={1.8}
-              color="#fff"
-            />
+              <span
+                style={{
+                  color: "#fff",
+                  borderColor: "#fff",
+                }}
+              >
+                CONTACT US
+              </span>
 
-          </a>
+              <ArrowUpRight
+                size={16}
+                strokeWidth={1.8}
+                color="#fff"
+              />
+
+            </Link>
+
           </div>
 
         </div>
