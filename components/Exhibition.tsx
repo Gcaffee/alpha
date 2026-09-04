@@ -232,7 +232,7 @@ const exhibitionData: ExhibitionYear = {
         "Singapore Airshow was our first grand exhibition of the year. We had an exclusive coverage of the show and witnessed the grandeur and innovations of the aviation industry.",
 
       ctaUrl:
-        "/singapore-air-show-2024",
+        "/exhibition-singapore-air-show",
 
       ctaText: "EXPLORE",
     },
@@ -250,7 +250,7 @@ const exhibitionData: ExhibitionYear = {
         "It was for the first time that we participated in a helicopter expo. HAI Heli Expo set the stage for our entry into Helicopter APU MRO services.",
 
       ctaUrl:
-        "/hai-heli-expo-2024",
+        "/exhibition-hai-heli-expo",
 
       ctaText: "EXPLORE",
     },
@@ -268,7 +268,7 @@ const exhibitionData: ExhibitionYear = {
         "MRO Middle East provided us a platform to drive collaboration and new commercial opportunities, discover the latest trends and explore innovative solutions.",
 
       ctaUrl:
-        "/mro-middle-east-2024",
+        "/exhibition-mro-middle-east",
 
       ctaText: "EXPLORE",
     },
@@ -286,7 +286,7 @@ const exhibitionData: ExhibitionYear = {
         "At the PB Expo, our focus was on making the right connections and meet some of aviation’s finest personnels. The attendees loved our exhibition.",
 
       ctaUrl:
-        "/pb-expo-2024",
+        "/exhibition-pb-expo-2024",
 
       ctaText: "EXPLORE",
     },
@@ -304,7 +304,7 @@ const exhibitionData: ExhibitionYear = {
         "After Singapore Airshow in February, we headed back to Singapore in the month of September to showcase our APU maintenance capabilities. We signed MoU with Aviaris Pte. Ltd. which was a strategic agreement to increase bandwidth of each other’s business and deepen our roots in Asia-Pacific.",
 
       ctaUrl:
-        "/mro-asia-pacific-2024",
+        "/exhibition-mro-asia-pacific",
 
       ctaText: "EXPLORE",
     },
@@ -322,7 +322,7 @@ const exhibitionData: ExhibitionYear = {
         "We attended MRO Europe to expand our business in Europe and shared our expertise as leading APU expert and learnt about their technologies.",
 
       ctaUrl:
-        "/mro-europe-2024",
+        "/exhibition-mro-europe",
 
       ctaText: "EXPLORE",
     },
@@ -340,7 +340,7 @@ const exhibitionData: ExhibitionYear = {
         "Grateful to have attended the 34th World Wide Review organised by the Technical Coordination Group (TCG) that gave us in-depth information about improved technologies in C-130 aircraft and helped us to brush our expertise in APU overhauling and maintenance of C-130 aircraft.",
 
       ctaUrl:
-        "/c-130-tcg-2024",
+        "/exhibition-c-130-tcg",
 
       ctaText: "EXPLORE",
     },

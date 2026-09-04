@@ -19,25 +19,25 @@ gsap.registerPlugin(ScrollTrigger);
 ========================================================= */
 
 const exhibition = {
-  name: "AERO INDIA 2025",
+  name: "Singapore Air Show",
 
-  date: "10 – 14 FEBRUARY 2025",
+  date: "20-25 Feb, 2024",
 
-  location: "BENGALURU, INDIA",
+  location: "Changi Exhibition Centre, Singapore",
 
   heroImage: "/hero.png",
 
-  aboutImage: "/videoframe_18320.png",
+  aboutImage: "/Singapore-Air-Show-1-scaled.webp",
 
   description:
-    "Alpha Aircraft Systems participates in leading aviation and MRO exhibitions, connecting with industry professionals, partners and customers across the global aviation ecosystem. We can add event specific text here instead as well. This is just dummy text text that you are reading which I am continuing to write until I reach the word limit that I want.",
+    "Singapore Airshow was our first grand exhibition of the year. We had an exclusive coverage of the show and witnessed the grandeur and innovations of the aviation industry.",
 
   highlights: [
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-    "/MRO.webp",
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-    "/MRO.webp",
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
+    "/Singapore-Air-Show-12-scaled.webp",
+    "/Singapore-Air-Show-4-scaled.webp",
+    "/Singapore-Air-Show-3-scaled.webp",
+    "/Singapore-Air-Show-2-scaled.webp",
+    "/Singapore-Air-Show-11-scaled.webp",
   ],
 
   video: "/Alpha-Aircraft-Systems-Facility-at-Hialeah.mp4",
@@ -523,11 +523,8 @@ export default function ExhibitionPage() {
             {/* EXPLORE */}
 
             <Link
-              href="/exhibition-singal"
-              className="
-                alpha-exhibition-button
-                alpha-exhibition-button-primary
-              "
+              href="/exhibition"
+              className="hero-button hero-button-primary"
             >
 
               <span>
@@ -544,12 +541,9 @@ export default function ExhibitionPage() {
 
             {/* CONTACT */}
 
-            <Link
-              href="/exhibition-singal"
-              className="
-                alpha-exhibition-button
-                alpha-exhibition-button-secondary
-              "
+            <Link style={{ color: "white"}}
+              href="/contact"
+              className="hero-button hero-button-outline1"
             >
 
               <span>
