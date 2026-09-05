@@ -19,25 +19,25 @@ gsap.registerPlugin(ScrollTrigger);
 ========================================================= */
 
 const exhibition = {
-  name: "AERO INDIA 2025",
+  name: "MRO Asia-Pacific",
 
-  date: "10 – 14 FEBRUARY 2025",
+  date: "25-26 Sep, 2024",
 
-  location: "BENGALURU, INDIA",
+  location: "Singapore Expo, Singapore",
 
   heroImage: "/hero.png",
 
-  aboutImage: "/videoframe_18320.png",
+  aboutImage: "/Alpha-Aircraft-Systems-at-MRO-Asia-Pacific-Singapore-9-scaled.webp",
 
   description:
-    "Alpha Aircraft Systems participates in leading aviation and MRO exhibitions, connecting with industry professionals, partners and customers across the global aviation ecosystem. We can add event specific text here instead as well. This is just dummy text text that you are reading which I am continuing to write until I reach the word limit that I want.",
+    "After Singapore Airshow in February, we headed back to Singapore in the month of September to showcase our APU maintenance capabilities.  We signed MoU with Aviaris Pte. Ltd. which was a strategic agreement to increase bandwidth of each other’s business and deepen our roots in Asia-Pacific.",
 
   highlights: [
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-    "/MRO.webp",
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-    "/MRO.webp",
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
+    "/Alpha-Aircraft-Systems-at-MRO-Asia-Pacific-Singapore-1-scaled.webp",
+    "/Alpha-Aircraft-Systems-at-MRO-Asia-Pacific-Singapore-5.webp",
+    "/Alpha-Aircraft-Systems-at-MRO-Asia-Pacific-Singapore-2-scaled.webp",
+    "/Alpha-Aircraft-Systems-at-MRO-Asia-Pacific-Singapore-7-scaled.webp",
+    "/Alpha-Aircraft-Systems-at-MRO-Asia-Pacific-Singapore-10-scaled.webp",
   ],
 
   video: "/Alpha-Aircraft-Systems-Facility-at-Hialeah.mp4",
@@ -523,11 +523,8 @@ export default function ExhibitionPage() {
             {/* EXPLORE */}
 
             <Link
-              href="/exhibition-singal"
-              className="
-                alpha-exhibition-button
-                alpha-exhibition-button-primary
-              "
+              href="/exhibition"
+              className="hero-button hero-button-primary"
             >
 
               <span>
@@ -544,12 +541,9 @@ export default function ExhibitionPage() {
 
             {/* CONTACT */}
 
-            <Link
-              href="/exhibition-singal"
-              className="
-                alpha-exhibition-button
-                alpha-exhibition-button-secondary
-              "
+            <Link style = {{color : "#fff"}}
+              href="/contact"
+              className="hero-button hero-button-outline1"
             >
 
               <span>

@@ -83,7 +83,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom-bar">
-          <p>© 2026 Alpha Aircraft Systems. All rights reserved.</p>
+          <p>Copyright © 2026 Alpha Aircraft Systems. Powered by <a style = {{color:"#b84a2b"}}href="https://www.gcaffe.org/" target="_blank" rel="noopener">G Caffe.</a></p>
 
           <div className="footer-meta-links">
             

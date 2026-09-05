@@ -19,25 +19,25 @@ gsap.registerPlugin(ScrollTrigger);
 ========================================================= */
 
 const exhibition = {
-  name: "AERO INDIA 2025",
+  name: "MRO Europe",
 
-  date: "10 – 14 FEBRUARY 2025",
+  date: "22-24 Oct, 2024",
 
-  location: "BENGALURU, INDIA",
+  location: "Fira, Barcelona, Spain",
 
   heroImage: "/hero.png",
 
-  aboutImage: "/videoframe_18320.png",
+  aboutImage: "/IMG_5297-scaled.jpg",
 
   description:
-    "Alpha Aircraft Systems participates in leading aviation and MRO exhibitions, connecting with industry professionals, partners and customers across the global aviation ecosystem. We can add event specific text here instead as well. This is just dummy text text that you are reading which I am continuing to write until I reach the word limit that I want.",
+    "We attended MRO Europe to expand our business in Europe and shared our expertise as leading APU expert and learnt about their technologies.",
 
   highlights: [
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-    "/MRO.webp",
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
-    "/MRO.webp",
-    "/Alpha-Aircraft-Systems-at-Wings-India-2026-11.webp",
+    "/MRO-Europe-1-scaled.webp",
+    "/IMG_5297-scaled.jpg",
+    "/MRO-Europe-1-scaled.webp",
+    "/IMG_5297-scaled.jpg",
+    "/MRO-Europe-1-scaled.webp",
   ],
 
   video: "/Alpha-Aircraft-Systems-Facility-at-Hialeah.mp4",
@@ -523,11 +523,8 @@ export default function ExhibitionPage() {
             {/* EXPLORE */}
 
             <Link
-              href="/exhibition-singal"
-              className="
-                alpha-exhibition-button
-                alpha-exhibition-button-primary
-              "
+              href="/exhibition"
+              className="hero-button hero-button-primary"
             >
 
               <span>
@@ -544,12 +541,11 @@ export default function ExhibitionPage() {
 
             {/* CONTACT */}
 
-            <Link
-              href="/exhibition-singal"
-              className="
-                alpha-exhibition-button
-                alpha-exhibition-button-secondary
-              "
+            <Link style={{
+                  color: "#fff"
+                }}
+              href="/contact"
+              className="hero-button hero-button-outline1"
             >
 
               <span>
