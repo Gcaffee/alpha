@@ -33817,3 +33817,13 @@ padding-left:10px;
     height: 100%;
   }
 }
+.cross-two {
+    right: 70px;
+    top: 75px;
+    display: none ! IMPORTANT;
+}
+.cross-one {
+    left: 30px;
+    display: none ! IMPORTANT;
+    bottom: 30px;
+}

@@ -211,7 +211,7 @@ export default function AboutPage() {
 
             <p className="about-copy">
               Alpha Aircraft Systems Inc., located in East 10th Lane, Hialeah, Florida, is a global leader
-in certified aircraft APU services.  
+in certified aircraft APU services.
 
               <br /><br />
              We specialize in FAA and EASA-approved APU testing, repair, and overhaul for clients
@@ -269,7 +269,7 @@ it easy for operators abroad to access trusted aviation services.
               <div className="apu-core">
 
                 <Image
-                  src="/apuu.png"
+                  src="/apu.png"
                   alt="Aircraft APU"
                   width={300}
                   height={300}
