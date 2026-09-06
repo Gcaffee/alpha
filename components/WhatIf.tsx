@@ -12,32 +12,32 @@ const items = [
   {
     number: "1995",
     text: "Become an Approved Repair Station",
-    image: "/11.jpg",
+    image: "/MILESTONES1.webp",
   },
   {
     number: "1995-2019",
     text: "Have been successfully repairing aircraft accessories",
-    image: "/12.jpg",
+    image: "/MILESTONES2.webp",
   },
   {
     number: "2019",
     text: "Developed a full engineered department",
-    image: "/13.jpg",
+    image: "/MILESTONES3.webp",
   },
   {
     number: "2000 TO PRESENT",
     text: "Received approval of APU overhauling & repair",
-    image: "/14.jpg",
+    image: "/MILESTONES4.webp",
   },
   {
     number: "2020 TO PRESENT",
     text: "Qualified to reverse engineering & repairing with in-house capability & CNC equipment",
-    image: "/15.jpg",
+    image: "/MILESTONES5.webp",
   },
   {
     number: "2021 TO PRESENT",
     text: "Handling complete process of PMA's part program",
-    image: "/16.jpg",
+    image: "/MILESTONES6.webp",
   },
   
   
@@ -335,6 +335,7 @@ export default function WhatIf() {
           innovation, experience, and continuous
           improvement.
         </p>
+        <br /><br />
       </div>
 
       {/* =====================================================
