@@ -12,32 +12,32 @@ const items = [
   {
     number: "1995",
     text: "Become an Approved Repair Station",
-    image: "/1.png",
+    image: "/11.jpg",
   },
   {
     number: "1995-2019",
     text: "Have been successfully repairing aircraft accessories",
-    image: "/2.png",
+    image: "/12.jpg",
   },
   {
     number: "2019",
     text: "Developed a full engineered department",
-    image: "/3.png",
+    image: "/13.jpg",
   },
   {
     number: "2000 TO PRESENT",
     text: "Received approval of APU overhauling & repair",
-    image: "/4.png",
+    image: "/14.jpg",
   },
   {
     number: "2020 TO PRESENT",
     text: "Qualified to reverse engineering & repairing with in-house capability & CNC equipment",
-    image: "/5.png",
+    image: "/15.jpg",
   },
   {
     number: "2021 TO PRESENT",
     text: "Handling complete process of PMA's part program",
-    image: "/6.png",
+    image: "/16.jpg",
   },
   
   
