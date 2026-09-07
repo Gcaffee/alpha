@@ -190,7 +190,7 @@ export default function AboutPage() {
 
           {/* LEFT CONTENT */}
 
-          <div className="hero-content">
+          <div className="hero-contentt">
 
             <div className="section-tag">
               <span />
