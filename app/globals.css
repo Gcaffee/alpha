@@ -13758,7 +13758,7 @@ padding-right:10px;
 
   grid-template-columns: 1fr 1fr;
 
-  gap: 100px;
+  gap: 0px;
 
   align-items: center;
 }
@@ -35059,3 +35059,38 @@ padding-left:10px;
 }
 
 
+/* =========================================================
+   C-130 EXPERTISE — MOBILE IMAGE ON TOP
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .alpha-apu-expertise-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* C-130 IMAGE FIRST */
+  .alpha-apu-expertise-visual {
+    order: -1;
+    width: 100%;
+    margin-bottom: 35px;
+  }
+
+  /* TEXT AFTER IMAGE */
+  .alpha-apu-expertise-copy {
+    order: 2;
+    width: 100%;
+  }
+
+  .alpha-apu-expertise-image-wrap {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .alpha-apu-expertise-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
