@@ -22,7 +22,7 @@ const facilities = [
       "Our leadership and engineering team bring extensive experience in APU maintenance, testing, and technical support.",
   },
   {
-    image: "/Test Room (5).jpg",
+    image: "/Test Room (5).webp",
     title: "APU Test Cell & Control Room",
     description:
       "Dedicated testing infrastructure enables controlled performance evaluation and validation of auxiliary power units.",
