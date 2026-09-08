@@ -1,8 +1,6 @@
-
 "use client";
 
 import { useEffect, useRef } from "react";
-
 
 const facilities = [
   {
@@ -92,7 +90,8 @@ const facilities = [
 ];
 
 export default function FacilitiesPage() {
-  const cardsRef = useRef([]);
+  // FIX: Proper TypeScript type
+  const cardsRef = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
     const cards = cardsRef.current;
@@ -112,10 +111,14 @@ export default function FacilitiesPage() {
     );
 
     cards.forEach((card) => {
-      if (card) observer.observe(card);
+      if (card) {
+        observer.observe(card);
+      }
     });
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -124,52 +127,37 @@ export default function FacilitiesPage() {
         <div className="facility-circle"></div>
 
         <div className="facility-container">
-
           {/* HEADER */}
           <div className="facility-header">
-
             <div className="facility-header-left">
-
-              
-
               <h1>
                 WORLD - CLASS MRO
                 <strong>INFRASTRUCTURE</strong>
               </h1>
 
-              <h2>
-                Inside Alpha Aircraft Systems
-              </h2>
-
+              <h2>Inside Alpha Aircraft Systems</h2>
             </div>
 
             <div className="facility-header-right">
-
               <div className="facility-header-line"></div>
 
               <p>
                 Advanced engineering, testing, repair, and logistics
                 capabilities under one integrated facility.
               </p>
-
             </div>
-
           </div>
-
 
           {/* FACILITY GRID */}
           <div className="facility-grid">
-
             {facilities.map((facility, index) => (
-
               <article
                 key={facility.title}
-                ref={(element) => {
+                ref={(element: HTMLElement | null) => {
                   cardsRef.current[index] = element;
                 }}
                 className={`facility-card facility-card-${index + 1}`}
               >
-
                 <img
                   src={facility.image}
                   alt={facility.title}
@@ -179,26 +167,15 @@ export default function FacilitiesPage() {
                 <div className="facility-overlay"></div>
 
                 <div className="facility-content">
+                  <h3>{facility.title}</h3>
 
-                  <h3>
-                    {facility.title}
-                  </h3>
-
-                  <p>
-                    {facility.description}
-                  </p>
-
+                  <p>{facility.description}</p>
                 </div>
-
               </article>
-
             ))}
-
           </div>
-
         </div>
       </section>
     </main>
   );
 }
-
