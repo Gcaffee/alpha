@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useLayoutEffect, useRef } from "react";
@@ -95,6 +96,7 @@ export default function AboutPage() {
 
       // ==========================================
       // DESKTOP HERO PARALLAX
+      // DESKTOP CODE UNCHANGED
       // ==========================================
 
       mm.add("(min-width: 769px)", () => {
@@ -137,6 +139,33 @@ export default function AboutPage() {
             scrub: 1.5,
           },
         });
+      });
+
+      // ==========================================
+      // MOBILE ONLY
+      // IMAGE TOP POSITION
+      // ==========================================
+
+      mm.add("(max-width: 768px)", () => {
+        gsap.fromTo(
+          ".aircraft-image",
+          {
+            opacity: 0,
+            y: -60,
+            x: 0,
+            scale: 0.8,
+            rotate: 3,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            x: 0,
+            scale: 1,
+            rotate: 0,
+            duration: 1.2,
+            ease: "power4.out",
+          }
+        );
       });
 
       // ==========================================
@@ -188,7 +217,11 @@ export default function AboutPage() {
 
         <div className="hero-inner">
 
-          {/* LEFT CONTENT */}
+          {/* ==========================================
+              LEFT CONTENT
+              DESKTOP: LEFT
+              MOBILE: BELOW IMAGE
+          ========================================== */}
 
           <div className="hero-contentt">
 
@@ -210,13 +243,17 @@ export default function AboutPage() {
             </h1>
 
             <p className="about-copy">
-              Alpha Aircraft Systems Inc., located in East 10th Lane, Hialeah, Florida, is a global leader
-in certified aircraft APU services.
+              Alpha Aircraft Systems Inc., located in East 10th Lane,
+              Hialeah, Florida, is a global leader in certified aircraft
+              APU services.
 
-              <br /><br />
-             We specialize in FAA and EASA-approved APU testing, repair, and overhaul for clients
-around the world. With multilingual support and international shipping logistics, we make
-it easy for operators abroad to access trusted aviation services.
+              <br />
+              <br />
+
+              We specialize in FAA and EASA-approved APU testing, repair,
+              and overhaul for clients around the world. With multilingual
+              support and international shipping logistics, we make it easy
+              for operators abroad to access trusted aviation services.
             </p>
 
             <div className="hero-meta">
@@ -240,7 +277,11 @@ it easy for operators abroad to access trusted aviation services.
 
           </div>
 
-          {/* RIGHT VISUAL */}
+          {/* ==========================================
+              RIGHT VISUAL
+              DESKTOP: RIGHT
+              MOBILE: TOP
+          ========================================== */}
 
           <div className="hero-visual">
 
@@ -286,7 +327,11 @@ it easy for operators abroad to access trusted aviation services.
 
       </section>
 
+    
+        
+
+     
+
     </main>
   );
 }
-
