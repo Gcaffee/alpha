@@ -55,7 +55,14 @@ export default function Footer() {
               </a>
             </div>
           </div>
-
+ <div className="footer-links-column">
+            <h3>Quick Links</h3>
+            <Link href="/">Home</Link>
+             <Link href="/about">About</Link>
+            <Link href="/contact">Contact</Link>
+            <Link href="/exhibition">Exhibitions</Link>
+            <Link href="/#certifications">Certifications</Link>
+          </div>
           <div className="footer-links-column">
             <h3>Services</h3>
             <Link href="/a-p-u-overhaul-repairs">A.P.U. Overhaul &amp; Repairs</Link>
@@ -65,21 +72,14 @@ export default function Footer() {
           </div>
 
           <div className="footer-links-column">
-            <h3>Company</h3>
+            <h3 className="foot">.</h3>
             <Link href="/aircraft-scanning">Aircraft Scanning</Link>
             <Link href="/borescope-services">Borescope Services</Link>
             <Link href="/c-s-d-pneumatic-systems">C.S.D. &amp; Pneumatic Systems</Link>
            
           </div>
 
-          <div className="footer-links-column">
-            <h3>Quick Links</h3>
-            <Link href="/">Home</Link>
-             <Link href="/about">About</Link>
-            <Link href="/contact">Contact</Link>
-            <Link href="/exhibition">Exhibitions</Link>
-            <Link href="/#certifications">Certifications</Link>
-          </div>
+         
         </div>
 
         <div className="footer-bottom-bar">

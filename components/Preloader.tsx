@@ -792,7 +792,7 @@ export default function APUOverhaulPage() {
 
           <div className="alpha-apu-hero-image-card">
             <Image
-              src="/app.png"
+              src="/apu.png"
               alt="Alpha Aircraft Systems APU Overhaul"
               className="alpha-apu-hero-image"
               width={900}
