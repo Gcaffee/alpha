@@ -33876,6 +33876,20 @@ padding-left:10px;
 
   color: #fff;
 }
+@media (max-width: 767px) {.hero-video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
+
+  width: 40%;
+  height: 75vh;
+
+  overflow: hidden;
+  z-index: 1;
+
+  margin-top: 12vh;
+}}
 @media (max-width: 767px) {.hero-content {
   position: relative;
   z-index: 5;
