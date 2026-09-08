@@ -9171,8 +9171,13 @@ display: none !important;
     max-width: 680px;
   }
 }
-
+@media (max-width: 768px) {.alpha-apu-expertise {
+    min-height: 100vh;
+    padding: 80px 0px 0px 0px !important;
+    background: #e6eaeb;
+}}
 @media (max-width: 768px) {
+  
   .site-footer {
     padding: 18px 12px 24px;
   }
@@ -9199,7 +9204,7 @@ display: none !important;
   display: flex;
   align-items: center;
 
-  padding: 60px 10px 0px 10px !important;
+  padding: 60px 10px 0px 10px;
 }
   .footer-branding {
     margin-bottom: 16px;
