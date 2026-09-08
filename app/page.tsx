@@ -7,10 +7,10 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import WhoWeAre from "@/components/WhoWeAre";
 import Challenges from "@/components/Challenges";
-import WhatIf from "@/components/WhatIf";
+
 import Testimonial from "@/components/Testimonial";
 import Marquee from "@/components/Marquee";
-
+import Facility from "@/components/Facility";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -45,8 +45,10 @@ export default function Home() {
         <Hero />
         <WhoWeAre />
         <Marquee />
-        <WhatIf />
+        
+        <Facility />
           <Testimonial />
+          
         <Challenges />
         
         </main>
