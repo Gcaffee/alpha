@@ -6536,7 +6536,7 @@ span.milestone-heading-linee
 
 .what-if-section {
   width: 100%;
-  min-height: 100vh;
+  min-height: 90vh;
 
   background: #eef1f2
 ;
@@ -6556,7 +6556,7 @@ span.milestone-heading-linee
 section.what-if-sectionss {
     background-color: #eef1f2 ! IMPORTANT;
     width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
 
   
   color: #fff;
@@ -6566,8 +6566,10 @@ section.what-if-sectionss {
   display: flex;
   align-items: center;
 
-  padding: 50px 10px 70px;
+  padding: 60px 10px 40px 10px;
 }
+
+
 /* =====================================================
    CONTAINER
 ===================================================== */
@@ -6985,7 +6987,7 @@ padding-bottom: 20px;
 @media (max-width: 600px) {
 
   .what-if-section {
-    padding: 15px 15px 50px;
+    padding: 15px 15px 0px;
   }
 
   .what-if-box {
@@ -7255,7 +7257,7 @@ padding-bottom: 20px;
 
   isolation: isolate;
 
-  background: #C0C0C0;
+  background: #C8C8C8;
 }
 
 
@@ -9184,7 +9186,21 @@ display: none !important;
     gap: 28px;
     padding: 28px 20px 20px;
   }
+.what-if-sectionss {
+    background-color: #eef1f2 ! IMPORTANT;
+    width: 100%;
+  min-height: 80vh;
 
+  
+  color: #fff;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  padding: 60px 10px 0px 10px !important;
+}
   .footer-branding {
     margin-bottom: 16px;
   }
@@ -28096,7 +28112,13 @@ padding-left:10px;
     font-size: 15px;
   }
 
-
+.facility-section {
+  position: relative;
+  width: 100%;
+  padding: 0px 0 80px;
+  background: #EEF1F2;
+  overflow: hidden;
+}
   /* RECENT */
 
   .expo-recent-section {
@@ -29993,7 +30015,9 @@ padding-left:10px;
   .our-story {
     padding: 0;
   }
-
+.facility-section {
+    padding: 0px !important;
+}
   .our-story__container {
     display: flex;
     flex-direction: column;
@@ -33521,7 +33545,7 @@ padding-left:10px;
 }
 @media (max-width: 767px) {
   .hero-section {
-    background: #C0C0C0;
+    background: #C8C8C8;
     min-height: auto;
   }
 
@@ -34204,7 +34228,7 @@ padding-left:10px;
 .facility-section {
   position: relative;
   width: 100%;
-  padding: 0px 0 80px;
+  padding: 0px 0 30px;
   background: #EEF1F2;
   overflow: hidden;
 }
@@ -34868,9 +34892,7 @@ padding-left:10px;
 
 @media (max-width: 650px) {
 
-  .facility-section {
-    padding: 65px 0 45px;
-  }
+  
 
   .facility-container {
     width: calc(100% - 30px);
@@ -35030,3 +35052,5 @@ padding-left:10px;
   }
 
 }
+
+
