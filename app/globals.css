@@ -5876,12 +5876,10 @@ span.milestone-heading-linee
 @media (max-width: 899px) {
 
   .milestones-section {
-    padding: 80px 20px 100px;
+    padding: 80px 20px 20px;
   }
 
-  .milestones-heading-wrap {
-    margin-bottom: 55px;
-  }
+  
 
   .milestones-heading {
     font-size: clamp(44px, 13vw, 75px);
@@ -12597,7 +12595,7 @@ padding-right:10px;
   }
 
   .hero-left {
-    margin-bottom: 80px;
+    margin-bottom: 0px;
   }
 
   .mro-letter {
