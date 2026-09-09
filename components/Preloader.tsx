@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -48,6 +47,7 @@ export default function APUOverhaulPage() {
     const ctx = gsap.context(() => {
       /* =====================================================
          HERO INTRO
+         Text animation ONLY
       ===================================================== */
 
       const heroTimeline = gsap.timeline({
@@ -79,245 +79,17 @@ export default function APUOverhaulPage() {
             duration: 0.8,
           },
           "-=.5"
-        )
-        .from(
-          ".alpha-apu-hero-image-wrap",
-          {
-            scale: 0.78,
-            opacity: 0,
-            rotationY: -20,
-            rotationX: 10,
-            x: 80,
-            duration: 1.4,
-            ease: "expo.out",
-          },
-          "-=1"
         );
 
       /* =====================================================
-         HERO IMAGE FLOAT
+         HERO IMAGE
          
-         NOTE:
-         Scroll rotation has been removed.
+         NO ANIMATION
+         NO ROTATION
+         NO FLOAT
+         NO MOUSE 3D
+         NO HOVER ZOOM
       ===================================================== */
-
-      gsap.to(".alpha-apu-hero-image-wrap", {
-        y: -10,
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
-
-      /* =====================================================
-         HERO MOUSE 3D
-      ===================================================== */
-
-      const handleMouseMove = (event: MouseEvent) => {
-        if (window.innerWidth <= 767) return;
-
-        const x = event.clientX / window.innerWidth - 0.5;
-        const y = event.clientY / window.innerHeight - 0.5;
-
-        gsap.to(".alpha-apu-hero-image-card", {
-          rotationY: x * 8,
-          rotationX: y * -6,
-          x: x * 12,
-          y: y * 8,
-          duration: 0.8,
-          ease: "power3.out",
-        });
-
-        gsap.to(".alpha-apu-hero-image-glow", {
-          x: x * -25,
-          y: y * -20,
-          duration: 1,
-          ease: "power3.out",
-        });
-      };
-
-      window.addEventListener("mousemove", handleMouseMove);
-
-      /* =====================================================
-         HERO HOVER
-      ===================================================== */
-
-      const heroImageCard =
-        root.current?.querySelector(
-          ".alpha-apu-hero-image-card"
-        ) as HTMLElement | null;
-
-      if (heroImageCard) {
-        const handleHeroEnter = () => {
-          gsap.to(".alpha-apu-hero-image", {
-            scale: 1.06,
-            duration: 1,
-            ease: "power3.out",
-          });
-        };
-
-        const handleHeroLeave = () => {
-          gsap.to(".alpha-apu-hero-image", {
-            scale: 1,
-            duration: 1,
-            ease: "power3.out",
-          });
-        };
-
-        heroImageCard.addEventListener(
-          "mouseenter",
-          handleHeroEnter
-        );
-
-        heroImageCard.addEventListener(
-          "mouseleave",
-          handleHeroLeave
-        );
-      }
-
-      /* =====================================================
-         MODULES SECTION
-      ===================================================== */
-
-      gsap.from(".alpha-apu-modules-header", {
-        scrollTrigger: {
-          trigger: ".alpha-apu-modules-section",
-          start: "top 75%",
-          end: "center center",
-          scrub: 1,
-        },
-        y: 100,
-        opacity: 0,
-      });
-
-      gsap.from(".alpha-apu-module-card", {
-        scrollTrigger: {
-          trigger: ".alpha-apu-modules-grid",
-          start: "top 80%",
-        },
-        y: 100,
-        opacity: 0,
-        rotationY: 15,
-        scale: 0.92,
-        duration: 1,
-        stagger: 0.15,
-        ease: "power4.out",
-      });
-
-      /* =====================================================
-         MODULE CARD HOVER
-      ===================================================== */
-
-      root.current
-        ?.querySelectorAll<HTMLElement>(
-          ".alpha-apu-module-card"
-        )
-        .forEach((card) => {
-          const handleMove = (event: MouseEvent) => {
-            if (window.innerWidth <= 767) return;
-
-            const rect = card.getBoundingClientRect();
-
-            const x = event.clientX - rect.left;
-            const y = event.clientY - rect.top;
-
-            gsap.to(card, {
-              rotationX:
-                (y / rect.height - 0.5) * -8,
-              rotationY:
-                (x / rect.width - 0.5) * 8,
-              scale: 1.02,
-              duration: 0.4,
-              ease: "power2.out",
-            });
-          };
-
-          const handleLeave = () => {
-            gsap.to(card, {
-              rotationX: 0,
-              rotationY: 0,
-              scale: 1,
-              duration: 0.6,
-              ease: "power3.out",
-            });
-          };
-
-          card.addEventListener("mousemove", handleMove);
-          card.addEventListener("mouseleave", handleLeave);
-        });
-
-      /* =====================================================
-         PROCESS HEADER
-      ===================================================== */
-
-      gsap.from(".alpha-apu-process-header", {
-        scrollTrigger: {
-          trigger: ".alpha-apu-process",
-          start: "top 75%",
-          end: "top 35%",
-          scrub: 1,
-        },
-        y: 120,
-        opacity: 0,
-      });
-
-      /* =====================================================
-         PROCESS CARDS
-      ===================================================== */
-
-      gsap.from(".alpha-apu-process-card", {
-        scrollTrigger: {
-          trigger: ".alpha-apu-process-grid",
-          start: "top 80%",
-        },
-        y: 130,
-        rotationX: 45,
-        opacity: 0,
-        transformOrigin: "center bottom",
-        duration: 1.2,
-        stagger: 0.18,
-        ease: "power4.out",
-      });
-
-      /* =====================================================
-         PROCESS CARD HOVER
-      ===================================================== */
-
-      root.current
-        ?.querySelectorAll<HTMLElement>(
-          ".alpha-apu-process-card"
-        )
-        .forEach((card) => {
-          const handleMove = (event: MouseEvent) => {
-            const rect = card.getBoundingClientRect();
-
-            const x = event.clientX - rect.left;
-            const y = event.clientY - rect.top;
-
-            gsap.to(card, {
-              rotationX:
-                (y / rect.height - 0.5) * -12,
-              rotationY:
-                (x / rect.width - 0.5) * 12,
-              scale: 1.03,
-              duration: 0.4,
-              ease: "power2.out",
-            });
-          };
-
-          const handleLeave = () => {
-            gsap.to(card, {
-              rotationX: 0,
-              rotationY: 0,
-              scale: 1,
-              duration: 0.6,
-              ease: "power3.out",
-            });
-          };
-
-          card.addEventListener("mousemove", handleMove);
-          card.addEventListener("mouseleave", handleLeave);
-        });
 
       /* =====================================================
          EXPERTISE
@@ -357,6 +129,15 @@ export default function APUOverhaulPage() {
             rotationX: 20,
           },
           "-=.5"
+        )
+        .from(
+          ".alpha-apu-info-tag",
+          {
+            scale: 0.5,
+            opacity: 0,
+            stagger: 0.1,
+          },
+          "-=.3"
         );
 
       /* =====================================================
@@ -437,6 +218,106 @@ export default function APUOverhaulPage() {
       }
 
       /* =====================================================
+         FLOATING TAGS
+      ===================================================== */
+
+      gsap
+        .utils
+        .toArray<HTMLElement>(
+          ".alpha-apu-info-tag"
+        )
+        .forEach((tag, index) => {
+          gsap.to(tag, {
+            y: index % 2 === 0 ? -18 : 18,
+            duration: 2 + index * 0.3,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+          });
+        });
+
+      /* =====================================================
+         PROCESS HEADER
+      ===================================================== */
+
+      gsap.from(".alpha-apu-process-header", {
+        scrollTrigger: {
+          trigger: ".alpha-apu-process",
+          start: "top 75%",
+          end: "top 35%",
+          scrub: 1,
+        },
+        y: 120,
+        opacity: 0,
+      });
+
+      /* =====================================================
+         PROCESS CARDS
+      ===================================================== */
+
+      gsap.from(".alpha-apu-process-card", {
+        scrollTrigger: {
+          trigger: ".alpha-apu-process-grid",
+          start: "top 80%",
+        },
+        y: 130,
+        rotationX: 45,
+        opacity: 0,
+        transformOrigin: "center bottom",
+        duration: 1.2,
+        stagger: 0.18,
+        ease: "power4.out",
+      });
+
+      /* =====================================================
+         PROCESS CARD HOVER
+      ===================================================== */
+
+      root.current
+        ?.querySelectorAll<HTMLElement>(
+          ".alpha-apu-process-card"
+        )
+        .forEach((card) => {
+          const handleMove = (event: MouseEvent) => {
+            const rect =
+              card.getBoundingClientRect();
+
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            gsap.to(card, {
+              rotationX:
+                (y / rect.height - 0.5) * -12,
+              rotationY:
+                (x / rect.width - 0.5) * 12,
+              scale: 1.03,
+              duration: 0.4,
+              ease: "power2.out",
+            });
+          };
+
+          const handleLeave = () => {
+            gsap.to(card, {
+              rotationX: 0,
+              rotationY: 0,
+              scale: 1,
+              duration: 0.6,
+              ease: "power3.out",
+            });
+          };
+
+          card.addEventListener(
+            "mousemove",
+            handleMove
+          );
+
+          card.addEventListener(
+            "mouseleave",
+            handleLeave
+          );
+        });
+
+      /* =====================================================
          CAPABILITIES
       ===================================================== */
 
@@ -461,12 +342,15 @@ export default function APUOverhaulPage() {
       });
 
       capabilitiesTimeline
-        .from(".alpha-apu-cap-card:first-child", {
-          x: -250,
-          rotationY: -40,
-          opacity: 0,
-          scale: 0.75,
-        })
+        .from(
+          ".alpha-apu-cap-card:first-child",
+          {
+            x: -250,
+            rotationY: -40,
+            opacity: 0,
+            scale: 0.75,
+          }
+        )
         .from(
           ".alpha-apu-cap-card:last-child",
           {
@@ -484,7 +368,9 @@ export default function APUOverhaulPage() {
 
       gsap
         .utils
-        .toArray<HTMLElement>(".alpha-apu-cap-number")
+        .toArray<HTMLElement>(
+          ".alpha-apu-cap-number"
+        )
         .forEach((number) => {
           gsap.to(number, {
             scrollTrigger: {
@@ -536,8 +422,15 @@ export default function APUOverhaulPage() {
             });
           };
 
-          card.addEventListener("mousemove", handleMove);
-          card.addEventListener("mouseleave", handleLeave);
+          card.addEventListener(
+            "mousemove",
+            handleMove
+          );
+
+          card.addEventListener(
+            "mouseleave",
+            handleLeave
+          );
         });
 
       /* =====================================================
@@ -592,7 +485,9 @@ export default function APUOverhaulPage() {
 
       gsap
         .utils
-        .toArray<HTMLElement>(".alpha-apu-grid-bg")
+        .toArray<HTMLElement>(
+          ".alpha-apu-grid-bg"
+        )
         .forEach((grid) => {
           gsap.to(grid, {
             scrollTrigger: {
@@ -606,21 +501,125 @@ export default function APUOverhaulPage() {
           });
         });
 
-      ScrollTrigger.refresh();
-
       /* =====================================================
-         CLEANUP
+         BOTTOM CAROUSEL INTRO
       ===================================================== */
 
-      return () => {
-        window.removeEventListener(
-          "mousemove",
-          handleMouseMove
-        );
-      };
+      gsap.from(".alpha-apu-carousel-header", {
+        scrollTrigger: {
+          trigger: ".alpha-apu-carousel-section",
+          start: "top 80%",
+        },
+        y: 100,
+        opacity: 0,
+        duration: 1.1,
+        ease: "power4.out",
+      });
+
+      gsap.from(".alpha-apu-bottom-card", {
+        scrollTrigger: {
+          trigger: ".alpha-apu-carousel-wrapper",
+          start: "top 85%",
+        },
+        y: 100,
+        opacity: 0,
+        rotationY: 18,
+        scale: 0.9,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power4.out",
+      });
+
+      /* =====================================================
+         BACKGROUND MODULE IMAGE PARALLAX
+      ===================================================== */
+
+      gsap.to(".alpha-apu-carousel-bg img", {
+        y: -100,
+        rotation: -4,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".alpha-apu-carousel-section",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+
+      /* =====================================================
+         MODULE NUMBER PARALLAX
+      ===================================================== */
+
+      gsap.to(".alpha-apu-module-number", {
+        x: -100,
+        y: -50,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".alpha-apu-carousel-section",
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+
+      /* =====================================================
+         CAROUSEL CARD 3D HOVER
+      ===================================================== */
+
+      root.current
+        ?.querySelectorAll<HTMLElement>(
+          ".alpha-apu-bottom-card"
+        )
+        .forEach((card) => {
+          const handleCardMove = (
+            event: MouseEvent
+          ) => {
+            if (window.innerWidth <= 767) return;
+
+            const rect =
+              card.getBoundingClientRect();
+
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            gsap.to(card, {
+              rotationX:
+                (y / rect.height - 0.5) * -8,
+              rotationY:
+                (x / rect.width - 0.5) * 8,
+              scale: 1.02,
+              duration: 0.4,
+              ease: "power3.out",
+            });
+          };
+
+          const handleCardLeave = () => {
+            gsap.to(card, {
+              rotationX: 0,
+              rotationY: 0,
+              scale: 1,
+              duration: 0.6,
+              ease: "power3.out",
+            });
+          };
+
+          card.addEventListener(
+            "mousemove",
+            handleCardMove
+          );
+
+          card.addEventListener(
+            "mouseleave",
+            handleCardLeave
+          );
+        });
+
+      ScrollTrigger.refresh();
     }, root);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+    };
   }, []);
 
   return (
@@ -637,7 +636,6 @@ export default function APUOverhaulPage() {
 
         <div className="alpha-apu-container">
           <div className="alpha-apu-hero-content">
-
             <h1 className="alpha-apu-hero-title">
               A.P.U
               <br />
@@ -674,7 +672,9 @@ export default function APUOverhaulPage() {
           </div>
         </div>
 
-        {/* HERO IMAGE */}
+        {/* =====================================================
+            STATIC HERO IMAGE
+        ===================================================== */}
 
         <div className="alpha-apu-hero-image-wrap">
           <div className="alpha-apu-hero-image-glow" />
@@ -705,27 +705,26 @@ export default function APUOverhaulPage() {
         <div className="alpha-apu-modules-bg" />
 
         <div className="alpha-apu-modules-container">
-
           {/* HEADER */}
 
           <div
-            style={{ color: "#082b4c" }}
             className="alpha-apu-modules-header"
+            style={{ color: "#082b4c" }}
           >
             <span>CAPABILITIES</span>
 
             <h2>APU MODULES</h2>
 
             <p>
-              Advanced maintenance, repair and overhaul
-              capabilities for critical aircraft systems.
+              Advanced maintenance, repair and
+              overhaul capabilities for critical
+              aircraft systems.
             </p>
           </div>
 
           {/* CARDS */}
 
           <div className="alpha-apu-modules-grid">
-
             {/* CARD 01 */}
 
             <article className="alpha-apu-module-card">
@@ -751,7 +750,7 @@ export default function APUOverhaulPage() {
               <div className="alpha-apu-module-content">
                 <span>AIRCRAFT</span>
 
-                <h3>BOEING 767</h3>
+                <h3>BOEING767</h3>
               </div>
             </article>
 
@@ -838,7 +837,7 @@ export default function APUOverhaulPage() {
               <div className="alpha-apu-module-content">
                 <span>AIRCRAFT</span>
 
-                <h3>BOEING 767</h3>
+                <h3>BOEING767</h3>
               </div>
             </article>
           </div>
@@ -848,7 +847,7 @@ export default function APUOverhaulPage() {
           <div className="alpha-apu-modules-cta">
             <a
               style={{ color: "#fff" }}
-              href="#expertise"
+              href="#capabilities"
               className="alpha-apu-button alpha-apu-button-primary"
             >
               EXPLORE OUR CAPABILITIES
@@ -867,7 +866,6 @@ export default function APUOverhaulPage() {
         id="process"
       >
         <div className="alpha-apu-container">
-
           <div className="alpha-apu-process-header">
             <div>
               <h2 className="alpha-apu-process-title">
@@ -896,7 +894,7 @@ export default function APUOverhaulPage() {
       </section>
 
       {/* =====================================================
-          EXPERTISE
+          C-130 EXPERTISE
       ===================================================== */}
 
       <section
@@ -911,7 +909,6 @@ export default function APUOverhaulPage() {
 
         <div className="alpha-apu-container">
           <div className="alpha-apu-expertise-grid">
-
             <div className="alpha-apu-expertise-copy">
               <h2>
                 KEEPING THE
@@ -922,11 +919,12 @@ export default function APUOverhaulPage() {
               </h2>
 
               <p>
-                From component repair and overhaul to
-                testing and support, Alpha Aircraft Systems
-                delivers dependable MRO capabilities for
-                the C-130 Hercules. Browse our detailed
-                C-130 parts and capability database.
+                From component repair and overhaul
+                to testing and support, Alpha Aircraft
+                Systems delivers dependable MRO
+                capabilities for the C-130 Hercules.
+                Browse our detailed C-130 parts and
+                capability database.
               </p>
 
               <a
@@ -959,7 +957,6 @@ export default function APUOverhaulPage() {
                 <div className="alpha-apu-image-overlay" />
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -980,7 +977,6 @@ export default function APUOverhaulPage() {
 
         <div className="alpha-apu-container">
           <div className="alpha-apu-support-inner">
-
             <div className="alpha-apu-support-badge">
               <i />
               REQUEST A DEMO
@@ -994,11 +990,11 @@ export default function APUOverhaulPage() {
 
             <p className="alpha-apu-support-text">
               Get a closer look at how Alpha Aircraft
-              Systems supports aircraft MRO with reliable
-              repair, overhaul, testing and component
-              solutions. Request a free demo to explore
-              our capabilities and discuss your requirements
-              with our team.
+              Systems supports aircraft MRO with
+              reliable repair, overhaul, testing and
+              component solutions. Request a free demo
+              to explore our capabilities and discuss
+              your requirements with our team.
             </p>
 
             <a
@@ -1008,11 +1004,9 @@ export default function APUOverhaulPage() {
               DISCUSS YOUR REQUIREMENTS
               <b>↗</b>
             </a>
-
           </div>
         </div>
       </section>
     </main>
   );
 }
-
