@@ -32,7 +32,6 @@ const exhibitions = [
     location: "MRO XPO India",
     date: "March 11-12, 2026",
     image: "/MRO.webp",
-   
     cta: "EXPLORE",
     link: "/mro-xpo-india",
   },
@@ -43,7 +42,6 @@ const exhibitions = [
       "Riyadh International Convention & Exhibition Center",
     date: "February 09-10, 2026",
     image: "/exhibition-world-defense-show",
-   
     cta: "EXPLORE",
     link: "/world-defense-show",
   },
@@ -54,7 +52,6 @@ const exhibitions = [
       "Dubai World Trade Centre, UAE",
     date: "2-3 February, 2026",
     image: "/MRO3.webp",
-   
     cta: "EXPLORE",
     link: "/exhibition-mro-middle-east-2026",
   },
@@ -65,7 +62,6 @@ const exhibitions = [
       "Begumpet Airport, Hyderabad",
     date: "28-31 January, 2026",
     image: "/MRO4.webp",
-   
     cta: "EXPLORE",
     link: "/exhibition-wings-india",
   },
@@ -144,11 +140,6 @@ export default function Exhibitions() {
             ".exhibition-card-title"
           ) as HTMLElement | null;
 
-        const category =
-          card.querySelector(
-            ".exhibition-category"
-          ) as HTMLElement | null;
-
         const button =
           card.querySelector(
             ".exhibition-card-button"
@@ -158,7 +149,6 @@ export default function Exhibitions() {
           !image ||
           !content ||
           !title ||
-          !category ||
           !button
         ) {
           return;
@@ -176,11 +166,6 @@ export default function Exhibitions() {
           x: 0,
         });
 
-        gsap.set(category, {
-          y: 12,
-          opacity: 0,
-        });
-
         gsap.set(button, {
           y: 15,
           opacity: 0,
@@ -195,7 +180,6 @@ export default function Exhibitions() {
             image,
             content,
             title,
-            category,
             button,
           ]);
 
@@ -237,19 +221,6 @@ export default function Exhibitions() {
             0.05
           );
 
-          /* CATEGORY */
-
-          tl.to(
-            category,
-            {
-              y: 0,
-              opacity: 1,
-              duration: 0.45,
-              ease: "power3.out",
-            },
-            0.1
-          );
-
           /* CTA */
 
           tl.to(
@@ -273,7 +244,6 @@ export default function Exhibitions() {
             image,
             content,
             title,
-            category,
             button,
           ]);
 
@@ -310,19 +280,6 @@ export default function Exhibitions() {
             {
               x: 0,
               duration: 0.4,
-              ease: "power3.inOut",
-            },
-            0
-          );
-
-          /* CATEGORY */
-
-          tl.to(
-            category,
-            {
-              y: 12,
-              opacity: 0,
-              duration: 0.3,
               ease: "power3.inOut",
             },
             0
@@ -373,6 +330,7 @@ export default function Exhibitions() {
       ================================================= */}
 
       <div className="exhibition-intro">
+
         {/* LABEL */}
 
         <div className="exhibition-label">
@@ -421,6 +379,7 @@ export default function Exhibitions() {
       ================================================= */}
 
       <div className="exhibition-slider">
+
         {/* =================================================
             SWIPER
         ================================================= */}
@@ -467,6 +426,7 @@ export default function Exhibitions() {
               <article
                 className="exhibition-card"
               >
+
                 {/* =====================================
                     IMAGE
                 ===================================== */}
@@ -496,6 +456,7 @@ export default function Exhibitions() {
                 ===================================== */}
 
                 <div className="exhibition-card-content">
+
                   {/* TITLE */}
 
                   <h3 className="exhibition-card-title">
@@ -514,15 +475,7 @@ export default function Exhibitions() {
                     </span>
                   </div>
 
-                  {/* CATEGORY */}
-
-                  <div className="exhibition-category">
-                    {exhibition.category}
-                  </div>
-
-                  {/* =================================
-                      INDIVIDUAL CTA
-                  ================================= */}
+                  {/* INDIVIDUAL CTA */}
 
                   <Link
                     href={exhibition.link}
@@ -537,6 +490,7 @@ export default function Exhibitions() {
                       strokeWidth={1.8}
                     />
                   </Link>
+
                 </div>
               </article>
             </SwiperSlide>
@@ -548,7 +502,9 @@ export default function Exhibitions() {
         ================================================= */}
 
         <div className="exhibition-bottom-controls">
+
           <div className="slider-controls">
+
             {/* PREVIOUS */}
 
             <button
@@ -580,10 +536,10 @@ export default function Exhibitions() {
                 strokeWidth={1.2}
               />
             </button>
+
           </div>
         </div>
       </div>
     </section>
   );
 }
-
