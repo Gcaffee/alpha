@@ -41,9 +41,9 @@ const exhibitions = [
     location:
       "Riyadh International Convention & Exhibition Center",
     date: "February 09-10, 2026",
-    image: "/exhibition-world-defense-show",
+    image: "/MRO2.webp",
     cta: "EXPLORE",
-    link: "/world-defense-show",
+    link: "/exhibition-world-defense-show",
   },
 
   {
