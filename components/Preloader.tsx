@@ -845,14 +845,21 @@ export default function APUOverhaulPage() {
           {/* CTA */}
 
           <div className="alpha-apu-modules-cta">
+            
+
             <a
-              style={{ color: "#fff" }}
-              href="#capabilities"
-              className="alpha-apu-button alpha-apu-button-primary"
-            >
-              EXPLORE OUR CAPABILITIES
-              <b>↗</b>
-            </a>
+                href="/AAS-APU-CAPABILITIES-8-8-2023.pdf"
+                download
+                className="alpha-apu-module-download"
+              >
+                <span style={{ color: "#fff"}}>
+                  EXPLORE OUR CAPABILITIES
+                </span>
+
+                <span className="alpha-apu-download-arrow" style={{ color: "#fff"}}>
+                  ↗
+                </span>
+              </a>
           </div>
         </div>
       </section>
@@ -928,7 +935,7 @@ export default function APUOverhaulPage() {
               </p>
 
               <a
-                href="/documents/component-mro.pdf"
+                href="/AAS-CAPABILITIES-C-130.pdf"
                 download
                 className="alpha-apu-module-download"
               >
@@ -998,12 +1005,13 @@ export default function APUOverhaulPage() {
             </p>
 
             <a
-              href="#contact"
+              href="/contact"
               className="alpha-apu-button alpha-apu-button-primary alpha-apu-support-button"
             >
               DISCUSS YOUR REQUIREMENTS
               <b>↗</b>
             </a>
+            
           </div>
         </div>
       </section>

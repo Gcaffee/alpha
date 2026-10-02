@@ -72,8 +72,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-links-column">
-            <h3 className="foot">.</h3>
-            <Link href="/aircraft-scanning">Aircraft Scanning</Link>
+            <Link className="skk"href="/aircraft-scanning">Aircraft Scanning</Link>
             <Link href="/borescope-services">Borescope Services</Link>
             <Link href="/c-s-d-pneumatic-systems">C.S.D. &amp; Pneumatic Systems</Link>
            

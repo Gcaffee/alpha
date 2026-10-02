@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -320,7 +319,6 @@ export default function WhatIfSection() {
     ===================================================== */
 
     const ctx = gsap.context(() => {
-
       /* ===================================================
          INITIAL SLIDER
       =================================================== */
@@ -329,7 +327,6 @@ export default function WhatIfSection() {
 
       /* ===================================================
          CERTIFICATES HEADING
-         SLOW 3D SCROLL ANIMATION
       =================================================== */
 
       const heading =
@@ -346,88 +343,43 @@ export default function WhatIfSection() {
         heading &&
         headingChars.length
       ) {
-
-        /* ===============================================
-           3D PERSPECTIVE
-        =============================================== */
-
         gsap.set(heading, {
           perspective: 1600,
           transformStyle:
             "preserve-3d",
         });
 
-        /* ===============================================
-           INITIAL 3D POSITION
-        =============================================== */
-
         gsap.set(headingChars, {
           y: 120,
-
           z: -180,
-
           opacity: 0,
-
           rotateX: -65,
-
           rotateY: 12,
-
           scale: 0.88,
-
           transformOrigin:
             "50% 100%",
-
           transformPerspective: 1600,
-
           force3D: true,
         });
 
-        /* ===============================================
-           SLOW 3D SCROLL REVEAL
-        =============================================== */
-
         gsap.to(headingChars, {
           y: 0,
-
           z: 0,
-
           opacity: 1,
-
           rotateX: 0,
-
           rotateY: 0,
-
           scale: 1,
-
           duration: 2,
-
           stagger: {
             each: 0.14,
             from: "start",
           },
-
           ease: "power2.out",
-
           scrollTrigger: {
             trigger: heading,
-
-            /*
-             * Animation starts when heading
-             * enters viewport.
-             */
             start: "top 88%",
-
-            /*
-             * Long animation area
-             * creates slow movement.
-             */
             end: "top 25%",
-
-            /*
-             * Slow + smooth scroll sync.
-             */
             scrub: 4,
-
             invalidateOnRefresh: true,
           },
         });
@@ -480,7 +432,6 @@ export default function WhatIfSection() {
         "ArrowRight"
       ) {
         event.preventDefault();
-
         nextSlide();
       }
 
@@ -489,7 +440,6 @@ export default function WhatIfSection() {
         "ArrowLeft"
       ) {
         event.preventDefault();
-
         previousSlide();
       }
     };
@@ -538,7 +488,6 @@ export default function WhatIfSection() {
 
   return (
     <section
-      id="certifications"
       ref={sectionRef}
       className="what-if-sectionss"
     >
@@ -553,7 +502,6 @@ export default function WhatIfSection() {
           <div className="what-if-heading">
 
             <h2>
-
               <span className="milestone-heading-line">
 
                 {"CERTIFICATES"
@@ -576,7 +524,6 @@ export default function WhatIfSection() {
                   )}
 
               </span>
-
             </h2>
 
           </div>
@@ -675,44 +622,38 @@ export default function WhatIfSection() {
                           </p>
 
                           {/* =================================
-                              DOWNLOAD
+                              DOWNLOAD CTA - ALWAYS VISIBLE
                           ================================= */}
 
-                          <div className="what-if-hover-content">
+                          <button
+                            type="button"
+                            className="what-if-download-cta"
+                            onClick={(
+                              event
+                            ) => {
+                              event.stopPropagation();
 
-                            <button
-                              type="button"
-                              className="what-if-download-cta"
-                              onClick={(
-                                event
-                              ) => {
-                                event.stopPropagation();
+                              downloadPDF(
+                                card.pdf,
+                                card.text
+                              );
+                            }}
+                          >
+                            <span>
+                              {
+                                card.cta
+                              }
+                            </span>
 
-                                downloadPDF(
-                                  card.pdf,
-                                  card.text
-                                );
-                              }}
-                            >
-
-                              <span>
-                                {
-                                  card.cta
-                                }
-                              </span>
-
-                              <Download
-                                size={
-                                  16
-                                }
-                                strokeWidth={
-                                  1.5
-                                }
-                              />
-
-                            </button>
-
-                          </div>
+                            <Download
+                              size={
+                                16
+                              }
+                              strokeWidth={
+                                1.5
+                              }
+                            />
+                          </button>
 
                         </div>
 
@@ -773,6 +714,3 @@ export default function WhatIfSection() {
     </section>
   );
 }
-
-
-

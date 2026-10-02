@@ -3,8 +3,11 @@
 
 import { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import {
   ArrowLeft,
   ArrowRight,
@@ -25,39 +28,46 @@ gsap.registerPlugin(ScrollTrigger);
 
 const exhibitions = [
   {
-    id: 1,
     name: "MRO XPO India",
     location: "MRO XPO India",
     date: "March 11-12, 2026",
     image: "/MRO.webp",
-    category: "Recent Exhibition",
+   
+    cta: "EXPLORE",
+    link: "/mro-xpo-india",
   },
+
   {
-    id: 2,
     name: "World Defense Show",
     location:
       "Riyadh International Convention & Exhibition Center",
     date: "February 09-10, 2026",
-    image: "/MRO2.webp",
-    category: "Recent Exhibition",
+    image: "/exhibition-world-defense-show",
+   
+    cta: "EXPLORE",
+    link: "/world-defense-show",
   },
+
   {
-    id: 3,
     name: "MRO Middle East",
     location:
       "Dubai World Trade Centre, UAE",
     date: "2-3 February, 2026",
     image: "/MRO3.webp",
-    category: "Recent Exhibition",
+   
+    cta: "EXPLORE",
+    link: "/exhibition-mro-middle-east-2026",
   },
+
   {
-    id: 4,
     name: "Wings India",
     location:
       "Begumpet Airport, Hyderabad",
     date: "28-31 January, 2026",
     image: "/MRO4.webp",
-    category: "Recent Exhibition",
+   
+    cta: "EXPLORE",
+    link: "/exhibition-wings-india",
   },
 ];
 
@@ -66,8 +76,7 @@ const exhibitions = [
 ========================================================= */
 
 export default function Exhibitions() {
-  const sectionRef =
-    useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   /* =======================================================
      GSAP
@@ -75,47 +84,40 @@ export default function Exhibitions() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-
       /* ===================================================
          LEFT CONTENT REVEAL
       =================================================== */
 
-      gsap.from(
-        ".exhibition-intro",
-        {
-          x: -80,
-          opacity: 0,
-          duration: 1.1,
-          ease: "power4.out",
+      gsap.from(".exhibition-intro", {
+        x: -80,
+        opacity: 0,
+        duration: 1.1,
+        ease: "power4.out",
 
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-            once: true,
-          },
-        }
-      );
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          once: true,
+        },
+      });
 
       /* ===================================================
          RIGHT SLIDER REVEAL
       =================================================== */
 
-      gsap.from(
-        ".exhibition-slider",
-        {
-          x: 80,
-          opacity: 0,
-          duration: 1.1,
-          delay: 0.15,
-          ease: "power4.out",
+      gsap.from(".exhibition-slider", {
+        x: 80,
+        opacity: 0,
+        duration: 1.1,
+        delay: 0.15,
+        ease: "power4.out",
 
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-            once: true,
-          },
-        }
-      );
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          once: true,
+        },
+      });
 
       /* ===================================================
          CARD HOVER
@@ -127,7 +129,6 @@ export default function Exhibitions() {
         );
 
       cards.forEach((card) => {
-
         const image =
           card.querySelector(
             ".exhibition-image img"
@@ -190,7 +191,6 @@ export default function Exhibitions() {
         =============================================== */
 
         const handleEnter = () => {
-
           gsap.killTweensOf([
             image,
             content,
@@ -199,8 +199,7 @@ export default function Exhibitions() {
             button,
           ]);
 
-          const tl =
-            gsap.timeline();
+          const tl = gsap.timeline();
 
           /* IMAGE */
 
@@ -251,7 +250,7 @@ export default function Exhibitions() {
             0.1
           );
 
-          /* BUTTON */
+          /* CTA */
 
           tl.to(
             button,
@@ -270,7 +269,6 @@ export default function Exhibitions() {
         =============================================== */
 
         const handleLeave = () => {
-
           gsap.killTweensOf([
             image,
             content,
@@ -279,8 +277,7 @@ export default function Exhibitions() {
             button,
           ]);
 
-          const tl =
-            gsap.timeline();
+          const tl = gsap.timeline();
 
           /* IMAGE */
 
@@ -331,7 +328,7 @@ export default function Exhibitions() {
             0
           );
 
-          /* BUTTON */
+          /* CTA */
 
           tl.to(
             button,
@@ -371,13 +368,11 @@ export default function Exhibitions() {
       ref={sectionRef}
       className="exhibition-section"
     >
-
       {/* =================================================
           LEFT CONTENT
       ================================================= */}
 
       <div className="exhibition-intro">
-
         {/* LABEL */}
 
         <div className="exhibition-label">
@@ -403,10 +398,10 @@ export default function Exhibitions() {
           <br />
           <br />
 
-          {/* CTA */}
+          {/* ALL EXHIBITIONS CTA */}
 
-          <a
-            href="https://alpha-hazel-five.vercel.app/exhibition"
+          <Link
+            href="/exhibition"
             className="hero-button hero-button-primary"
           >
             <span>
@@ -417,9 +412,8 @@ export default function Exhibitions() {
               size={16}
               strokeWidth={1.8}
             />
-          </a>
+          </Link>
         </p>
-
       </div>
 
       {/* =================================================
@@ -427,7 +421,6 @@ export default function Exhibitions() {
       ================================================= */}
 
       <div className="exhibition-slider">
-
         {/* =================================================
             SWIPER
         ================================================= */}
@@ -444,7 +437,6 @@ export default function Exhibitions() {
           grabCursor={true}
           watchSlidesProgress={true}
           breakpoints={{
-
             /* MOBILE */
 
             0: {
@@ -465,106 +457,90 @@ export default function Exhibitions() {
               slidesPerView: 2,
               spaceBetween: 20,
             },
-
           }}
           className="exhibition-swiper"
         >
-
-          {exhibitions.map(
-            (exhibition) => (
-
-              <SwiperSlide
-                key={exhibition.id}
+          {exhibitions.map((exhibition) => (
+            <SwiperSlide
+              key={exhibition.name}
+            >
+              <article
+                className="exhibition-card"
               >
+                {/* =====================================
+                    IMAGE
+                ===================================== */}
 
-                <article
-                  className="exhibition-card"
-                >
+                <div className="exhibition-image">
+                  <Image
+                    src={exhibition.image}
+                    alt={exhibition.name}
+                    fill
+                    sizes="
+                      (max-width: 600px) 100vw,
+                      (max-width: 768px) 65vw,
+                      50vw
+                    "
+                    className="exhibition-img"
+                  />
+                </div>
 
-                  {/* =====================================
-                      IMAGE
-                  ===================================== */}
+                {/* =====================================
+                    OVERLAY
+                ===================================== */}
 
-                  <div className="exhibition-image">
+                <div className="exhibition-overlay" />
 
-                    <Image
-                      src={exhibition.image}
-                      alt={exhibition.name}
-                      fill
-                      sizes="
-                        (max-width: 600px) 100vw,
-                        (max-width: 768px) 65vw,
-                        50vw
-                      "
-                      className="exhibition-img"
-                    />
+                {/* =====================================
+                    CARD CONTENT
+                ===================================== */}
 
-                  </div>
+                <div className="exhibition-card-content">
+                  {/* TITLE */}
 
-                  {/* =====================================
-                      OVERLAY
-                  ===================================== */}
+                  <h3 className="exhibition-card-title">
+                    {exhibition.name}
+                  </h3>
 
-                  <div className="exhibition-overlay" />
+                  {/* META */}
 
-                  {/* =====================================
-                      CARD CONTENT
-                  ===================================== */}
-
-                  <div className="exhibition-card-content">
-
-                    {/* NUMBER */}
-
-                    <span className="exhibition-number">
-                      {String(
-                        exhibition.id
-                      ).padStart(2, "0")}
+                  <div className="exhibition-meta">
+                    <span>
+                      {exhibition.location}
                     </span>
 
-                    {/* TITLE */}
-
-                    <h3 className="exhibition-card-title">
-                      {exhibition.name}
-                    </h3>
-
-                    {/* META */}
-
-                    <div className="exhibition-meta">
-
-                      <span>
-                        {exhibition.location}
-                      </span>
-
-                      <span>
-                        {exhibition.date}
-                      </span>
-
-                    </div>
-
-                    {/* CATEGORY */}
-
-                    <div className="exhibition-category">
-                      {exhibition.category}
-                    </div>
-
-                    {/* CARD CTA */}
-
-                    <button
-                      className="exhibition-card-button"
-                      type="button"
-                    >
-                      EXPLORE
-                    </button>
-
+                    <span>
+                      {exhibition.date}
+                    </span>
                   </div>
 
-                </article>
+                  {/* CATEGORY */}
 
-              </SwiperSlide>
+                  <div className="exhibition-category">
+                    {exhibition.category}
+                  </div>
 
-            )
-          )}
+                  {/* =================================
+                      INDIVIDUAL CTA
+                  ================================= */}
 
+                  <Link
+                    href={exhibition.link}
+                    className="exhibition-card-button"
+                  >
+                    <span>
+                      {exhibition.cta}
+                    </span>
+
+                    <ArrowUpRight
+                      size={16}
+                      strokeWidth={1.8}
+                    />
+                  </Link>
+                </div>
+              </article>
+            </SwiperSlide>
+          ))}
         </Swiper>
 
         {/* =================================================
@@ -572,12 +548,8 @@ export default function Exhibitions() {
         ================================================= */}
 
         <div className="exhibition-bottom-controls">
-
           <div className="slider-controls">
-
-            {/* =============================================
-                PREVIOUS
-            ============================================= */}
+            {/* PREVIOUS */}
 
             <button
               className="
@@ -587,17 +559,13 @@ export default function Exhibitions() {
               aria-label="Previous exhibition"
               type="button"
             >
-
               <ArrowLeft
                 size={42}
                 strokeWidth={1.2}
               />
-
             </button>
 
-            {/* =============================================
-                NEXT
-            ============================================= */}
+            {/* NEXT */}
 
             <button
               className="
@@ -607,22 +575,15 @@ export default function Exhibitions() {
               aria-label="Next exhibition"
               type="button"
             >
-
               <ArrowRight
                 size={42}
                 strokeWidth={1.2}
               />
-
             </button>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }
-
 

@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, {
@@ -20,9 +19,8 @@ gsap.registerPlugin(ScrollTrigger);
 ========================================================= */
 
 type CardData = {
-  id: number;
   text: string;
-  hoverText: string;
+  description: string;
   cta: string;
   link: string;
   image: string;
@@ -34,66 +32,72 @@ type CardData = {
 
 const cardsData: CardData[] = [
   {
-    id: 1,
     text: "A.P.U. Overhaul & Repairs",
-    hoverText:
+    description:
       "Specialization is all types of APU overhaul and repair",
     cta: "VIEW SERVICE",
-    link: "https://alpha-hazel-five.vercel.app/a-p-u-overhaul-repairs",
+    link:
+      "https://alpha-hazel-five.vercel.app/a-p-u-overhaul-repairs",
     image: "/1-APU.jpg",
   },
+
   {
-    id: 2,
     text: "Fuel Systems & Fuel Flow Transmitter",
-    hoverText:
+    description:
       "Reliable and durable overhauling",
     cta: "VIEW SERVICE",
-    link: "https://alpha-hazel-five.vercel.app/fuel-systems-fuel-flow-transmitter",
+    link:
+      "https://alpha-hazel-five.vercel.app/fuel-systems-fuel-flow-transmitter",
     image: "/2-Fuel.jpg",
   },
+
   {
-    id: 3,
     text: "Plasma Spray & Professional Welding",
-    hoverText:
+    description:
       "Cost-effective high-tech solutions",
     cta: "VIEW SERVICE",
-    link: "https://alpha-hazel-five.vercel.app/plasma-spray-professional-welding",
+    link:
+      "https://alpha-hazel-five.vercel.app/plasma-spray-professional-welding",
     image: "/3-Plasma.jpg",
   },
+
   {
-    id: 4,
     text: "Hydraulic Systems",
-    hoverText:
+    description:
       "Long-lasting and reliable component overhaul",
     cta: "VIEW SERVICE",
-    link: "https://alpha-hazel-five.vercel.app/hydraulic-systems",
+    link:
+      "https://alpha-hazel-five.vercel.app/hydraulic-systems",
     image: "/4-Hydraulic.jpg",
   },
+
   {
-    id: 5,
     text: "C.S.D. & Pneumatic Systems",
-    hoverText:
+    description:
       "Dealt with precision and accuracy",
     cta: "VIEW SERVICE",
-    link: "https://alpha-hazel-five.vercel.app/c-s-d-pneumatic-systems",
+    link:
+      "https://alpha-hazel-five.vercel.app/c-s-d-pneumatic-systems",
     image: "/5-CSD.jpg",
   },
+
   {
-    id: 6,
     text: "Aircraft Scanning",
-    hoverText:
+    description:
       "CNN 3D scan measurements with FARO instrument",
     cta: "VIEW SERVICE",
-    link: "https://alpha-hazel-five.vercel.app/aircraft-scanning",
+    link:
+      "https://alpha-hazel-five.vercel.app/aircraft-scanning",
     image: "/6-Aircraft-Scanning.jpg",
   },
+
   {
-    id: 7,
     text: "Borescope Services",
-    hoverText:
+    description:
       "Optimised instrument to take accurate measurements",
     cta: "VIEW SERVICE",
-    link: "https://alpha-hazel-five.vercel.app/borescope-services",
+    link:
+      "https://alpha-hazel-five.vercel.app/borescope-services",
     image: "/7-Borescope.jpg",
   },
 ];
@@ -125,21 +129,20 @@ const getRealIndex = (index: number): number => {
 ========================================================= */
 
 export default function WhatIfSection() {
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const sliderRef = useRef<HTMLDivElement | null>(null);
+  const sectionRef =
+    useRef<HTMLElement | null>(null);
 
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const imagesRef = useRef<(HTMLImageElement | null)[]>([]);
+  const sliderRef =
+    useRef<HTMLDivElement | null>(null);
 
-  /* =========================================================
-     CURRENT SLIDE
-  ========================================================= */
+  const cardsRef =
+    useRef<(HTMLDivElement | null)[]>([]);
 
-  const currentIndex = useRef<number>(
-    cardsData.length
-  );
+  const currentIndex =
+    useRef<number>(cardsData.length);
 
-  const isAnimating = useRef<boolean>(false);
+  const isAnimating =
+    useRef<boolean>(false);
 
   const [activeIndex, setActiveIndex] =
     useState<number>(0);
@@ -163,22 +166,6 @@ export default function WhatIfSection() {
           ease: "power4.inOut",
           overwrite: true,
         });
-
-        /* =============================================
-           IMAGE PARALLAX / ZOOM
-        ============================================= */
-
-        const image = imagesRef.current[i];
-
-        if (image) {
-          gsap.to(image, {
-            scale: i === index ? 1.08 : 1,
-            yPercent: i === index ? -4 : 0,
-            duration: animate ? 1.2 : 0,
-            ease: "power3.out",
-            overwrite: true,
-          });
-        }
       });
     },
     []
@@ -212,7 +199,9 @@ export default function WhatIfSection() {
         updateSlider(false);
 
         setActiveIndex(
-          getRealIndex(currentIndex.current)
+          getRealIndex(
+            currentIndex.current
+          )
         );
       }
 
@@ -224,37 +213,42 @@ export default function WhatIfSection() {
      PREVIOUS SLIDE
   ========================================================= */
 
-  const previousSlide = useCallback((): void => {
-    if (isAnimating.current) return;
+  const previousSlide =
+    useCallback((): void => {
+      if (isAnimating.current) return;
 
-    isAnimating.current = true;
+      isAnimating.current = true;
 
-    currentIndex.current -= 1;
+      currentIndex.current -= 1;
 
-    setActiveIndex(
-      getRealIndex(currentIndex.current)
-    );
+      setActiveIndex(
+        getRealIndex(
+          currentIndex.current
+        )
+      );
 
-    updateSlider(true);
+      updateSlider(true);
 
-    window.setTimeout(() => {
-      if (
-        currentIndex.current <
-        cardsData.length
-      ) {
-        currentIndex.current =
-          cardsData.length * 2 - 1;
+      window.setTimeout(() => {
+        if (
+          currentIndex.current <
+          cardsData.length
+        ) {
+          currentIndex.current =
+            cardsData.length * 2 - 1;
 
-        updateSlider(false);
+          updateSlider(false);
 
-        setActiveIndex(
-          getRealIndex(currentIndex.current)
-        );
-      }
+          setActiveIndex(
+            getRealIndex(
+              currentIndex.current
+            )
+          );
+        }
 
-      isAnimating.current = false;
-    }, 920);
-  }, [updateSlider]);
+        isAnimating.current = false;
+      }, 920);
+    }, [updateSlider]);
 
   /* =========================================================
      INITIAL SETUP
@@ -267,21 +261,18 @@ export default function WhatIfSection() {
     updateSlider(false);
 
     /* =====================================================
-       SLOW 3D SCROLL HEADING
+       HEADING
     ===================================================== */
 
-    const heading = document.querySelector(
-      ".what-if-heading"
-    );
+    const heading =
+      document.querySelector(
+        ".what-if-heading"
+      );
 
     const headingChars =
       document.querySelectorAll(
         ".what-if-char"
       );
-
-    /* =============================================
-       HEADING PERSPECTIVE
-    ============================================= */
 
     if (heading) {
       gsap.set(heading, {
@@ -289,29 +280,17 @@ export default function WhatIfSection() {
       });
     }
 
-    /* =============================================
-       INITIAL 3D STATE
-    ============================================= */
-
     gsap.set(headingChars, {
       y: 100,
       z: -120,
       opacity: 0,
-
       rotateX: -35,
       rotateY: 8,
-
       scale: 0.92,
-
       transformOrigin: "50% 100%",
       transformPerspective: 1400,
-
       force3D: true,
     });
-
-    /* =============================================
-       SLOW SCROLL ANIMATION
-    ============================================= */
 
     const headingTween = gsap.to(
       headingChars,
@@ -319,12 +298,9 @@ export default function WhatIfSection() {
         y: 0,
         z: 0,
         opacity: 1,
-
         rotateX: 0,
         rotateY: 0,
-
         scale: 1,
-
         duration: 2,
 
         stagger: {
@@ -336,24 +312,9 @@ export default function WhatIfSection() {
 
         scrollTrigger: {
           trigger: ".what-if-heading",
-
-          /*
-           * Animation starts when heading
-           * enters the viewport.
-           */
           start: "top 85%",
-
-          /*
-           * Long scroll distance makes
-           * the animation feel slow.
-           */
           end: "top 30%",
-
-          /*
-           * Higher scrub = smoother/slower feel.
-           */
           scrub: 6,
-
           invalidateOnRefresh: true,
         },
       }
@@ -380,7 +341,7 @@ export default function WhatIfSection() {
     );
 
     /* =====================================================
-       KEYBOARD CONTROLS
+       KEYBOARD
     ===================================================== */
 
     const keyboardHandler = (
@@ -400,16 +361,8 @@ export default function WhatIfSection() {
       keyboardHandler
     );
 
-    /* =====================================================
-       COPY REFS FOR CLEANUP
-    ===================================================== */
-
-    const cards = cardsRef.current;
-    const images = imagesRef.current;
-
-    /* =====================================================
-       CLEANUP
-    ===================================================== */
+    const cards =
+      cardsRef.current;
 
     return () => {
       window.removeEventListener(
@@ -418,8 +371,10 @@ export default function WhatIfSection() {
       );
 
       gsap.killTweensOf(cards);
-      gsap.killTweensOf(images);
-      gsap.killTweensOf(headingChars);
+
+      gsap.killTweensOf(
+        headingChars
+      );
 
       headingTween.scrollTrigger?.kill();
       headingTween.kill();
@@ -443,15 +398,13 @@ export default function WhatIfSection() {
 
         <div className="what-if-box">
 
-          {/* =========================================
+          {/* =================================================
               HEADING
-          ========================================= */}
+          ================================================= */}
 
           <div className="what-if-heading">
-
             <h2>
               <span className="milestone-heading-line">
-
                 {"SERVICES".split("").map(
                   (char, index) => (
                     <span
@@ -464,15 +417,13 @@ export default function WhatIfSection() {
                     </span>
                   )
                 )}
-
               </span>
             </h2>
-
           </div>
 
-          {/* =========================================
+          {/* =================================================
               SLIDER
-          ========================================= */}
+          ================================================= */}
 
           <div
             ref={sliderRef}
@@ -484,7 +435,7 @@ export default function WhatIfSection() {
                 (card, index) => (
 
                   <div
-                    key={`${card.id}-${index}`}
+                    key={`${card.text}-${index}`}
                     ref={(element) => {
                       cardsRef.current[index] =
                         element;
@@ -506,10 +457,6 @@ export default function WhatIfSection() {
                       ================================= */}
 
                       <Image
-                        ref={(element) => {
-                          imagesRef.current[index] =
-                            element;
-                        }}
                         src={card.image}
                         alt={card.text}
                         width={800}
@@ -528,56 +475,36 @@ export default function WhatIfSection() {
                       <div className="what-if-overlay" />
 
                       {/* =================================
-                          CONTENT
+                          DIRECT CONTENT
+                          NO HOVER
                       ================================= */}
 
                       <div className="what-if-content">
-
-                        {/* NUMBER */}
-
-                        <span className="what-if-number">
-                          {String(card.id).padStart(
-                            2,
-                            "0"
-                          )}
-                        </span>
-
-                        {/* MAIN TEXT */}
 
                         <p className="what-if-main-text">
                           {card.text}
                         </p>
 
-                        {/* =================================
-                            HOVER CONTENT
-                        ================================= */}
+                        <p className="what-if-hover-text">
+                          {card.description}
+                        </p>
 
-                        <div className="what-if-hover-content">
+                        <Link
+                          href={card.link}
+                          className="what-if-card-cta"
+                          onClick={(event) => {
+                            event.stopPropagation();
+                          }}
+                        >
+                          <span>
+                            {card.cta}
+                          </span>
 
-                          <p className="what-if-hover-text">
-                            {card.hoverText}
-                          </p>
-
-                          {/* CTA */}
-
-                          <Link
-                            href={card.link}
-                            className="what-if-card-cta"
-                            onClick={(event) => {
-                              event.stopPropagation();
-                            }}
-                          >
-                            <span>
-                              {card.cta}
-                            </span>
-
-                            <ArrowRight
-                              size={16}
-                              strokeWidth={1.5}
-                            />
-                          </Link>
-
-                        </div>
+                          <ArrowRight
+                            size={16}
+                            strokeWidth={1.5}
+                          />
+                        </Link>
 
                       </div>
 
@@ -590,9 +517,9 @@ export default function WhatIfSection() {
             </div>
           </div>
 
-          {/* =========================================
+          {/* =================================================
               ARROWS
-          ========================================= */}
+          ================================================= */}
 
           <div className="what-if-arrows">
 
