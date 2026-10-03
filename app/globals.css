@@ -8891,7 +8891,8 @@ display: none !important;
           }
 
           .what-if-card-cta {
-            font-size: 10px;
+            font-size: 15px;
+            padding-top:10px;
           }
 
         }
@@ -35105,3 +35106,6 @@ padding-left:10px;
 }}
 
 
+@media (max-width: 767px) {.what-if-hover-text {
+    display: none !important;
+}}
