@@ -25631,8 +25631,8 @@ body {
 
   .heroContent {
     padding:
-      60px 20px
-      40px;
+      20px 20px
+      0px;
   }
 
   .heroText h1 {
@@ -25687,7 +25687,7 @@ body {
 
   .powerSection {
     padding:
-      75px 20px;
+      50px 20px;
   }
 
   .powerText h2 {
@@ -33485,7 +33485,7 @@ padding-left:10px;
   }
 
   .powerText {
-    padding: 40px 16px;
+    padding: 0px 16px;
   }
 
   .powerImage {
@@ -35108,4 +35108,15 @@ padding-left:10px;
 
 @media (max-width: 767px) {.what-if-hover-text {
     display: none !important;
-}}
+}
+.workCounter {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 0px;
+    color: #0a3458;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+}
