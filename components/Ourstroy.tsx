@@ -39,7 +39,7 @@ export default function OurStory() {
 
           {/* PRIMARY BUTTON */}
           <a
-            href="https://alpha-hazel-five.vercel.app/exhibition"
+            href="/a-p-u-overhaul-repairs"
             className="hero-button hero-button-primary"
           >
             <span>EXPLORE CAPABILITIES</span>

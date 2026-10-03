@@ -529,7 +529,7 @@ export default function ExhibitionPage() {
             {/* EXPLORE */}
 
             <Link
-              href="/exhibition"
+              href="/a-p-u-overhaul-repairs"
               className="
                 hero-button hero-button-primary
               "

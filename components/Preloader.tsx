@@ -654,7 +654,7 @@ export default function APUOverhaulPage() {
 
             <div className="alpha-apu-hero-actions">
               <a
-                href="#capabilities"
+                href="/a-p-u-overhaul-repairs"
                 className="alpha-apu-button alpha-apu-button-primary"
               >
                 EXPLORE CAPABILITIES
